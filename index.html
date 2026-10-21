@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="45 Tactics">
 <meta name="theme-color" content="#E9EFEA" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1913" media="(prefers-color-scheme: dark)">
@@ -21,7 +21,7 @@
 :root{
   --bg:#E9EFEA; --panel:#FFFFFF; --ink:#13241A; --muted:#5A6D61; --line:#CFDAD2; --accent:#1C6A43; --accent-ink:#FFFFFF;
   box-sizing:border-box;
-  padding-top:calc(env(safe-area-inset-top,0px) + 6px);
+  padding-top:calc(env(safe-area-inset-top,0px) + 12px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){
@@ -73,11 +73,11 @@ input,select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);b
 .pc[aria-pressed="true"]{box-shadow:0 0 0 3px var(--accent)}
 .vsep{width:1px;align-self:stretch;background:var(--line);flex:none}
 .plabel{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;min-width:54px;text-align:center;flex:none}
-dialog{border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink);padding:0;width:min(520px,calc(100vw - 20px));max-height:min(86vh,760px)}
+dialog{border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink);padding:0;width:min(520px,calc(100vw - 20px));top:calc(env(safe-area-inset-top,0px) + 16px);bottom:calc(env(safe-area-inset-bottom,0px) + 16px);margin:auto;max-height:min(760px,calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 32px))}
 dialog::backdrop{background:rgba(6,18,11,.45)}
 .dh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 6px}
 .dh h2{font-size:18px;margin:0}
-.db{padding:6px 16px 18px;overflow:auto;max-height:calc(min(86vh,760px) - 60px)}
+.db{padding:6px 16px 18px;overflow:auto;max-height:calc(min(760px,calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 32px)) - 60px)}
 .db h3{font-size:15px;margin:22px 0 4px}
 .tabs{display:flex;gap:6px;margin-bottom:14px}
 .tabs .btn{flex:1;justify-content:center}

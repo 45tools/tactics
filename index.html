@@ -315,6 +315,10 @@ a.btn{color:var(--ink)}a.btn.primary{color:var(--accent-ink)}
   </div>
 </dialog>
 <div id="printArea"></div>
+<dialog id="dShare">
+  <div class="dh"><h2 data-i18n="shareReady"></h2><button class="ib" data-close data-i18n-aria="close">×</button></div>
+  <div class="db"><button class="btn primary" id="shareGo" data-i18n="shareGo" style="width:100%"></button></div>
+</dialog>
 
 <dialog id="dSet">
   <div class="dh"><h2 data-i18n="settings"></h2><button class="ib" data-close data-i18n-aria="close">×</button></div>
@@ -451,7 +455,7 @@ function dgReclass(){
 }
 const dgGen=(ti,n)=>n<2?dgInner(n):[...dgInner(n-1),DG_OUT[0]];
 /* ---- tag rugby (field 40 x 30 m + 5 m in-goal: 50 x 30 m) ---- */
-const TR0={5:{start:FN(PL('キックオフ（試合開始）','Kick-off (start)','开球（开场）','開球（開場）'),[[.8,.15,'X'],[.8,.325,'X'],[.98,.5,'X'],[.8,.675,'X'],[.8,.85,'X']])}};
+const TR0={5:{start:FN(PL('フリーパス（試合開始）','Free pass (start)','自由传球（开场）','自由傳球（開場）'),[[.8,.15,'X'],[.8,.32,'X'],[.98,.5,'X'],[.9,.62,'X'],[.8,.85,'X']])}};
 const TR={5:{flat:FN(PL('フラット（横一列）','Flat line','平行站位','平行站位'),[[.8,.15,'X'],[.8,.325,'X'],[.8,.5,'X'],[.8,.675,'X'],[.8,.85,'X']]),
  wedge:FN(PL('くさび形','Wedge','楔形','楔形'),[[.86,.5,'X'],[.77,.34,'X'],[.77,.66,'X'],[.68,.18,'X'],[.68,.82,'X']]),
  deep:FN(PL('2列（深め）','Two lines (deep)','两排（纵深）','兩排（縱深）'),[[.84,.3,'X'],[.84,.7,'X'],[.7,.15,'X'],[.7,.5,'X'],[.7,.85,'X']])}};
@@ -465,11 +469,11 @@ function bbSport(o){
     of=(d,f)=>{const r=f*fence(d),a=d*Math.PI/180;return bp(r*Math.sin(a),r*Math.cos(a))},
     k=Math.SQRT1_2*b, Hr=105*wid/len,
     ang=(p,q)=>Math.atan2((q[1]-p[1])*Hr,(q[0]-p[0])*105)*180/Math.PI;
-  const P=bp(0,o.m),CA=bp(0,-1.7),OF=f=>[[...of(-28,f),'LF'],[...of(0,f+.02),'CF'],[...of(28,f),'RF']];
+  const P=bp(0,o.m),CA=bp(0,-3),OF=f=>[[...of(-28,f),'LF'],[...of(0,f+.02),'CF'],[...of(28,f),'RF']];
   const def=(inf,f=.72)=>[[...P,'P'],[...CA,'CA'],...inf,...OF(f)];
   const normal=[[...bp(.653*b,.835*b),'B1'],[...bp(.33*b,1.22*b),'B2'],[...bp(-.653*b,.835*b),'B3'],[...bp(-.33*b,1.22*b),'SS']];
   const R1=bp(k-1.8,k+1.8),R2=bp(-1.8,2*k-1.8),R3=bp(-k+1,k-1.7),B1=bp(k,k),B2=bp(0,2*k),B3=bp(-k,k),HM=bp(0,0);
-  const BAT=[...bp(-1.3,0),'BAT',0],r1=[...R1,'RUN',ang(R1,B2)],r2=[...R2,'RUN',ang(R2,B3)],r3=[...R3,'RUN',ang(R3,HM)];
+  const BAT=[...bp(-3.3,1),'BAT',0],r1=[...R1,'RUN',ang(R1,B2)],r2=[...R2,'RUN',ang(R2,B3)],r3=[...R3,'RUN',ang(R3,HM)];
   return {len,wid,kind:'abs',noRotate:true,ball:o.ball||'baseball',surface:'field',names:['bbDef','bbOff'],shapeRot:[90,0],
     cnt:[[9,9],[1,4]],def:[[9,'normal'],[1,'none']],ballXY:bp(1.2,o.m*.5),face:[HM,null],geo:{b,m:o.m,lf:o.lf,cf:o.cf,hy},
     regs:['P','CA','B1','B2','B3','SS','LF','CF','RF','BAT','RUN'],shape:{P:'GK',CA:'GK',B1:'MF',B2:'MF',B3:'MF',SS:'MF',LF:'FW',CF:'FW',RF:'FW',BAT:'MF',RUN:'MF'},
@@ -742,25 +746,25 @@ rotate:'ローテーション（時計回りに1つ）',offense:'オフェンス
 formHintG:'並び方を選ぶと、その形に並び直します。プリセットにない人数は自動で並びます。',rosterHintG:'ポジションを入れると、並び方を変えても そのポジションの場所に並びます。入れ終わったら「この配置に並べ直す」で並び直せます。',
 tOtherSport:'このファイルは「{s}」用です。45 Tactics Multiで開いてください',tSport:'{s}に切り替えました',
 print:'印刷・画像で保存',pTitle:'タイトル',pTitlePh:'例：11/3 練習試合',pDate:'日付',pContent:'内容',pCurrent:'今の盤面',pScenes:'保存した場面',pPer:'1ページの図',pRoster:'名簿を入れる',pMemo:'メモ欄を入れる',pBW:'白黒向けにする',pDo:'印刷・PDF',pImg:'画像で保存',
-pHint:'印刷画面で「PDFとして保存」を選ぶとPDFになります。iPhone・iPadで印刷できないときは「画像で保存」をお使いください。',memo:'メモ',tImg:'画像を書き出しました',noScenes:'保存した場面がありません',dgCount:'{t}：内野{a}人・外野{b}人',resetStart:'試合開始の配置に戻す',tResetStart:'試合開始の配置に戻しました（元に戻す で復元できます）'});
+pHint:'iPhone・iPadでは「印刷・PDF」を押すと共有メニューが開き、「プリント」や「ファイルに保存」を選べます。パソコンでは印刷画面で「PDFとして保存」を選ぶとPDFになります。',shareReady:'準備ができました',shareGo:'共有メニューを開く',tPdf:'PDFを保存しました',memo:'メモ',tImg:'画像を書き出しました',noScenes:'保存した場面がありません',dgCount:'{t}：内野{a}人・外野{b}人',resetStart:'試合開始の配置に戻す',tResetStart:'試合開始の配置に戻しました（元に戻す で復元できます）'});
 Object.assign(I18N.en,{sport:'Sport',chooseSport:'Choose a sport',titleM:'Sports tactics board',aboutTextM:'A free, ad-free tactics board for many sports. Everything you enter is saved only on this device and is never visible to anyone else.',
 rotate:'Rotate (one position clockwise)',offense:'Offense',defense:'Defense',bbDef:'Fielding',bbOff:'Batting',bg_court:'Court (default)',bg_field:'Field (default)',
 formHintG:'Choose a formation to line the players up. Other team sizes are arranged automatically.',rosterHintG:'Set a position and the player goes to that spot when you change formation. Tap “Reset to this formation” when you are done.',
 tOtherSport:'This file is for {s}. Please open it in 45 Tactics Multi',tSport:'Switched to {s}',
 print:'Print / save image',pTitle:'Title',pTitlePh:'e.g. Practice match, 3 Nov',pDate:'Date',pContent:'Content',pCurrent:'Current board',pScenes:'Saved scenes',pPer:'Boards per page',pRoster:'Include roster',pMemo:'Include notes box',pBW:'Black & white',pDo:'Print / PDF',pImg:'Save as image',
-pHint:'Choose “Save as PDF” in the print dialog to make a PDF. If printing does not work on iPhone/iPad, use “Save as image”.',memo:'Notes',tImg:'Image exported',noScenes:'No saved scenes',dgCount:'{t}: {a} in / {b} out',resetStart:'Reset to start positions',tResetStart:'Reset to start positions (Undo to restore)'});
+pHint:'On iPhone/iPad, “Print / PDF” opens the share sheet, where you can choose Print or Save to Files. On a computer, choose “Save as PDF” in the print dialog.',shareReady:'Ready',shareGo:'Open share menu',tPdf:'PDF saved',memo:'Notes',tImg:'Image exported',noScenes:'No saved scenes',dgCount:'{t}: {a} in / {b} out',resetStart:'Reset to start positions',tResetStart:'Reset to start positions (Undo to restore)'});
 Object.assign(I18N['zh-Hans'],{sport:'项目',chooseSport:'选择运动项目',titleM:'运动战术板',aboutTextM:'免费、无广告、支持多种运动的战术板。输入的内容只保存在本设备中，其他人看不到。',
 rotate:'轮转（顺时针移动一个位置）',offense:'进攻',defense:'防守',bbDef:'守备',bbOff:'进攻',bg_court:'球场（默认）',bg_field:'场地（默认）',
 formHintG:'选择阵型后按该形状重新排列。预设以外的人数会自动排列。',rosterHintG:'设置位置后，更换阵型时球员会站到该位置。设置完成后点击“按此阵型重新排列”。',
 tOtherSport:'此文件用于「{s}」，请在 45 Tactics Multi 中打开',tSport:'已切换为{s}',
 print:'打印・保存图片',pTitle:'标题',pTitlePh:'例：11/3 练习赛',pDate:'日期',pContent:'内容',pCurrent:'当前布阵',pScenes:'已保存的场景',pPer:'每页图数',pRoster:'包含名单',pMemo:'包含备注栏',pBW:'黑白打印',pDo:'打印・PDF',pImg:'保存为图片',
-pHint:'在打印画面选择“存储为PDF”即可生成PDF。iPhone/iPad 无法打印时，请使用“保存为图片”。',memo:'备注',tImg:'已导出图片',noScenes:'没有已保存的场景',dgCount:'{t}：内场{a}人・外场{b}人',resetStart:'恢复开场站位',tResetStart:'已恢复开场站位（可撤销）'});
+pHint:'在 iPhone/iPad 上点“打印・PDF”会打开分享菜单，可选择“打印”或“存储到文件”。在电脑上，于打印画面选择“存储为PDF”即可。',shareReady:'已准备好',shareGo:'打开分享菜单',tPdf:'已保存PDF',memo:'备注',tImg:'已导出图片',noScenes:'没有已保存的场景',dgCount:'{t}：内场{a}人・外场{b}人',resetStart:'恢复开场站位',tResetStart:'已恢复开场站位（可撤销）'});
 Object.assign(I18N['zh-Hant'],{sport:'項目',chooseSport:'選擇運動項目',titleM:'運動戰術板',aboutTextM:'免費、無廣告、支援多種運動的戰術板。輸入的內容只會儲存在這台裝置中，其他人看不到。',
 rotate:'輪轉（順時針移動一個位置）',offense:'進攻',defense:'防守',bbDef:'守備',bbOff:'進攻',bg_court:'球場（預設）',bg_field:'場地（預設）',
 formHintG:'選擇陣型後依該形狀重新排列。預設以外的人數會自動排列。',rosterHintG:'設定位置後，變更陣型時球員會站到該位置。設定完成後點「依此陣型重新排列」。',
 tOtherSport:'此檔案用於「{s}」，請在 45 Tactics Multi 中開啟',tSport:'已切換為{s}',
 print:'列印・儲存圖片',pTitle:'標題',pTitlePh:'例：11/3 練習賽',pDate:'日期',pContent:'內容',pCurrent:'目前布陣',pScenes:'已儲存的場景',pPer:'每頁圖數',pRoster:'包含名單',pMemo:'包含備註欄',pBW:'黑白列印',pDo:'列印・PDF',pImg:'儲存為圖片',
-pHint:'在列印畫面選擇「儲存為PDF」即可產生PDF。iPhone/iPad 無法列印時，請使用「儲存為圖片」。',memo:'備註',tImg:'已匯出圖片',noScenes:'沒有已儲存的場景',dgCount:'{t}：內場{a}人・外場{b}人',resetStart:'恢復開場站位',tResetStart:'已恢復開場站位（可復原）'});
+pHint:'在 iPhone/iPad 上點「列印・PDF」會開啟分享選單，可選擇「列印」或「儲存到檔案」。在電腦上，於列印畫面選擇「儲存為PDF」即可。',shareReady:'已準備好',shareGo:'開啟分享選單',tPdf:'已儲存PDF',memo:'備註',tImg:'已匯出圖片',noScenes:'沒有已儲存的場景',dgCount:'{t}：內場{a}人・外場{b}人',resetStart:'恢復開場站位',tResetStart:'已恢復開場站位（可復原）'});
 const LANG_NAMES={ja:'日本語',en:'English','zh-Hans':'简体中文','zh-Hant':'繁體中文'};
 function detectLang(){
   const l=(navigator.language||'en').toLowerCase();
@@ -1553,22 +1557,105 @@ $('bPrint').onclick=()=>{
   const sb=$('pContent').querySelector('[data-v="scenes"]');sb.disabled=!S.scenes.length;if(!S.scenes.length)segPick('pContent','cur');
   $('pPerRow').hidden=$('pContent').dataset.v!='scenes';$('dPrint').showModal();
 };
-$('pDo').onclick=()=>{buildPrint();$('dPrint').close();setTimeout(()=>window.print(),80)};
+/* ---- page renderer (canvas, A4 150dpi) used for image export and iPhone/iPad PDF ---- */
+const IS_IOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform=='MacIntel'&&navigator.maxTouchPoints>1);
+const PX=150/25.4, PW=Math.round(210*PX), PH=Math.round(297*PX), PM=Math.round(10*PX), PCW=PW-2*PM;
+const PFONT='"Hiragino Sans","Hiragino Kaku Gothic ProN","Zen Kaku Gothic New","Noto Sans JP","Yu Gothic",system-ui,sans-serif';
+function svgImg(svgS,w){const h=Math.round(w*(H+8)/(W+8));return new Promise((res,rej)=>{const img=new Image();img.onload=()=>res(img);img.onerror=rej;img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgS.replace('<svg ',`<svg width="${w}" height="${h}" `))})}
+function fitText(x,str,maxW){if(x.measureText(str).width<=maxW)return str;while(str.length&&x.measureText(str+'…').width>maxW)str=str.slice(0,-1);return str+'…'}
+async function renderPages(){
+  const title=$('pTitle').value.trim(), date=$('pDate').value, useSc=$('pContent').dataset.v=='scenes'&&S.scenes.length, per=useSc?+$('pPer').dataset.v:1, bw=$('pBW').checked;
+  const items=useSc?S.scenes.map(s=>{const o=JSON.parse(s.data);fillPos(o);return {name:s.name,o}}):[{name:'',o:null}];
+  const teams=S.teams.filter(x=>x.visible);
+  const ttl=title||(EDITION=='multi'?sportName(SPID):t('title'));
+  const meta=(EDITION=='multi'&&title?sportName(SPID)+'　':'')+date;
+  const ar=(H+8)/(W+8), cols=per==4?2:1, gap=Math.round(5*PX);
+  const cellW=cols==2?(PCW-gap)/2:PCW;
+  let bwid=cellW; if(per==2) bwid=Math.min(PCW,Math.round(112*PX)/ar);
+  { // keep roster + notes on the same page when everything fits on one page
+    const rt0=$('pRoster').checked?teams.filter(tm=>tm.players.length):[],fs=Math.round(9.5/72*150),rh=Math.round(fs*1.75);
+    const reserve=(rt0.length?fs*1.6+rh*(Math.max(...rt0.map(tm=>tm.players.length))+1)+gap:0)+($('pMemo').checked?Math.round(40*PX)+gap:0);
+    const hdr=PM+Math.round(17/72*150)+13+Math.round(8*PX/3*2), avail=PH-PM-hdr, rows=Math.ceil(Math.min(per,items.length)/cols), capH=useSc?Math.round(11/72*150)+14:0;
+    if(items.length<=per){const maxBh=(avail-reserve-rows*(gap+capH))/rows; if(maxBh>avail*0.3&&bwid*ar>maxBh) bwid=maxBh/ar}
+  }
+  const imgs=[];for(const it of items) imgs.push(await svgImg(boardSVG(it.o,bw),Math.round(bwid*1.5)));
+  const pages=[];let c,x,y;
+  const newPage=()=>{c=document.createElement('canvas');c.width=PW;c.height=PH;x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,PW,PH);x.fillStyle='#000';x.textBaseline='alphabetic';
+    // header
+    const f1=Math.round(17/72*150),f2=Math.round(10/72*150);
+    x.font=`${f2}px ${PFONT}`;
+    let mw=x.measureText(meta).width; const dots=teams.map(tm=>({tm,w:f2*1.0+x.measureText(tm.name).width+f2}));mw+=dots.reduce((a,d)=>a+d.w,0)+(teams.length?f2:0);
+    let mx=PM+PCW-mw;const by=PM+f1;
+    x.fillText(meta,mx,by);mx+=x.measureText(meta).width+(teams.length?f2:0);
+    dots.forEach((d,k)=>{const r=f2*0.42;x.beginPath();x.arc(mx+r,by-f2*0.36,r,0,7);x.fillStyle=bw?(d.tm===S.teams[0]?'#1E1E1E':'#fff'):d.tm.color;x.fill();x.lineWidth=2;x.strokeStyle='#000';x.stroke();x.fillStyle='#000';x.fillText(d.tm.name,mx+f2*1.0,by);mx+=d.w});
+    x.font=`700 ${f1}px ${PFONT}`;x.fillText(fitText(x,ttl,PCW-mw-20),PM,by);
+    x.fillRect(PM,by+10,PCW,3);y=by+10+3+Math.round(8*PX/3*2);pages.push(c)};
+  for(let i=0;i<items.length;i+=per){newPage();const grp=items.slice(i,i+per);
+    let rowH=0;grp.forEach((it,k)=>{const col=k%cols, cx=PM+(cols==2?col*(cellW+gap):(PCW-bwid)/2), bh=bwid*ar;
+      if(col==0&&k>0){y+=rowH+gap;rowH=0}
+      x.drawImage(imgs[i+k],cx,y,bwid,bh);x.lineWidth=2;x.strokeStyle='#999';x.strokeRect(cx,y,bwid,bh);
+      let hh=bh;if(it.name){const fs=Math.round(11/72*150);x.font=`700 ${fs}px ${PFONT}`;x.fillStyle='#000';x.fillText(fitText(x,`${i+k+1}. ${it.name}`,bwid),cx,y+bh+fs+6);hh+=fs+14}
+      rowH=Math.max(rowH,hh)});
+    y+=rowH+gap}
+  // roster
+  const rt=$('pRoster').checked?teams.filter(tm=>tm.players.length):[];
+  if(rt.length){const fs=Math.round(9.5/72*150),rh=Math.round(fs*1.75),n=Math.max(...rt.map(tm=>tm.players.length));const need=fs*1.6+rh*(n+1);
+    if(y+need>PH-PM)newPage();
+    const tg=Math.round(6*PX),tw=(PCW-tg*(rt.length-1))/rt.length;
+    rt.forEach((tm,k)=>{const tx=PM+k*(tw+tg);let ty=y;x.fillStyle='#000';x.font=`700 ${fs}px ${PFONT}`;x.fillText(fitText(x,tm.name,tw),tx,ty+fs);ty+=fs*1.6;
+      const cw=SP.noPos?[0.22,0.78]:[0.18,0.5,0.32];const hd=SP.noPos?[t('number'),t('name')]:[t('number'),t('name'),t('position')];
+      const rows=[hd,...tm.players.map(p=>SP.noPos?[p.num,p.name]:[p.num,p.name,posText(p)])];
+      rows.forEach((r,ri)=>{let cx=tx;r.forEach((v,ci)=>{const w=tw*cw[ci];if(ri==0){x.fillStyle='#eee';x.fillRect(cx,ty,w,rh)}x.strokeStyle='#888';x.lineWidth=2;x.strokeRect(cx,ty,w,rh);x.fillStyle='#000';x.font=`${ri==0?'700 ':''}${fs}px ${PFONT}`;x.fillText(fitText(x,String(v??''),w-12),cx+6,ty+rh*0.7);cx+=w});ty+=rh})});
+    y+=need+gap}
+  if($('pMemo').checked){const mh=Math.round(40*PX);if(y+mh>PH-PM)newPage();const fs=Math.round(10/72*150);
+    x.strokeStyle='#bbb';x.lineWidth=1.5;for(let ly=y+Math.round(8*PX);ly<y+mh;ly+=Math.round(8*PX)){x.beginPath();x.moveTo(PM,ly);x.lineTo(PM+PCW,ly);x.stroke()}
+    x.strokeStyle='#888';x.lineWidth=2;x.strokeRect(PM,y,PCW,mh);x.fillStyle='#000';x.font=`700 ${fs}px ${PFONT}`;x.fillText(t('memo'),PM+Math.round(3*PX),y+fs+Math.round(2*PX))}
+  return pages;
+}
+/* minimal PDF: one JPEG per A4 page */
+function makePDF(jpegs){
+  const enc=new TextEncoder(),parts=[],offs=[];let len=0;
+  const add=b=>{if(typeof b=='string')b=enc.encode(b);parts.push(b);len+=b.length};
+  const n=jpegs.length,obj=k=>{offs[k]=len;add(`${k} 0 obj\n`)};
+  add('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');
+  obj(1);add('<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
+  obj(2);add(`<< /Type /Pages /Count ${n} /Kids [${jpegs.map((_,i)=>`${3+i*3} 0 R`).join(' ')}] >>\nendobj\n`);
+  jpegs.forEach((j,i)=>{const p=3+i*3,im=p+1,ct=p+2,cs=`q 595.28 0 0 841.89 0 0 cm /Im0 Do Q`;
+    obj(p);add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /XObject << /Im0 ${im} 0 R >> >> /Contents ${ct} 0 R >>\nendobj\n`);
+    obj(im);add(`<< /Type /XObject /Subtype /Image /Width ${j.w} /Height ${j.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${j.data.length} >>\nstream\n`);add(j.data);add('\nendstream\nendobj\n');
+    obj(ct);add(`<< /Length ${cs.length} >>\nstream\n${cs}\nendstream\nendobj\n`)});
+  const xref=len,tot=3+n*3;let xr=`xref\n0 ${tot}\n0000000000 65535 f \n`;for(let k=1;k<tot;k++)xr+=String(offs[k]).padStart(10,'0')+' 00000 n \n';
+  add(xr+`trailer\n<< /Size ${tot} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);
+  return new Blob(parts,{type:'application/pdf'});
+}
+const cBlob=(c,type,q)=>new Promise(r=>c.toBlob(r,type,q));
+function download(blob,fname){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fname;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500)}
+/* share files; if the browser says the tap is too old, ask for one more tap */
+async function shareFiles(files,okMsg){
+  const can=navigator.canShare&&navigator.canShare({files});
+  if(can){try{await navigator.share({files,title:'45 Tactics'});return}catch(err){
+    if(err&&err.name=='AbortError')return;
+    if(err&&err.name=='NotAllowedError'){$('shareGo').onclick=async()=>{$('dShare').close();try{await navigator.share({files,title:'45 Tactics'})}catch(e){if(!e||e.name!='AbortError'){files.forEach(f=>download(f,f.name));toast(okMsg)}}};$('dShare').showModal();return}}}
+  files.forEach(f=>download(f,f.name));toast(okMsg);
+}
+const fbase=()=>`45tactics_${EDITION=='multi'?SPID+'_':''}${stamp()}`;
+let busy=false;
+$('pDo').onclick=async()=>{
+  if(!IS_IOS){buildPrint();$('dPrint').close();setTimeout(()=>window.print(),80);return}
+  if(busy)return;busy=true;
+  try{const pages=await renderPages(),jp=[];
+    for(const c of pages){const b=await cBlob(c,'image/jpeg',0.92);jp.push({w:c.width,h:c.height,data:new Uint8Array(await b.arrayBuffer())})}
+    const file=new File([makePDF(jp)],fbase()+'.pdf',{type:'application/pdf'});
+    $('dPrint').close();await shareFiles([file],t('tPdf'));
+  }catch(err){toast(t('tNoExport'))}finally{busy=false}
+};
 window.addEventListener('afterprint',()=>{$('printArea').innerHTML=''});
 $('pImg').onclick=async()=>{
-  try{
-    const svgS=boardSVG(null,$('pBW').checked), w=1600, h=Math.round(w*(H+8)/(W+8));
-    const img=new Image();
-    await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgS.replace('<svg ',`<svg width="${w}" height="${h}" `))});
-    const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(img,0,0,w,h);
-    const blob=await new Promise(r=>c.toBlob(r,'image/png'));
-    const fname=`45tactics_${EDITION=='multi'?SPID+'_':''}${stamp()}.png`;
-    try{const file=new File([blob],fname,{type:'image/png'});
-      if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'45 Tactics'});return}}
-    catch(err){if(err&&err.name=='AbortError')return}
-    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fname;document.body.appendChild(a);a.click();
-    setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);toast(t('tImg'));
-  }catch(err){toast(t('tNoExport'))}
+  if(busy)return;busy=true;
+  try{const pages=await renderPages(),fb=fbase(),files=[];
+    for(let i=0;i<pages.length;i++)files.push(new File([await cBlob(pages[i],'image/png')],fb+(pages.length>1?`_${i+1}`:'')+'.png',{type:'image/png'}));
+    $('dPrint').close();await shareFiles(files,t('tImg'));
+  }catch(err){toast(t('tNoExport'))}finally{busy=false}
 };
 
 applyStatic(); drawPitch(); layout(); render();

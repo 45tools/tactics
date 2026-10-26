@@ -1,0 +1,1554 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#E9EFEA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1913" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-title" content="45 Tactics">
+<meta name="author" content="45 Tools">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>45 Tactics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9EFEA; --panel:#FFFFFF; --ink:#13241A; --muted:#5A6D61; --line:#CFDAD2; --accent:#1C6A43; --accent-ink:#FFFFFF;
+  box-sizing:border-box;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0E1913; --panel:#17261D; --ink:#E5EFE8; --muted:#97AE9F; --line:#2A3D31; --accent:#58C389; --accent-ink:#0E1913; }
+}
+:root[data-theme="dark"]{ --bg:#0E1913; --panel:#17261D; --ink:#E5EFE8; --muted:#97AE9F; --line:#2A3D31; --accent:#58C389; --accent-ink:#0E1913; }
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;background:var(--bg);overflow:hidden;scroll-padding-top:env(safe-area-inset-top,0px);overscroll-behavior:none;-webkit-text-size-adjust:100%}
+html,body{margin:0}
+body{position:fixed;inset:0;height:auto;padding-top:calc(env(safe-area-inset-top,0px) + 8px);padding-bottom:env(safe-area-inset-bottom,0px);background:var(--bg);color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+  display:flex;flex-direction:column;overflow:hidden;overscroll-behavior:none;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.bar{display:flex;align-items:center;gap:6px;padding:8px max(10px,env(safe-area-inset-left,0px)) 8px max(10px,env(safe-area-inset-right,0px));flex:none}
+.menu{position:fixed;right:max(10px,env(safe-area-inset-right,0px));z-index:30;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 10px 30px rgba(10,30,18,.25);padding:6px;display:flex;flex-direction:column;min-width:230px;max-height:calc(100vh - 90px);overflow:auto}
+.menu[hidden]{display:none}
+.menu hr{border:0;border-top:1px solid var(--line);margin:4px 8px}
+.mi{border:0;background:transparent;text-align:left;min-height:44px;padding:0 14px;font-size:15px;font-weight:500;border-radius:9px;display:flex;align-items:center;justify-content:space-between;gap:12px;white-space:nowrap}
+.mi:active{background:var(--bg)}
+.mi:disabled{opacity:.4}
+.mi[hidden]{display:none}
+.mi[aria-pressed]::after{content:'';width:18px;text-align:center}
+.mi[aria-pressed="true"]::after{content:'✓';color:var(--accent);font-weight:700}
+#bMenu{flex:none}
+.btn.icon{width:46px;padding:0;justify-content:center}
+.seg.tools{flex:none}
+.seg.tools button{width:42px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+#bUndo{flex:none}
+.bar h1{font-size:17px;font-weight:700;margin:0 8px 0 2px;white-space:nowrap;letter-spacing:.02em}
+.bar .sp{flex:1;min-width:4px}
+body.playing #bMenu,body.playing #bUndo,body.playing .tools{opacity:.35;pointer-events:none}
+#bFull[hidden]{display:none}
+button{font:inherit;color:inherit;cursor:pointer}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:10px;min-height:40px;padding:0 12px;font-size:14px;font-weight:500;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;flex:none}
+.btn:active{transform:translateY(1px)}
+.btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+.btn:disabled{opacity:.4}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);flex:none}
+.seg button{border:0;background:transparent;min-height:38px;padding:0 12px;font-size:14px;font-weight:500;white-space:nowrap}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{flex:1;min-height:0;position:relative;display:flex;flex-direction:column;padding:0 max(6px,env(safe-area-inset-left,0px)) 4px max(6px,env(safe-area-inset-right,0px))}
+svg#board{flex:1;min-height:0;width:100%;display:block;touch-action:none}
+.dock{flex:none;height:62px;display:flex;align-items:center;justify-content:center;gap:8px;min-width:0}
+.dock .float{position:static;transform:none;box-shadow:0 2px 10px rgba(10,30,18,.14);max-width:100%}
+#penBar{gap:6px;padding:6px}
+#penBar .seg button{padding:0 8px;font-size:13px}
+#penBar .vsep{display:none}
+#penBar #penColors{gap:5px!important}
+#penBar .pc{width:24px;height:24px}
+body.pen svg#board{cursor:crosshair}
+body.erase svg#board{cursor:cell}
+body.text svg#board{cursor:text}
+.note{font-weight:700;text-anchor:middle;paint-order:stroke;stroke:rgba(0,0,0,.72);stroke-width:.6px;stroke-linejoin:round;pointer-events:none}
+.zl{font-weight:700;fill:rgba(255,255,255,.6);pointer-events:none}
+.float.top{top:10px;bottom:auto}
+#tText{width:220px}
+.num{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;text-anchor:middle;pointer-events:none}
+.nm{font-weight:700;text-anchor:middle;fill:#fff;paint-order:stroke;stroke:#123A24;stroke-width:.5px;stroke-linejoin:round;pointer-events:none}
+body.move .tok, body.move #ball{cursor:grab}
+.float{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:8px;display:flex;gap:8px;align-items:center;box-shadow:0 6px 24px rgba(10,30,18,.22);max-width:calc(100% - 20px);overflow-x:auto}
+.float[hidden]{display:none}
+.dot{width:14px;height:14px;border-radius:50%;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+input,select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;min-height:38px;padding:0 10px;min-width:0}
+#insp .n{width:58px;text-align:center}
+#insp .m{width:150px}
+.ib{border:0;background:transparent;font-size:20px;width:36px;height:36px;border-radius:8px;color:var(--muted);flex:none}
+.pc{width:30px;height:30px;border-radius:50%;border:2px solid var(--panel);box-shadow:0 0 0 1px var(--line);flex:none}
+.pc[aria-pressed="true"]{box-shadow:0 0 0 3px var(--accent)}
+.vsep{width:1px;align-self:stretch;background:var(--line);flex:none}
+.plabel{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;min-width:54px;text-align:center;flex:none}
+dialog{border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink);padding:0;width:min(520px,calc(100vw - 20px));top:calc(env(safe-area-inset-top,0px) + 16px);bottom:calc(env(safe-area-inset-bottom,0px) + 16px);margin:auto;max-height:min(760px,calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 32px))}
+dialog::backdrop{background:rgba(6,18,11,.45)}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 6px}
+.dh h2{font-size:18px;margin:0}
+.db{padding:6px 16px 18px;overflow:auto;max-height:calc(min(760px,calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 32px)) - 60px)}
+.db h3{font-size:15px;margin:22px 0 4px}
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tabs .btn{flex:1;justify-content:center}
+.row{display:flex;align-items:center;gap:10px;margin:10px 0}
+.row label{width:96px;flex:none;font-size:14px;color:var(--muted)}
+.row .grow{flex:1}
+.sw{display:flex;gap:8px;flex-wrap:wrap}
+.sw button{width:30px;height:30px;border-radius:50%;border:2px solid var(--panel);box-shadow:0 0 0 1px var(--line)}
+.sw button[aria-pressed="true"]{box-shadow:0 0 0 3px var(--accent)}
+.step{display:flex;align-items:center;gap:6px}
+.step output{min-width:34px;text-align:center;font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:700}
+.roster{display:grid;grid-template-columns:56px 1fr 118px;gap:6px;margin-top:6px}
+.roster select{width:100%}
+.roster input.n{text-align:center}
+.hint{font-size:13px;color:var(--muted);line-height:1.6;margin:6px 0 0}
+.scenes{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:6px}
+.scenes li{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:10px;padding:5px}
+.scenes .no{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:18px;width:26px;text-align:center;color:var(--muted);flex:none}
+.scenes .open{flex:1;min-width:0;border:0;background:transparent;text-align:left;min-height:38px;padding:0 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px;font-weight:700}
+.scenes .sb{min-height:36px;padding:0 9px;font-size:13px}
+.empty{color:var(--muted);font-size:14px;margin-top:12px}
+.toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 66px);transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:20;max-width:calc(100vw - 24px)}
+.toast[hidden]{display:none}
+
+html:lang(zh-Hans) body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif}
+html:lang(zh-Hant) body{font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif}
+html:lang(en) body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+a.btn{color:var(--ink)}a.btn.primary{color:var(--accent-ink)}
+#mselTxt{white-space:nowrap}
+.bgopts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bgopt{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:6px;font-size:12.5px;font-weight:500;display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1.25;text-align:center}
+.bgopt[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.bgopt>span{display:block;width:100%;aspect-ratio:105/68;border-radius:5px;border:1px solid var(--line);background-size:cover;background-position:center}
+.sw-stripes{background:repeating-linear-gradient(90deg,#2E8250 0 10%,#2A7849 10% 20%)}
+.sw-plain{background:#fff}
+.sw-lanes5{background:linear-gradient(180deg,#5B8FD6 0 20%,#9AA94E 20% 36%,#2B7A4B 36% 64%,#9AA94E 64% 80%,#5B8FD6 80%)}
+.sw-lanes3{background:linear-gradient(180deg,#5B8FD6 0 33.3%,#2B7A4B 33.3% 66.6%,#5B8FD6 66.6%)}
+.sw-zones{background:repeating-conic-gradient(#3A9460 0 25%,#246A41 0 50%) 0 0/33.34% 40%}
+.sw-photo{background:#C9D3CC repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.5) 6px 12px)}
+@media (max-width:420px){.mlab{display:none}#bMenu{width:46px;padding:0;justify-content:center}}
+/* phone landscape: the dock moves to the right edge so it never covers the pitch */
+@media (orientation:landscape) and (max-height:540px){
+ .wrap{flex-direction:row;padding-bottom:4px}
+ .dock{height:auto;width:196px;flex-direction:column;justify-content:center;padding-left:8px;padding-right:max(0px,env(safe-area-inset-right,0px));overflow-y:auto}
+ .dock .float{flex-direction:column;align-items:stretch;width:100%;gap:6px;overflow:visible}
+ .dock .float .seg{flex-direction:column}
+ .dock .float .seg button+button{border-left:0;border-top:1px solid var(--line)}
+ .dock #penBar .vsep{display:block;width:auto;height:1px}
+ #penColors{flex-wrap:wrap;justify-content:center}
+ #insp .n,#insp .m,#insp select{width:100%}
+ #insp .dot{align-self:center}
+ #insp .ib{align-self:flex-end;order:-1;height:28px}
+ #mselTxt{white-space:normal;text-align:center}
+ .plabel{text-align:center}
+ .bar{padding-top:4px;padding-bottom:4px}
+}
+[hidden]{display:none!important}
+#bSport .se,#bSport #sEmoji{font-size:19px;line-height:1}
+@media (max-width:440px){#bSport .slab{display:none}#bSport{padding:0 8px}}
+.sports{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.spb{min-height:52px;justify-content:flex-start;white-space:normal;text-align:left;line-height:1.25}
+.spb .se{font-size:22px;flex:none}
+.chk{display:flex;align-items:center;gap:10px;margin:12px 0;font-size:14px}
+.chk input{min-height:0;width:20px;height:20px;padding:0;accent-color:var(--accent)}
+.roster.nopos{grid-template-columns:56px 1fr}
+#printArea{display:none}
+@media print{
+ @page{size:A4;margin:10mm}
+ html,body{position:static!important;height:auto!important;overflow:visible!important;background:#fff!important;padding:0!important;display:block!important;color:#000!important}
+ body>*:not(#printArea){display:none!important}
+ #printArea{display:block!important;width:190mm;max-width:100%;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .pp{break-after:page;page-break-after:always}.pp:last-child{break-after:auto;page-break-after:auto}
+ .ph{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1.5px solid #000;padding-bottom:4px;margin-bottom:8px}
+ .pt{font-size:17pt;font-weight:700}.pm{font-size:10pt;white-space:nowrap}
+ .pd{display:inline-block;width:9pt;height:9pt;border-radius:50%;border:1px solid #000;margin-right:3pt;vertical-align:-1pt}
+ .pg{display:grid;gap:5mm;grid-template-columns:1fr}.per4 .pg{grid-template-columns:1fr 1fr}
+ figure{margin:0;break-inside:avoid}figure svg{width:100%;height:auto;display:block;border:1px solid #999}
+ .per2 figure svg{max-height:112mm}
+ figcaption{font-size:11pt;font-weight:700;margin-top:1.5mm}
+ .pr{display:flex;gap:6mm;margin-top:5mm;break-inside:avoid}.pr table{border-collapse:collapse;font-size:9.5pt;flex:1}
+ .pr caption{font-weight:700;text-align:left;padding-bottom:2pt}.pr th,.pr td{border:1px solid #888;padding:2pt 4pt;text-align:left}
+ .pmemo{margin-top:5mm;border:1px solid #888;min-height:40mm;padding:2mm 3mm;font-size:10pt;font-weight:700;break-inside:avoid;background:repeating-linear-gradient(transparent 0 8mm,#bbb 8mm calc(8mm + 1px))}
+}
+@media (max-width:620px){.bar h1{display:none}.btn,.seg button{padding:0 10px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body class="move">
+<div class="bar" role="toolbar" data-i18n-aria="toolbar">
+ <div class="seg tools" role="group" data-i18n-aria="tools">
+  <button data-mode="move" aria-pressed="true" data-i18n-aria="move" title=""><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg></button>
+  <button data-mode="pen" aria-pressed="false" data-i18n-aria="pen" title=""><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1L19 8a2.1 2.1 0 0 0-3-3L5 16l-1 4z"/><path d="M14 7l3 3"/></svg></button>
+  <button data-mode="text" aria-pressed="false" data-i18n-aria="text" title=""><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6V4h14v2M12 4v16M9 20h6"/></svg></button>
+  <button data-mode="erase" aria-pressed="false" data-i18n-aria="erase" title=""><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20h12M5.5 14.5l7-7a2 2 0 0 1 2.8 0l2.2 2.2a2 2 0 0 1 0 2.8L12 18H8.5l-3-3a2 2 0 0 1 0-.5z"/><path d="M9 11l5 5"/></svg></button>
+ </div>
+ <button class="btn icon" id="bUndo" data-i18n-aria="undo" title="" disabled><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+
+ <button class="btn" id="bSport" hidden aria-haspopup="dialog"><span id="sEmoji"></span><span class="slab" id="sName"></span><span class="slab">▾</span></button>
+ <h1 id="appName">45 Tactics</h1>
+ <span class="sp"></span>
+ <button class="btn icon" id="bAbout" data-i18n-aria="about" title=""><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg></button>
+ <button class="btn" id="bMenu" aria-haspopup="true" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="mlab"><span data-i18n="menu"></span> ▾</span></button>
+</div>
+<div class="menu" id="menu" role="menu" hidden>
+  <button class="mi" id="bSport2" role="menuitem" hidden data-i18n="chooseSport"></button>
+  <button class="mi" id="bSettings" role="menuitem" data-i18n="settings"></button>
+  <button class="mi" id="bScenes" role="menuitem" data-i18n="scenes"></button>
+  <button class="mi" id="bPlay" role="menuitem" disabled data-i18n="playScenes"></button>
+  <button class="mi" id="bPrint" role="menuitem" data-i18n="print"></button>
+  <hr>
+  <button class="mi" id="bMulti" role="menuitemcheckbox" aria-pressed="false" data-i18n="multi"></button>
+  <button class="mi" id="bFace" role="menuitem" data-i18n="faceBall"></button>
+  <button class="mi" id="bRotate" role="menuitem" hidden data-i18n="rotate"></button>
+  <button class="mi" id="bClearDraw" role="menuitem" data-i18n="clearDraw"></button>
+  <hr>
+  <button class="mi" id="bNames" role="menuitemcheckbox" aria-pressed="true" data-i18n="showNames"></button>
+  <button class="mi" id="bAway" role="menuitemcheckbox" aria-pressed="false" data-i18n="hideAway"></button>
+  <button class="mi" id="bZones" role="menuitemcheckbox" aria-pressed="false" data-i18n="showZones"></button>
+  <button class="mi" id="bFull" role="menuitem" hidden></button>
+  <hr>
+  <button class="mi" id="bAbout2" role="menuitem" data-i18n="about"></button>
+</div>
+<div class="wrap" id="wrap">
+  <svg id="board" xmlns="http://www.w3.org/2000/svg" data-i18n-aria="pitchAria">
+    <g id="rot">
+      <g id="pitch"></g>
+      <g id="zonesL" pointer-events="none"></g>
+      <g id="drawL"></g>
+      <g id="tokens"></g>
+      <g id="ballL"></g>
+      <g id="textL" pointer-events="none"></g>
+      <g id="selL"></g>
+    </g>
+  </svg>
+
+  <div class="float top" id="textBar" hidden>
+    <input id="tText" data-i18n-ph="textPh" data-i18n-aria="text" maxlength="40" enterkeyhint="done">
+    <span id="textColors" style="display:flex;gap:8px"></span>
+    <span class="vsep"></span>
+    <button class="btn" id="tDel" data-i18n="del"></button>
+    <button class="btn primary" id="tDone" data-i18n="done"></button>
+  </div>
+
+  <div class="dock" id="dock">
+  <div class="float" id="insp" hidden>
+    <span class="dot" id="iDot"></span>
+    <input class="n" id="iNum" inputmode="numeric" data-i18n-aria="number" maxlength="3">
+    <input class="m" id="iName" data-i18n-ph="name" data-i18n-aria="name" maxlength="14">
+    <select id="iPos" data-i18n-aria="position"></select>
+    <button class="ib" id="iClose" data-i18n-aria="close">×</button>
+  </div>
+
+  <div class="float" id="mselBar" hidden>
+    <span id="mselTxt" style="font-size:14px"></span>
+    <button class="btn" id="mselClear" data-i18n="clearSel"></button>
+  </div>
+
+  <div class="float" id="penBar" hidden>
+    <div class="seg" role="group" data-i18n-aria="lineHow">
+      <button data-shape="free" aria-pressed="true" data-i18n="free" data-i18n-title="freeTip"></button>
+      <button data-shape="line" aria-pressed="false" data-i18n="line" data-i18n-title="lineTip"></button>
+    </div>
+    <span class="vsep"></span>
+    <div class="seg" role="group" data-i18n-aria="lineKind">
+      <button data-kind="run" aria-pressed="true" data-i18n="solid" data-i18n-title="solidTip"></button>
+      <button data-kind="pass" aria-pressed="false" data-i18n="dashed" data-i18n-title="dashedTip"></button>
+    </div>
+    <span class="vsep"></span>
+    <span id="penColors" style="display:flex;gap:8px"></span>
+  </div>
+
+  <div class="float" id="playBar" hidden>
+    <button class="btn" id="pRestart" data-i18n="restart"></button>
+    <span class="plabel" id="pLabel">1 / 1</span>
+    <button class="btn" id="pSpeed"></button>
+    <button class="btn primary" id="pStop" data-i18n="stop"></button>
+  </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden role="status"></div>
+
+<dialog id="dAbout">
+  <div class="dh"><h2>45 Tactics <small style="font-weight:500;color:var(--muted);font-size:13px" data-i18n="title"></small><br><small style="font-weight:500;color:var(--muted);font-size:13px">by 45 Tools</small></h2><button class="ib" data-close data-i18n-aria="close">×</button></div>
+  <div class="db">
+    <p class="hint" style="margin-top:0;font-size:14px;color:var(--ink)" data-i18n="aboutText"></p>
+    <div class="row" style="flex-direction:column;align-items:stretch;gap:8px;margin-top:16px">
+      <a class="btn" id="aGuide" target="_blank" rel="noopener" style="justify-content:center;text-decoration:none"></a>
+      <a class="btn primary" id="aSupport" target="_blank" rel="noopener" style="justify-content:center;text-decoration:none"></a>
+    </div>
+    <p class="hint" data-i18n="supportNote"></p>
+    <div class="row" style="margin-top:16px"><label for="langA" data-i18n="language"></label><select id="langA" class="grow"></select></div>
+  </div>
+</dialog>
+
+<dialog id="dSport">
+  <div class="dh"><h2 data-i18n="chooseSport"></h2><button class="ib" data-close data-i18n-aria="close">×</button></div>
+  <div class="db"><div class="sports" id="sportList"></div></div>
+</dialog>
+
+<dialog id="dPrint">
+  <div class="dh"><h2 data-i18n="print"></h2><button class="ib" data-close data-i18n-aria="close">×</button></div>
+  <div class="db">
+    <div class="row"><label for="pTitle" data-i18n="pTitle"></label><input id="pTitle" class="grow" maxlength="40" data-i18n-ph="pTitlePh"></div>
+    <div class="row"><label for="pDate" data-i18n="pDate"></label><input id="pDate" type="date" class="grow"></div>
+    <div class="row"><label data-i18n="pContent"></label><div class="seg" id="pContent" data-v="cur"><button data-v="cur" aria-pressed="true" data-i18n="pCurrent"></button><button data-v="scenes" aria-pressed="false" data-i18n="pScenes"></button></div></div>
+    <div class="row" id="pPerRow" hidden><label data-i18n="pPer"></label><div class="seg" id="pPer" data-v="2"><button data-v="1" aria-pressed="false">1</button><button data-v="2" aria-pressed="true">2</button><button data-v="4" aria-pressed="false">4</button></div></div>
+    <label class="chk"><input type="checkbox" id="pRoster" checked><span data-i18n="pRoster"></span></label>
+    <label class="chk"><input type="checkbox" id="pMemo" checked><span data-i18n="pMemo"></span></label>
+    <label class="chk"><input type="checkbox" id="pBW"><span data-i18n="pBW"></span></label>
+    <div class="row" style="margin-top:16px;flex-wrap:wrap"><button class="btn primary" id="pDo" data-i18n="pDo"></button><button class="btn" id="pImg" data-i18n="pImg"></button></div>
+    <p class="hint" data-i18n="pHint"></p>
+  </div>
+</dialog>
+<div id="printArea"></div>
+
+<dialog id="dSet">
+  <div class="dh"><h2 data-i18n="settings"></h2><button class="ib" data-close data-i18n-aria="close">×</button></div>
+  <div class="db" id="setBody"></div>
+  <input type="file" id="photoIn" accept="image/*" hidden>
+</dialog>
+
+<dialog id="dScn">
+  <div class="dh"><h2 data-i18n="scenes"></h2><button class="ib" data-close data-i18n-aria="close">×</button></div>
+  <div class="db">
+    <div class="row"><input class="grow" id="scName" maxlength="30"><button class="btn primary" id="scSave" data-i18n="saveBoard"></button></div>
+    <p class="hint" data-i18n="scHint"></p>
+    <ul class="scenes" id="scList"></ul>
+    <h3 data-i18n="file"></h3>
+    <p class="hint" style="margin-top:0" data-i18n="fileHint"></p>
+    <div class="row" style="flex-wrap:wrap">
+      <button class="btn" id="bExport" data-i18n="export"></button>
+      <button class="btn" id="bImport" data-i18n="import"></button>
+      <button class="btn" id="bDefault" hidden data-i18n="loadDefault"></button>
+      <input type="file" id="fileIn" accept=".json,application/json" hidden>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const EDITION='multi'; /* build.py writes 'soccer' for 45 Tactics and 'multi' for 45 Tactics Multi */
+const W=105,R=1.9,PHOTO_KEY='tactics-board-pro-photo';
+let H=68,KEY='tactics-board-pro-v1';
+/* ---- リンク設定 ---- */
+const GUIDE_URL='https://note.com/45tools/n/nf0fd86d1e1e2';
+const SUPPORT_URL='https://ofuse.me/45tools';
+
+const COLORS=['#1F4FD6','#D7263D','#F2C230','#141A16','#F4F4F2','#7C3AED','#0EA5A4','#F97316'];
+const PEN_COLORS=['#FFFFFF','#FFE14D','#FF6B6B','#7FB8FF','#1E2A22'];
+const BG_STYLES=['stripes','plain','lanes5','lanes3','zones','photo'];
+const F={
+ 5:{'1-2-1':[[.06,.5],[.4,.5],[.64,.22],[.64,.78],[.9,.5]],'2-2':[[.06,.5],[.42,.3],[.42,.7],[.82,.3],[.82,.7]]},
+ 7:{'2-3-1':[[.06,.5],[.38,.3],[.38,.7],[.66,.18],[.66,.5],[.66,.82],[.92,.5]],'3-2-1':[[.06,.5],[.38,.2],[.38,.5],[.38,.8],[.66,.33],[.66,.67],[.92,.5]]},
+ 8:{'3-3-1':[[.06,.5],[.36,.2],[.36,.5],[.36,.8],[.64,.18],[.64,.5],[.64,.82],[.92,.5]],
+    '2-3-2':[[.06,.5],[.36,.32],[.36,.68],[.62,.18],[.62,.5],[.62,.82],[.9,.35],[.9,.65]],
+    '3-2-2':[[.06,.5],[.36,.2],[.36,.5],[.36,.8],[.62,.33],[.62,.67],[.9,.33],[.9,.67]]},
+ 11:{'4-4-2':[[.06,.5],[.34,.14],[.34,.38],[.34,.62],[.34,.86],[.64,.14],[.64,.38],[.64,.62],[.64,.86],[.92,.38],[.92,.62]],
+  '4-3-3':[[.06,.5],[.34,.14],[.34,.38],[.34,.62],[.34,.86],[.62,.28],[.58,.5],[.62,.72],[.9,.16],[.94,.5],[.9,.84]],
+  '4-2-3-1':[[.06,.5],[.34,.14],[.34,.38],[.34,.62],[.34,.86],[.56,.38],[.56,.62],[.78,.18],[.78,.5],[.78,.82],[.96,.5]],
+  '3-5-2':[[.06,.5],[.34,.25],[.34,.5],[.34,.75],[.62,.08],[.58,.33],[.66,.5],[.58,.67],[.62,.92],[.92,.38],[.92,.62]],
+  '3-4-3':[[.06,.5],[.34,.25],[.34,.5],[.34,.75],[.62,.12],[.62,.38],[.62,.62],[.62,.88],[.9,.18],[.94,.5],[.9,.82]]}
+};
+const REG={
+ GK:{l:'GK',c:'GK',xy:[.06,.5]},
+ RSB:{l:'右SB',c:'DF',xy:[.34,.88]},RCB:{l:'右CB',c:'DF',xy:[.34,.66]},CB:{l:'CB',c:'DF',xy:[.34,.5]},LCB:{l:'左CB',c:'DF',xy:[.34,.34]},LSB:{l:'左SB',c:'DF',xy:[.34,.12]},
+ DMF:{l:'ボランチ',c:'MF',xy:[.54,.5]},RMF:{l:'右MF',c:'MF',xy:[.64,.88]},LMF:{l:'左MF',c:'MF',xy:[.64,.12]},OMF:{l:'トップ下',c:'MF',xy:[.76,.5]},
+ RWG:{l:'右WG',c:'FW',xy:[.9,.85]},CF:{l:'CF',c:'FW',xy:[.94,.5]},LWG:{l:'左WG',c:'FW',xy:[.9,.15]}};
+const REG_GROUPS=[['GK',['GK']],['DF',['RSB','RCB','CB','LCB','LSB']],['MF',['DMF','RMF','LMF','OMF']],['FW',['RWG','CF','LWG']]];
+const regOf=p=>p.reg&&REG[p.reg]?REG[p.reg]:null;
+/* ===================== sports (45 Tactics Multi) ===================== */
+const PL=(ja,en,hs,ht)=>({ja,en,'zh-Hans':hs,'zh-Hant':ht||hs});
+const lbl=o=>o?(o[LANG]||o.en):'';
+/* position labels for the non-football sports (football uses reg_* in I18N) */
+const POS={
+ PG:PL('PG（ポイントガード）','PG (point guard)','PG（控球后卫）','PG（控球後衛）'),
+ SG:PL('SG（シューティングガード）','SG (shooting guard)','SG（得分后卫）','SG（得分後衛）'),
+ SF:PL('SF（スモールフォワード）','SF (small forward)','SF（小前锋）','SF（小前鋒）'),
+ PF:PL('PF（パワーフォワード）','PF (power forward)','PF（大前锋）','PF（大前鋒）'),
+ C:PL('C（センター）','C (centre)','C（中锋）','C（中鋒）'),
+ S:PL('S（セッター）','S (setter)','S（二传）','S（舉球員）'),
+ OH:PL('OH（アウトサイドヒッター）','OH (outside hitter)','OH（主攻）','OH（主攻手）'),
+ MB:PL('MB（ミドルブロッカー）','MB (middle blocker)','MB（副攻）','MB（攔中）'),
+ OP:PL('OP（オポジット）','OP (opposite)','OP（接应）','OP（副攻手）'),
+ L:PL('L（リベロ）','L (libero)','L（自由人）','L（自由球員）'),
+ FL:PL('前衛レフト','Front left','前排左','前排左'),FC:PL('前衛センター','Front centre','前排中','前排中'),FR:PL('前衛ライト','Front right','前排右','前排右'),
+ ML:PL('中衛レフト','Middle left','中排左','中排左'),MC:PL('中衛センター','Middle centre','中排中','中排中'),MR:PL('中衛ライト','Middle right','中排右','中排右'),
+ BL:PL('後衛レフト','Back left','后排左','後排左'),BC:PL('後衛センター','Back centre','后排中','後排中'),BR:PL('後衛ライト','Back right','后排右','後排右'),
+ GK:PL('GK（ゴールキーパー）','GK (goalkeeper)','GK（守门员）','GK（守門員）'),
+ LW:PL('LW（左サイド）','LW (left wing)','LW（左边锋）','LW（左翼）'),LB:PL('LB（左バック）','LB (left back)','LB（左卫）','LB（左衛）'),
+ CB:PL('CB（センター）','CB (centre back)','CB（中卫）','CB（中衛）'),RB:PL('RB（右バック）','RB (right back)','RB（右卫）','RB（右衛）'),
+ RW:PL('RW（右サイド）','RW (right wing)','RW（右边锋）','RW（右翼）'),PV:PL('PV（ポスト）','PV (pivot)','PV（底线）','PV（底線）'),
+ D:PL('ディフェンス','Defender','防守','防守'),
+ IN:PL('内野','Inner court','内场','內場'),OUT:PL('外野','Outer court','外场','外場'),
+ P:PL('投手','P (pitcher)','投手','投手'),CA:PL('捕手','C (catcher)','捕手','捕手'),
+ B1:PL('一塁手','1B','一垒手','一壘手'),B2:PL('二塁手','2B','二垒手','二壘手'),B3:PL('三塁手','3B','三垒手','三壘手'),SS:PL('遊撃手','SS','游击手','游擊手'),
+ LF:PL('左翼手','LF','左外野手','左外野手'),CF:PL('中堅手','CF','中外野手','中外野手'),RF:PL('右翼手','RF','右外野手','右外野手'),
+ BAT:PL('打者','Batter','击球员','打者'),RUN:PL('走者','Runner','跑垒员','跑壘員'),X:PL('選手','Player','球员','球員')
+};
+const FN=(l,s)=>({l,s});
+/* ---- basketball (28 x 15 m, attack →, basket at x=.944) ---- */
+const BK_OFF={5:{
+ '5out':FN(PL('5アウト','5-out','五外','五外'),[[.675,.5,'PG'],[.768,.827,'SG'],[.768,.173,'SF'],[.93,.94,'PF'],[.93,.06,'C']]),
+ '4out':FN(PL('4アウト1イン','4-out 1-in','四外一内','四外一內'),[[.675,.5,'PG'],[.768,.827,'SG'],[.768,.173,'SF'],[.93,.94,'PF'],[.885,.36,'C']]),
+ horns:FN(PL('ホーンズ','Horns','牛角','牛角'),[[.675,.5,'PG'],[.93,.94,'SG'],[.93,.06,'SF'],[.79,.337,'PF'],[.79,.663,'C']]),
+ '131':FN(PL('1-3-1','1-3-1','1-3-1','1-3-1'),[[.68,.5,'PG'],[.8,.88,'SG'],[.8,.12,'SF'],[.94,.3,'PF'],[.79,.5,'C']])}};
+const BK_DEF={5:{
+ man:FN(PL('マンツーマン','Man-to-man','人盯人','人盯人'),[[.756,.5,'PG'],[.82,.73,'SG'],[.82,.27,'SF'],[.934,.8,'PF'],[.934,.2,'C']]),
+ z23:FN(PL('2-3ゾーン','2-3 zone','2-3联防','2-3區域'),[[.78,.35,'PG'],[.78,.65,'SG'],[.92,.2,'SF'],[.92,.8,'PF'],[.93,.5,'C']]),
+ z32:FN(PL('3-2ゾーン','3-2 zone','3-2联防','3-2區域'),[[.73,.5,'PG'],[.79,.2,'SG'],[.79,.8,'SF'],[.9,.37,'PF'],[.9,.63,'C']]),
+ z131:FN(PL('1-3-1ゾーン','1-3-1 zone','1-3-1联防','1-3-1區域'),[[.7,.5,'PG'],[.82,.15,'SG'],[.82,.85,'SF'],[.93,.5,'PF'],[.82,.5,'C']])}};
+/* ---- handball (40 x 20 m, attack →) ---- */
+const hbArc=(r,deg)=>[(40-r*Math.cos(deg*Math.PI/180))/40,(10+r*Math.sin(deg*Math.PI/180))/20];
+const hbD=(r,deg)=>[...hbArc(r,deg),'D'];
+const HB_OFF={7:{
+ '33':FN(PL('3-3','3-3','3-3','3-3'),[[.0125,.5,'GK'],[.95,.06,'LW'],[.75,.26,'LB'],[.72,.5,'CB'],[.75,.74,'RB'],[.95,.94,'RW'],[.84,.5,'PV']]),
+ '2pv':FN(PL('2ポスト','Two pivots','双底线','雙底線'),[[.0125,.5,'GK'],[.95,.06,'LW'],[.74,.3,'LB'],[.74,.7,'RB'],[.95,.94,'RW'],[.84,.38,'PV'],[.84,.62,'PV']])}};
+const HB_DEF={7:{
+ '60':FN(PL('6-0','6-0','6-0','6-0'),[[.985,.5,'GK'],...[-62,-37,-12,12,37,62].map(a=>hbD(6.6,a))]),
+ '51':FN(PL('5-1','5-1','5-1','5-1'),[[.985,.5,'GK'],...[-55,-27,0,27,55].map(a=>hbD(6.6,a)),hbD(9.5,0)]),
+ '321':FN(PL('3-2-1','3-2-1','3-2-1','3-2-1'),[[.985,.5,'GK'],hbD(6.6,-40),hbD(6.6,0),hbD(6.6,40),hbD(8.5,-28),hbD(8.5,28),hbD(11,0)])}};
+/* ---- volleyball (6: 24 x 15 m incl. 3 m free zone / 9: 26 x 15.5 m) ---- */
+const V6=[[.46,.7,'S'],[.875,.7,'OH'],[.875,.5,'MB'],[.875,.3,'OP'],[.46,.3,'OH'],[.46,.5,'MB']]; // slot k = rotation position k+1
+const VB6={6:{base:FN(PL('ローテーション1（Sが後衛ライト）','Rotation 1 (setter in 1)','轮转1（二传在1号位）','輪轉1（舉球員在1號位）'),V6)},
+ 7:{base:FN(PL('ローテーション1＋リベロ','Rotation 1 + libero','轮转1＋自由人','輪轉1＋自由球員'),[...V6,[.12,.9,'L']])}};
+const VB9={9:{base:FN(PL('基本（前衛・中衛・後衛）','Basic (3 rows)','基本（三排）','基本（三排）'),
+ [[.885,.33,'FL'],[.885,.5,'FC'],[.885,.67,'FR'],[.615,.33,'ML'],[.615,.5,'MC'],[.615,.67,'MR'],[.31,.33,'BL'],[.31,.5,'BC'],[.31,.67,'BR']])}};
+/* ---- dodgeball (court 20 x 10 m + 3 m outer zone: 26 x 16 m) ---- */
+function dgInner(n){const r=[],rows=Math.max(1,Math.ceil(n/4));let k=0;
+  for(let i=0;i<rows;i++){const m=Math.ceil((n-k)/(rows-i));for(let j=0;j<m;j++)r.push([.36+(rows==1?.27:i*(.44/(rows-1))),.26+(j+.5)*(.48/m),'IN']);k+=m}return r}
+const DG_OUT=[[1.885,.5,'OUT'],[1.4,.09,'OUT'],[1.4,.91,'OUT'],[1.65,.09,'OUT'],[1.65,.91,'OUT']];
+const DG={12:{o1:FN(PL('内野11・外野1','11 in / 1 out','内场11・外场1','內場11・外場1'),[...dgInner(11),DG_OUT[0]]),
+ o2:FN(PL('内野10・外野2','10 in / 2 out','内场10・外场2','內場10・外場2'),[...dgInner(10),DG_OUT[1],DG_OUT[2]]),
+ o3:FN(PL('内野9・外野3','9 in / 3 out','内场9・外场3','內場9・外場3'),[...dgInner(9),DG_OUT[0],DG_OUT[1],DG_OUT[2]])}};
+const dgGen=(ti,n)=>n<2?dgInner(n):[...dgInner(n-1),DG_OUT[0]];
+/* ---- tag rugby (field 40 x 30 m + 5 m in-goal: 50 x 30 m) ---- */
+const TR={5:{flat:FN(PL('フラット（横一列）','Flat line','平行站位','平行站位'),[[.8,.15,'X'],[.8,.325,'X'],[.8,.5,'X'],[.8,.675,'X'],[.8,.85,'X']]),
+ wedge:FN(PL('くさび形','Wedge','楔形','楔形'),[[.86,.5,'X'],[.77,.34,'X'],[.77,.66,'X'],[.68,.18,'X'],[.68,.82,'X']]),
+ deep:FN(PL('2列（深め）','Two lines (deep)','两排（纵深）','兩排（縱深）'),[[.84,.3,'X'],[.84,.7,'X'],[.7,.15,'X'],[.7,.5,'X'],[.7,.85,'X']])}};
+const trGen=(ti,n)=>Array.from({length:n},(_,j)=>[.8,(j+.5)/n,'X']);
+/* ---- baseball family: home at the bottom, field opens upward ---- */
+function bbSport(o){
+  const b=o.b,len=2*o.lf*Math.SQRT1_2+14,wid=o.cf+14,hy=wid-9,
+    bp=(dx,dy)=>[(len/2+dx)/len,(hy-dy)/wid],
+    fence=d=>o.lf+(o.cf-o.lf)*Math.cos(2*d*Math.PI/180),
+    of=(d,f)=>{const r=f*fence(d),a=d*Math.PI/180;return bp(r*Math.sin(a),r*Math.cos(a))},
+    k=Math.SQRT1_2*b, Hr=105*wid/len,
+    ang=(p,q)=>Math.atan2((q[1]-p[1])*Hr,(q[0]-p[0])*105)*180/Math.PI;
+  const P=bp(0,o.m),CA=bp(0,-1.7),OF=f=>[[...of(-28,f),'LF'],[...of(0,f+.02),'CF'],[...of(28,f),'RF']];
+  const def=(inf,f=.72)=>[[...P,'P'],[...CA,'CA'],...inf,...OF(f)];
+  const normal=[[...bp(.653*b,.835*b),'B1'],[...bp(.33*b,1.22*b),'B2'],[...bp(-.653*b,.835*b),'B3'],[...bp(-.33*b,1.22*b),'SS']];
+  const R1=bp(k-1.8,k+1.8),R2=bp(-1.8,2*k-1.8),R3=bp(-k+1,k-1.7),B1=bp(k,k),B2=bp(0,2*k),B3=bp(-k,k),HM=bp(0,0);
+  const BAT=[...bp(-1.3,0),'BAT',0],r1=[...R1,'RUN',ang(R1,B2)],r2=[...R2,'RUN',ang(R2,B3)],r3=[...R3,'RUN',ang(R3,HM)];
+  return {len,wid,kind:'abs',noRotate:true,ball:o.ball||'baseball',surface:'field',names:['bbDef','bbOff'],shapeRot:[90,0],
+    cnt:[[9,9],[1,4]],def:[[9,'normal'],[1,'none']],ballXY:bp(1.2,o.m*.5),face:[HM,null],geo:{b,m:o.m,lf:o.lf,cf:o.cf,hy},
+    regs:['P','CA','B1','B2','B3','SS','LF','CF','RF','BAT','RUN'],shape:{P:'GK',CA:'GK',B1:'MF',B2:'MF',B3:'MF',SS:'MF',LF:'FW',CF:'FW',RF:'FW',BAT:'MF',RUN:'MF'},
+    forms:[{9:{normal:FN(PL('通常','Normal','正常','正常'),def(normal)),
+      infin:FN(PL('前進守備（内野）','Infield in','内野前进','內野前進'),def([[...bp(.6*b,.62*b),'B1'],[...bp(.25*b,.92*b),'B2'],[...bp(-.6*b,.62*b),'B3'],[...bp(-.25*b,.92*b),'SS']])),
+      ofin:FN(PL('外野前進','Outfield in','外野前进','外野前進'),def(normal,.55)),
+      bunt:FN(PL('バントシフト','Bunt defence','触击防守','觸擊防守'),def([[...bp(.33*b,.45*b),'B1'],[...bp(.68*b,.74*b),'B2'],[...bp(-.33*b,.45*b),'B3'],[...bp(-.12*b,1.33*b),'SS']]))}},
+     {1:{none:FN(PL('走者なし','Bases empty','无人在垒','無人在壘'),[BAT])},
+      2:{r1:FN(PL('一塁','Runner on 1st','一垒有人','一壘有人'),[BAT,r1]),r2:FN(PL('二塁','Runner on 2nd','二垒有人','二壘有人'),[BAT,r2]),r3:FN(PL('三塁','Runner on 3rd','三垒有人','三壘有人'),[BAT,r3])},
+      3:{r12:FN(PL('一・二塁','1st & 2nd','一二垒有人','一二壘有人'),[BAT,r1,r2]),r13:FN(PL('一・三塁','1st & 3rd','一三垒有人','一三壘有人'),[BAT,r1,r3]),r23:FN(PL('二・三塁','2nd & 3rd','二三垒有人','二三壘有人'),[BAT,r2,r3])},
+      4:{r123:FN(PL('満塁','Bases loaded','满垒','滿壘'),[BAT,r1,r2,r3])}}],
+    draw:drawBaseball};
+}
+const BK_SHAPE={PG:'FW',SG:'FW',SF:'MF',PF:'MF',C:'DF'};
+const SPORTS={
+ soccer:{len:105,wid:68,kind:'fb',emoji:'⚽',zones:true},
+ soccer8:{len:68,wid:50,kind:'fb',emoji:'⚽',def:[[8,'3-3-1'],[8,'2-3-2']],draw:drawSoccer8},
+ futsal:{len:40,wid:20,kind:'fb',emoji:'🥅',surface:'wood',cnt:[[1,7],[1,7]],def:[[5,'1-2-1'],[5,'2-2']],draw:drawFutsal},
+ basketball:{len:28,wid:15,kind:'abs',emoji:'🏀',ball:'basket',surface:'wood',names:['offense','defense'],cnt:[[1,5],[1,5]],def:[[5,'5out'],[5,'man']],
+   forms:[BK_OFF,BK_DEF],face:[[.944,.5],null],ballXY:[.64,.5],regs:['PG','SG','SF','PF','C'],shape:BK_SHAPE,draw:()=>drawBasket(true)},
+ minibasket:{len:28,wid:15,kind:'abs',emoji:'🏀',ball:'basket',surface:'wood',names:['offense','defense'],cnt:[[1,5],[1,5]],def:[[5,'5out'],[5,'man']],
+   forms:[BK_OFF,BK_DEF],face:[[.944,.5],null],ballXY:[.64,.5],regs:['PG','SG','SF','PF','C'],shape:BK_SHAPE,draw:()=>drawBasket(false)},
+ volley6:{len:24,wid:15,kind:'own',emoji:'🏐',ball:'volley',surface:'volley',cnt:[[1,7],[1,7]],def:[[6,'base'],[6,'base']],forms:[VB6,VB6],rotate:true,
+   ballXY:[.15,.7],regs:['S','OH','MB','OP','L'],shape:{S:'FW',OH:'MF',OP:'MF',MB:'DF',L:'GK'},draw:()=>drawVolley(6)},
+ volley9:{len:26,wid:15.5,kind:'own',emoji:'🏐',ball:'volley',surface:'volley',cnt:[[1,9],[1,9]],def:[[9,'base'],[9,'base']],forms:[VB9,VB9],
+   ballXY:[.08,.6],regs:['FL','FC','FR','ML','MC','MR','BL','BC','BR'],shape:{FL:'FW',FC:'FW',FR:'FW',ML:'MF',MC:'MF',MR:'MF',BL:'DF',BC:'DF',BR:'DF'},draw:()=>drawVolley(9)},
+ handball:{len:40,wid:20,kind:'abs',emoji:'🤾',ball:'hand',surface:'wood',names:['offense','defense'],cnt:[[1,7],[1,7]],def:[[7,'33'],[7,'60']],
+   forms:[HB_OFF,HB_DEF],face:[[1,.5],null],ballXY:[.69,.5],regs:['GK','LW','LB','CB','RB','RW','PV','D'],shape:{GK:'GK',LW:'FW',RW:'FW',PV:'FW',LB:'MF',CB:'MF',RB:'MF',D:'DF'},draw:drawHandball},
+ dodgeball:{len:26,wid:16,kind:'own',emoji:'🔴',ball:'dodge',surface:'wood',cnt:[[1,15],[1,15]],def:[[12,'o1'],[12,'o1']],forms:[DG,DG],gen:dgGen,
+   ballXY:[.5,.5],regs:['IN','OUT'],shape:{IN:'MF',OUT:'FW'},draw:drawDodge},
+ baseball:bbSport({b:27.43,m:18.44,lf:76,cf:90}), /* outfield drawn shorter than real so the infield stays readable */
+ youthbaseball:bbSport({b:23,m:16,lf:62,cf:72}),
+ softball:bbSport({b:18.29,m:13.11,lf:50,cf:56,ball:'softball'}),
+ tagrugby:{len:50,wid:30,kind:'own',emoji:'🏉',ball:'rugby',surface:'grass',cnt:[[1,8],[1,8]],def:[[5,'flat'],[5,'flat']],forms:[TR,TR],gen:trGen,noPos:true,
+   ballXY:[.4,.5],regs:[],shape:{},draw:drawTagRugby},
+ hockey:{len:91.4,wid:55,kind:'fb',emoji:'🏑',ball:'hockey',surface:'turf',draw:drawHockey}
+};
+SPORTS.baseball.emoji=SPORTS.youthbaseball.emoji='⚾';SPORTS.softball.emoji='🥎';
+const SPORT_ORDER=['soccer','soccer8','futsal','basketball','minibasket','volley6','volley9','handball','dodgeball','baseball','youthbaseball','softball','tagrugby','hockey'];
+const SPORT_NAME={
+ soccer:[PL('サッカー（11人制）','Football (11-a-side)','足球（11人制）','足球（11人制）'),PL('サッカー','Football','足球','足球')],
+ soccer8:[PL('サッカー（8人制）','Football (8-a-side)','足球（8人制）','足球（8人制）'),PL('8人制','8-a-side','8人制','8人制')],
+ futsal:[PL('フットサル','Futsal','五人制足球','五人制足球'),PL('フットサル','Futsal','五人足球','五人足球')],
+ basketball:[PL('バスケットボール','Basketball','篮球','籃球'),PL('バスケ','Basketball','篮球','籃球')],
+ minibasket:[PL('ミニバスケットボール','Mini basketball','小篮球','小籃球'),PL('ミニバス','Mini basket','小篮球','小籃球')],
+ volley6:[PL('バレーボール（6人制）','Volleyball (6-a-side)','排球（6人制）','排球（6人制）'),PL('バレー6人','Volley 6','排球6人','排球6人')],
+ volley9:[PL('バレーボール（9人制）','Volleyball (9-a-side)','排球（9人制）','排球（9人制）'),PL('バレー9人','Volley 9','排球9人','排球9人')],
+ handball:[PL('ハンドボール','Handball','手球','手球'),PL('ハンド','Handball','手球','手球')],
+ dodgeball:[PL('ドッジボール','Dodgeball','躲避球','躲避球'),PL('ドッジ','Dodgeball','躲避球','躲避球')],
+ baseball:[PL('野球（一般）','Baseball','棒球','棒球'),PL('野球','Baseball','棒球','棒球')],
+ youthbaseball:[PL('学童野球','Youth baseball','少年棒球','少年棒球'),PL('学童野球','Youth BB','少年棒球','少年棒球')],
+ softball:[PL('ソフトボール','Softball','垒球','壘球'),PL('ソフト','Softball','垒球','壘球')],
+ tagrugby:[PL('タグラグビー','Tag rugby','腰旗橄榄球','腰旗橄欖球'),PL('タグラグビー','Tag rugby','腰旗橄榄球','腰旗橄欖球')],
+ hockey:[PL('ホッケー','Field hockey','曲棍球','曲棍球'),PL('ホッケー','Hockey','曲棍球','曲棍球')]
+};
+/* defaults shared by every sport */
+for(const id in SPORTS){const s=SPORTS[id];s.id=id;s.def=s.def||[[11,'4-3-3'],[11,'4-4-2']];s.cnt=s.cnt||[[1,11],[1,11]];s.ballXY=s.ballXY||[.5,.5];s.surface=s.surface||'grass'}
+let SPID='soccer', SP=SPORTS.soccer;
+const isFB=()=>SP.kind=='fb';
+const posName=id=>isFB()?t('reg_'+id):(POS[id]?lbl(POS[id]):id);
+const sportName=(id,short)=>lbl(SPORT_NAME[id][short?1:0]);
+function regOptions(v,auto){
+  if(isFB()) return `<option value="">${auto?t('autoPos',{p:auto}):t('unset')}</option>`+REG_GROUPS.map(([g,ids])=>`<optgroup label="${g}">${ids.map(id=>`<option value="${id}"${id==v?' selected':''}>${t('reg_'+id)}</option>`).join('')}</optgroup>`).join('');
+  return `<option value="">${auto?t('autoPos',{p:posName(auto)}):t('unset')}</option>`+(SP.regs||[]).map(id=>`<option value="${id}"${id==v?' selected':''}>${posName(id)}</option>`).join('');
+}
+/* formations of the current sport for team ti: {count:{id:{l,s}}} (football keeps F) */
+const formsOf=ti=>SP.forms?SP.forms[ti]:null;
+function formsFor(n,ti){if(isFB())return Object.keys(F[n]||{});const f=formsOf(ti||0);return Object.keys((f&&f[n])||{})}
+function formLabel(ti,n,id){if(isFB())return id;const f=formsOf(ti);return f&&f[n]&&f[n][id]?lbl(f[n][id].l):id}
+/* slots [x,y,pos,angle?] for team ti with n players */
+function slotsFor(ti,n,id){
+  const f=formsOf(ti);
+  if(f&&f[n]) return (f[n][id]||Object.values(f[n])[0]).s;
+  if(SP.gen) return SP.gen(ti,n);
+  if(f){const ks=Object.keys(f).map(Number).filter(k=>k>=n).sort((a,b)=>a-b);if(ks.length)return Object.values(f[ks[0]])[0].s.slice(0,n)}
+  return Array.from({length:n},(_,j)=>[.7,(j+.5)/n,(SP.regs&&SP.regs[0])||'X']);
+}
+function slotAbs(ti,q){return SP.kind=='abs'?[q[0]*W,q[1]*H]:ti==0?[q[0]*W/2,q[1]*H]:[W-q[0]*W/2,H-q[1]*H]}
+function slotAngle(ti,q,x,y){
+  if(q[3]!=null) return SP.kind=='own'&&ti?q[3]+180:q[3];
+  if(SP.kind=='abs'){const f=SP.face&&SP.face[ti];if(f)return Math.atan2(f[1]*H-y,f[0]*W-x)*180/Math.PI;return ti?180:0}
+  return ti?180:0;
+}
+function applyFormationG(ti){
+  const t=S.teams[ti], n=t.count;
+  while(t.players.length<n){const used=new Set(t.players.map(p=>+p.num));let k=t.players.length+1;while(used.has(k))k++;t.players.push({num:String(k),name:''})}
+  t.players.length=n;
+  const pts=slotsFor(ti,n,t.formation);
+  const c=t.players.map((p,i)=>pts.map((q,k)=>(p.reg?(p.reg==q[2]?0:100):(p.pos&&p.pos==q[2]?0:1))+Math.abs(i-k)*.01));
+  const a=hungarian(c);
+  t.players.forEach((p,i)=>{const q=pts[a[i]],[x,y]=slotAbs(ti,q);p.x=x;p.y=y;p.pos=q[2];p.a=slotAngle(ti,q,x,y);p.home=[x,y]});
+}
+/* volleyball: every player moves one position clockwise (2→1→6→5→4→3→2) */
+function rotateTeam(ti){
+  const t=S.teams[ti]; if(!SP.rotate||t.players.length<6) return;
+  const P=V6.map(q=>slotAbs(ti,q)), six=t.players.slice(0,6);
+  const a=hungarian(six.map(p=>P.map(([x,y])=>(p.x-x)**2+(p.y-y)**2)));
+  pushUndo();
+  six.forEach((p,i)=>{const k=a[i],nk=k==0?5:k-1;[p.x,p.y]=P[nk]});
+  render();save();
+}
+const shRot=ti=>SP.shapeRot?SP.shapeRot[ti]:(ti?180:0);
+function shapeKey(p){if(isFB())return regOf(p)?regOf(p).c:p.pos;return (SP.shape&&SP.shape[p.reg||p.pos])||'MF'}
+const BALLS={
+ soccer:'<g transform="scale(1.8)"><circle r="1.2" fill="#fff" stroke="#111" stroke-width=".2"/><path d="M0 -.5L.48 -.15L.3 .4L-.3 .4L-.48 -.15Z" fill="#111"/></g>',
+ basket:'<g transform="scale(1.8)"><circle r="1.2" fill="#E8772E" stroke="#3B1D0A" stroke-width=".16"/><path d="M-1.2 0H1.2M0 -1.2V1.2M-.85 -.85Q-.3 0 -.85 .85M.85 -.85Q.3 0 .85 .85" fill="none" stroke="#3B1D0A" stroke-width=".11"/></g>',
+ volley:'<g transform="scale(1.8)"><circle r="1.2" fill="#F7F7F2" stroke="#1D3B6E" stroke-width=".16"/><path d="M-.2 -1.18Q.5 -.2 1.15 .3M-1.1 .45Q-.2 .1 .2 -1.18M-.75 .95Q.1 .35 1 .7" fill="none" stroke="#1D5FB8" stroke-width=".22"/><path d="M-1.18 -.1Q-.4 -.7 .1 -1.2" fill="none" stroke="#F2C230" stroke-width=".22"/></g>',
+ hand:'<g transform="scale(1.5)"><circle r="1.2" fill="#fff" stroke="#111" stroke-width=".2"/><path d="M0 -.5L.48 -.15L.3 .4L-.3 .4L-.48 -.15Z" fill="#D7263D"/></g>',
+ dodge:'<g transform="scale(1.8)"><circle r="1.2" fill="#E03131" stroke="#5C0B0B" stroke-width=".16"/><circle cx="-.4" cy="-.4" r=".3" fill="rgba(255,255,255,.55)"/></g>',
+ baseball:'<g transform="scale(1.6)"><circle r="1.2" fill="#FBFBF6" stroke="#333" stroke-width=".14"/><path d="M-.6 -1Q-.15 0 -.6 1M.6 -1Q.15 0 .6 1" fill="none" stroke="#D7263D" stroke-width=".14" stroke-dasharray=".18 .12"/></g>',
+ softball:'<g transform="scale(1.6)"><circle r="1.2" fill="#E6EE3A" stroke="#333" stroke-width=".14"/><path d="M-.6 -1Q-.15 0 -.6 1M.6 -1Q.15 0 .6 1" fill="none" stroke="#D7263D" stroke-width=".14" stroke-dasharray=".18 .12"/></g>',
+ rugby:'<g transform="scale(1.8)"><ellipse rx="1.45" ry=".9" fill="#8B5A2B" stroke="#3a2410" stroke-width=".14"/><path d="M-.5 0H.5M-.3 -.15V.15M0 -.15V.15M.3 -.15V.15" stroke="#fff" stroke-width=".1"/></g>',
+ hockey:'<g transform="scale(1.3)"><circle r="1.2" fill="#FFFFFF" stroke="#333" stroke-width=".18"/></g>'
+};
+/* ---------- courts (internal units: long side = W = 105) ---------- */
+const SURF={
+ grass:{out:'#24683F',fill:()=>{let s='';for(let i=0;i<10;i++)s+=`<rect x="${i*W/10}" y="0" width="${W/10}" height="${H}" fill="${i%2?'#2A7849':'#2E8250'}"/>`;return s},sw:'repeating-linear-gradient(90deg,#2E8250 0 10%,#2A7849 10% 20%)'},
+ turf:{out:'#24683F',fill:()=>{let s='';for(let i=0;i<10;i++)s+=`<rect x="${i*W/10}" y="0" width="${W/10}" height="${H}" fill="${i%2?'#2C67A8':'#3272B6'}"/>`;return s},sw:'repeating-linear-gradient(90deg,#3272B6 0 10%,#2C67A8 10% 20%)'},
+ wood:{out:'#B9874F',fill:()=>{let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="#D3A26A"/>`;for(let x=3.5;x<W;x+=3.5)s+=`<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="rgba(110,60,20,.09)" stroke-width=".2"/>`;return s},sw:'repeating-linear-gradient(90deg,#D3A26A 0 9%,#C8975F 9% 10%)'},
+ volley:{out:'#2F6EA8',fill:()=>'',sw:'linear-gradient(90deg,#2F6EA8 0 12%,#E8833A 12% 88%,#2F6EA8 88%)'},
+ field:{out:'#1F5E38',fill:()=>`<rect x="0" y="0" width="${W}" height="${H}" fill="#2E8250"/>`,sw:'linear-gradient(0deg,#C08A55 0 30%,#2E8250 30%)'}
+};
+function court(){
+  const st=S.pitch.style, plain=st=='plain', lc=plain?'#5B6A61':'rgba(255,255,255,.9)', m=v=>+(v*W/SP.len).toFixed(3);
+  let s=`<rect x="-4" y="-4" width="${W+8}" height="${H+8}" rx="1.2" fill="${plain?'#FFFFFF':SURF[SP.surface].out}"/>`;
+  if(!plain){ if(st=='photo'&&photo) s+=`<image href="${photo}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/>`; else s+=SURF[SP.surface].fill(); }
+  return {s,plain,lc,m,on:S.pitch.lines!==false,photo:st=='photo'&&photo,L:`fill="none" stroke="${lc}" stroke-width=".26"`};
+}
+const arcD=(x1,y1,r,x2,y2,sw)=>`M${x1} ${y1}A${r} ${r} 0 0 ${sw} ${x2} ${y2}`;
+function goalBox(c,x,gy,gw,depth,right){const {m,L}=c;return `<rect x="${right?x:x-m(depth)}" y="${gy-m(gw)/2}" width="${m(depth)}" height="${m(gw)}" ${L}/>`}
+function drawSoccer8(){
+  const c=court(),{m,L,lc}=c;let s=c.s;if(!c.on)return s;const cy=H/2;
+  s+=`<rect x="0" y="0" width="${W}" height="${H}" ${L}/><line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" ${L}/><circle cx="${W/2}" cy="${cy}" r="${m(7)}" ${L}/><circle cx="${W/2}" cy="${cy}" r=".35" fill="${lc}"/>`;
+  [[0,1],[W,-1]].forEach(([x,d])=>{const pa=x?x-m(12):0,ga=x?x-m(4):0;
+    s+=`<rect x="${pa}" y="${cy-m(14.5)}" width="${m(12)}" height="${m(29)}" ${L}/><rect x="${ga}" y="${cy-m(6.5)}" width="${m(4)}" height="${m(13)}" ${L}/><circle cx="${x+d*m(8)}" cy="${cy}" r=".3" fill="${lc}"/>`+goalBox(c,x,cy,5,1.2,!!x)});
+  return s;
+}
+function drawFutsal(){
+  const c=court(),{m,L,lc}=c;let s=c.s;if(!c.on)return s;const cy=H/2,r=m(6),p=m(1.5);
+  s+=`<rect x="0" y="0" width="${W}" height="${H}" ${L}/><line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" ${L}/><circle cx="${W/2}" cy="${cy}" r="${m(3)}" ${L}/><circle cx="${W/2}" cy="${cy}" r=".35" fill="${lc}"/>`;
+  s+=`<path d="M0 ${cy-p-r}A${r} ${r} 0 0 1 ${r} ${cy-p}L${r} ${cy+p}A${r} ${r} 0 0 1 0 ${cy+p+r}" ${L}/>`;
+  s+=`<path d="M${W} ${cy-p-r}A${r} ${r} 0 0 0 ${W-r} ${cy-p}L${W-r} ${cy+p}A${r} ${r} 0 0 0 ${W} ${cy+p+r}" ${L}/>`;
+  [[0,1],[W,-1]].forEach(([x,d])=>{s+=`<circle cx="${x+d*m(6)}" cy="${cy}" r=".3" fill="${lc}"/><circle cx="${x+d*m(10)}" cy="${cy}" r=".3" fill="${lc}"/>`+goalBox(c,x,cy,3,1,!!x)});
+  return s;
+}
+function drawHockey(){
+  const c=court(),{m,L,lc}=c;let s=c.s;if(!c.on)return s;const cy=H/2,r=m(14.63),p=m(1.83);
+  s+=`<rect x="0" y="0" width="${W}" height="${H}" ${L}/><line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" ${L}/><line x1="${m(22.9)}" y1="0" x2="${m(22.9)}" y2="${H}" ${L}/><line x1="${W-m(22.9)}" y1="0" x2="${W-m(22.9)}" y2="${H}" ${L}/>`;
+  s+=`<path d="M0 ${cy-p-r}A${r} ${r} 0 0 1 ${r} ${cy-p}L${r} ${cy+p}A${r} ${r} 0 0 1 0 ${cy+p+r}" ${L}/><path d="M${W} ${cy-p-r}A${r} ${r} 0 0 0 ${W-r} ${cy-p}L${W-r} ${cy+p}A${r} ${r} 0 0 0 ${W} ${cy+p+r}" ${L}/>`;
+  [[0,1],[W,-1]].forEach(([x,d])=>{s+=`<circle cx="${x+d*m(6.475)}" cy="${cy}" r=".3" fill="${lc}"/>`+goalBox(c,x,cy,3.66,1.2,!!x)});
+  return s;
+}
+function drawBasket(three){
+  const c=court(),{m,L,lc,plain}=c;let s=c.s;const cy=H/2;
+  if(!plain&&!c.photo){[[0,1],[W,-1]].forEach(([x])=>{s+=`<rect x="${x?x-m(5.8):0}" y="${cy-m(2.45)}" width="${m(5.8)}" height="${m(4.9)}" fill="rgba(160,60,30,.32)"/>`})}
+  if(!c.on)return s;
+  s+=`<rect x="0" y="0" width="${W}" height="${H}" ${L}/><line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" ${L}/><circle cx="${W/2}" cy="${cy}" r="${m(1.8)}" ${L}/>`;
+  [[0,1],[W,-1]].forEach(([x,d])=>{const bx=x+d*m(1.575),ft=x+d*m(5.8);
+    s+=`<rect x="${x?x-m(5.8):0}" y="${cy-m(2.45)}" width="${m(5.8)}" height="${m(4.9)}" ${L}/><circle cx="${ft}" cy="${cy}" r="${m(1.8)}" ${L}/>`;
+    if(three){const ax=x+d*m(1.575+Math.sqrt(6.75**2-6.6**2));
+      s+=`<path d="M${x} ${m(.9)}L${ax} ${m(.9)}A${m(6.75)} ${m(6.75)} 0 0 ${d>0?1:0} ${ax} ${H-m(.9)}L${x} ${H-m(.9)}" ${L}/>`}
+    s+=`<path d="M${bx} ${cy-m(1.25)}A${m(1.25)} ${m(1.25)} 0 0 ${d>0?1:0} ${bx} ${cy+m(1.25)}" ${L}/><line x1="${x+d*m(1.2)}" y1="${cy-m(.9)}" x2="${x+d*m(1.2)}" y2="${cy+m(.9)}" stroke="${lc}" stroke-width=".5"/><circle cx="${bx}" cy="${cy}" r="${m(.23)}" fill="none" stroke="${plain?'#D9480F':'#FF7A2F'}" stroke-width=".3"/>`});
+  return s;
+}
+function drawVolley(n){
+  const c=court(),{m,L,lc,plain}=c;let s=c.s;const pad=n==6?3:2.5,cl=n==6?18:21,cw=n==6?9:10.5,x0=m(pad),y0=m(pad),cx=W/2;
+  if(!plain&&!c.photo) s+=`<rect x="${x0}" y="${y0}" width="${m(cl)}" height="${m(cw)}" fill="#E8833A"/>`;
+  if(c.on){s+=`<rect x="${x0}" y="${y0}" width="${m(cl)}" height="${m(cw)}" ${L}/>`;if(n==6)s+=`<line x1="${cx-m(3)}" y1="${y0}" x2="${cx-m(3)}" y2="${y0+m(cw)}" ${L}/><line x1="${cx+m(3)}" y1="${y0}" x2="${cx+m(3)}" y2="${y0+m(cw)}" ${L}/>`}
+  s+=`<line x1="${cx}" y1="${y0-m(1)}" x2="${cx}" y2="${y0+m(cw)+m(1)}" stroke="${plain?'#13241A':'#F4F4F2'}" stroke-width=".7"/><line x1="${cx}" y1="${y0-m(1)}" x2="${cx}" y2="${y0+m(cw)+m(1)}" stroke="${plain?'#FFFFFF':'#13241A'}" stroke-width=".25" stroke-dasharray=".6 .6"/>`;
+  s+=`<circle cx="${cx}" cy="${y0-m(1)}" r=".6" fill="${plain?'#13241A':'#F4F4F2'}"/><circle cx="${cx}" cy="${y0+m(cw)+m(1)}" r=".6" fill="${plain?'#13241A':'#F4F4F2'}"/>`;
+  return s;
+}
+function drawHandball(){
+  const c=court(),{m,L,lc}=c;let s=c.s;if(!c.on)return s;const cy=H/2,p=m(1.5);
+  const area=(x,d,r,dash)=>{const sw=d>0?1:0,X=x+d*r;return `<path d="M${x} ${cy-p-r}A${r} ${r} 0 0 ${sw} ${X} ${cy-p}L${X} ${cy+p}A${r} ${r} 0 0 ${sw} ${x} ${cy+p+r}" ${L}${dash?' stroke-dasharray=".9 .9" clip-path="url(#hbClip)"':''}/>`};
+  s+=`<defs><clipPath id="hbClip"><rect x="0" y="0" width="${W}" height="${H}"/></clipPath></defs><rect x="0" y="0" width="${W}" height="${H}" ${L}/><line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" ${L}/>`;
+  [[0,1],[W,-1]].forEach(([x,d])=>{s+=area(x,d,m(6),0)+area(x,d,m(9),1)+`<line x1="${x+d*m(7)}" y1="${cy-m(.5)}" x2="${x+d*m(7)}" y2="${cy+m(.5)}" ${L}/><line x1="${x+d*m(4)}" y1="${cy-m(.3)}" x2="${x+d*m(4)}" y2="${cy+m(.3)}" ${L}/>`+goalBox(c,x,cy,3,1,!!x)});
+  return s;
+}
+function drawDodge(){
+  const c=court(),{m,L,lc,plain}=c;let s=c.s;const x0=m(3),y0=m(3),cw=m(20),ch=m(10);
+  if(!plain&&!c.photo) s+=`<rect x="0" y="0" width="${W}" height="${H}" fill="rgba(255,255,255,.12)"/><rect x="${x0}" y="${y0}" width="${cw}" height="${ch}" fill="#D9AA72"/>`;
+  if(!c.on)return s;
+  s+=`<rect x="${x0}" y="${y0}" width="${cw}" height="${ch}" ${L}/><line x1="${W/2}" y1="${y0}" x2="${W/2}" y2="${y0+ch}" ${L}/><rect x="0" y="0" width="${W}" height="${H}" ${L} stroke-dasharray="1 1"/>`;
+  return s;
+}
+function drawTagRugby(){
+  const c=court(),{m,L,lc,plain}=c;let s=c.s;
+  if(!plain&&!c.photo) s+=`<rect x="0" y="0" width="${m(5)}" height="${H}" fill="rgba(255,255,255,.1)"/><rect x="${W-m(5)}" y="0" width="${m(5)}" height="${H}" fill="rgba(255,255,255,.1)"/>`;
+  if(!c.on)return s;
+  s+=`<rect x="0" y="0" width="${W}" height="${H}" ${L}/><line x1="${m(5)}" y1="0" x2="${m(5)}" y2="${H}" ${L} stroke-width=".4"/><line x1="${W-m(5)}" y1="0" x2="${W-m(5)}" y2="${H}" ${L} stroke-width=".4"/><line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" ${L}/>`;
+  [15,35].forEach(x=>s+=`<line x1="${m(x)}" y1="0" x2="${m(x)}" y2="${H}" ${L} stroke-dasharray="1 1"/>`);
+  return s;
+}
+function drawBaseball(){
+  const c=court(),{m,L,lc,plain}=c,g=SP.geo;let s=c.s;
+  const X=dx=>+(W/2+m(dx)).toFixed(3),Y=dy=>+(m(g.hy-dy)).toFixed(3),k=g.b*Math.SQRT1_2,fl=g.lf*Math.SQRT1_2,ccy=2*g.cf-fl;
+  const fair=`M${X(0)} ${Y(0)}L${X(-fl)} ${Y(fl)}Q${X(0)} ${Y(ccy)} ${X(fl)} ${Y(fl)}Z`;
+  if(!plain&&!c.photo){
+    s+=`<path d="${fair}" fill="#2E8A52"/>`;
+    s+=`<defs><clipPath id="bbFair"><path d="${fair}"/></clipPath></defs><circle cx="${X(0)}" cy="${Y(g.m)}" r="${m(g.b*1.04)}" fill="#C08A55" clip-path="url(#bbFair)"/>`;
+    const i=2.2*Math.SQRT2;s+=`<path d="M${X(0)} ${Y(i+1)}L${X(k-i)} ${Y(k)}L${X(0)} ${Y(2*k-i)}L${X(-k+i)} ${Y(k)}Z" fill="#2E8A52"/>`;
+    s+=`<circle cx="${X(0)}" cy="${Y(0)}" r="${m(4)}" fill="#C08A55"/><circle cx="${X(0)}" cy="${Y(g.m)}" r="${m(2.7)}" fill="#C08A55"/>`;
+  }
+  if(c.on){
+    s+=`<path d="M${X(-fl)} ${Y(fl)}Q${X(0)} ${Y(ccy)} ${X(fl)} ${Y(fl)}" fill="none" stroke="${plain?'#5B6A61':'#F2C230'}" stroke-width=".5"/>`;
+    s+=`<line x1="${X(0)}" y1="${Y(0)}" x2="${X(-fl)}" y2="${Y(fl)}" ${L}/><line x1="${X(0)}" y1="${Y(0)}" x2="${X(fl)}" y2="${Y(fl)}" ${L}/>`;
+    s+=`<path d="M${X(k)} ${Y(k)}L${X(0)} ${Y(2*k)}L${X(-k)} ${Y(k)}" fill="none" stroke="${lc}" stroke-width=".16" stroke-dasharray=".5 .5"/>`;
+    const bs=m(.6);[[k,k],[0,2*k],[-k,k]].forEach(([a,b])=>s+=`<rect x="${X(a)-bs/2}" y="${Y(b)-bs/2}" width="${bs}" height="${bs}" transform="rotate(45 ${X(a)} ${Y(b)})" fill="#FFFFFF" stroke="#333" stroke-width=".08"/>`);
+    s+=`<path d="M${X(0)} ${Y(0)+.3}l${-m(.3)} ${-m(.3)}v${-m(.25)}h${m(.6)}v${m(.25)}z" fill="#FFFFFF" stroke="#333" stroke-width=".06"/><rect x="${X(0)-m(.3)}" y="${Y(g.m)-.12}" width="${m(.6)}" height=".24" fill="#FFFFFF"/>`;
+  }
+  return s;
+}
+
+const $=id=>document.getElementById(id);
+/* ---------- i18n ---------- */
+const I18N={
+ja:{title:'サッカー作戦ボード',menu:'メニュー',settings:'設定',scenes:'場面・ファイル',playScenes:'▶ 場面を再生',multi:'複数選択',faceBall:'全員ボールを向く',clearDraw:'矢印・文字を消去',showNames:'名前を表示',hideAway:'相手を隠す',showZones:'レーン・ゾーンを表示',full:'全画面',exitFull:'全画面を解除',about:'このアプリについて',
+toolbar:'操作',tools:'ツール',move:'移動',pen:'ペン',text:'テキスト',erase:'消しゴム',undo:'元に戻す',pitchAria:'ピッチ',textPh:'伝えたいことを入力',del:'削除',done:'完了',number:'背番号',name:'名前',position:'ポジション',close:'閉じる',clearSel:'選択解除',
+lineHow:'線の引き方',free:'手書き線',freeTip:'フリーハンド（矢印なしの線。文字も書けます）',line:'直線矢印',lineTip:'直線の矢印',lineKind:'線の種類',solid:'実線',solidTip:'動き',dashed:'破線',dashedTip:'パス',penColor:'線の色',textColor:'文字の色',
+restart:'最初から',again:'もう一度',speed:'速さ {s}×',stop:'終了',
+scPh:'例：前半 ビルドアップ',saveBoard:'今の盤面を保存',scHint:'配置・向き・ボール・描いた線を場面として保存します。再生はこの一覧の順番で進みます。',file:'ファイル',fileHint:'盤面と保存した場面をまとめて1つのファイルにします。AirDropやLINEで送れば、別の端末やほかの人の端末で読み込めます。',export:'ファイルに書き出す',import:'ファイルを読み込む',loadDefault:'共有された初期データを読み込む',empty:'まだ保存した場面はありません。名前を付けて保存すると、あとで開いたり、続けて再生したりできます。',openScene:'この場面を開く',moveUp:'上へ',overwrite:'上書き',sceneN:'場面 {n}',
+teamName:'チーム名',color:'色',visibility:'表示',shown:'表示中',hiddenS:'非表示',players:'人数',fewer:'減らす',more:'増やす',formation:'フォーメーション',auto:'自動配置',applyForm:'この配置に並べ直す',formHint:'5・7・8・11人はフォーメーションを選べます。それ以外の人数は自動で並びます。',rosterHint:'ポジションを入れると、フォーメーションを変えても その位置に一番近い場所に並びます（形も GK・DF は四角、MF は丸、FW は三角）。入れ終わったら「この配置に並べ直す」で並び直せます。',home:'ホーム',away:'アウェイ',unset:'未設定',autoPos:'自動 {p}',
+pitchTab:'コート',background:'背景',bg_stripes:'芝（標準）',bg_plain:'白（無地）',bg_lanes5:'5レーン',bg_lanes3:'3レーン',bg_zones:'エリア（チェッカー）',bg_photo:'写真',choosePhoto:'写真を選ぶ',changePhoto:'写真を変更',lines:'ライン',linesOn:'表示',linesOff:'非表示',photoHint:'写真はこの端末の中だけに保存されます（ファイル書き出しには含まれません）。',photoErr:'この写真は読み込めませんでした',photoBig:'写真が大きすぎて保存できません。今回だけ表示します',language:'言語',
+reg_GK:'GK',reg_RSB:'右SB',reg_RCB:'右CB',reg_CB:'CB',reg_LCB:'左CB',reg_LSB:'左SB',reg_DMF:'ボランチ',reg_RMF:'右MF',reg_LMF:'左MF',reg_OMF:'トップ下',reg_RWG:'右WG',reg_CF:'CF',reg_LWG:'左WG',
+z_wide:'大外',z_half:'ハーフスペース',z_center:'中央',z_def:'ディフェンシブサード',z_mid:'ミドルサード',z_att:'アタッキングサード',
+mselP:'選手{n}人',mselBall:'ボール',mselD:'矢印・文字{n}',mselSep:'・',mselSuffix:' を選択中（ドラッグでまとめて移動）',mselHint:'選手・ボールをタップ、または囲んで選択',
+aboutText:'無料・広告なしで使えるサッカーの作戦ボードです。入力した内容はこの端末の中だけに保存され、ほかの人には見えません。',guide:'📖 使い方を見る',support:'♡ このアプリを応援する',supportNote:'気に入っていただけたら、応援していただけると開発の励みになります。応援は任意で、しなくてもすべての機能を使えます。',soon:'（準備中）',
+tClear:'矢印と文字を全部消しました（元に戻す で復元できます）',tTextDel:'文字を削除しました',tReform:'今のポジションを保ったまま並べ替えました',tSaved:'「{n}」を保存しました',tOver:'「{n}」を今の盤面で上書きしました',tExported:'書き出しました',tWait:'少し待ってからもう一度お試しください',tNoExport:'この画面では書き出せません',tImported:'読み込みました（場面 {n} 件を追加）',tLoaded:'読み込みました',tBadFile:'このファイルは読み込めません。45 Tacticsで書き出したファイルを選んでください',tDefaultUpd:'共有データ（初期配置）を最新版に更新しました。元に戻すで前の盤面に戻せます',tDefault:'初期データを読み込みました（場面 {n} 件を反映）'},
+en:{title:'Football tactics board',menu:'Menu',settings:'Settings',scenes:'Scenes & Files',playScenes:'▶ Play scenes',multi:'Multi-select',faceBall:'Face the ball',clearDraw:'Clear arrows & text',showNames:'Show names',hideAway:'Hide opponents',showZones:'Show lanes & zones',full:'Full screen',exitFull:'Exit full screen',about:'About this app',
+toolbar:'Toolbar',tools:'Tools',move:'Move',pen:'Pen',text:'Text',erase:'Eraser',undo:'Undo',pitchAria:'Pitch',textPh:'Type a note',del:'Delete',done:'Done',number:'Number',name:'Name',position:'Position',close:'Close',clearSel:'Clear selection',
+lineHow:'Line style',free:'Freehand',freeTip:'Freehand line without an arrowhead (you can write letters too)',line:'Straight arrow',lineTip:'Straight arrow',lineKind:'Line type',solid:'Solid',solidTip:'Run',dashed:'Dashed',dashedTip:'Pass',penColor:'Line color',textColor:'Text color',
+restart:'Restart',again:'Replay',speed:'Speed {s}×',stop:'Done',
+scPh:'e.g. First-half build-up',saveBoard:'Save current board',scHint:'Saves positions, facing, the ball and drawings as a scene. Playback follows the order of this list.',file:'File',fileHint:'Bundles the board and all saved scenes into one file. Send it by AirDrop or a messaging app to open it on another device.',export:'Export to file',import:'Import file',loadDefault:'Load shared starter data',empty:'No saved scenes yet. Save one with a name to reopen it later or play scenes in sequence.',openScene:'Open this scene',moveUp:'Move up',overwrite:'Overwrite',sceneN:'Scene {n}',
+teamName:'Team name',color:'Color',visibility:'Visibility',shown:'Shown',hiddenS:'Hidden',players:'Players',fewer:'Fewer',more:'More',formation:'Formation',auto:'Auto layout',applyForm:'Reset to this formation',formHint:'Formations are available for 5, 7, 8 and 11 players. Other sizes are arranged automatically.',rosterHint:'Set a position and the player stays nearest to it when you change formation (shape: GK/DF square, MF circle, FW triangle). Tap “Reset to this formation” when you are done.',home:'Home',away:'Away',unset:'Not set',autoPos:'Auto {p}',
+pitchTab:'Pitch',background:'Background',bg_stripes:'Grass (default)',bg_plain:'Plain white',bg_lanes5:'5 lanes',bg_lanes3:'3 lanes',bg_zones:'Zones (checker)',bg_photo:'Photo',choosePhoto:'Choose photo',changePhoto:'Change photo',lines:'Pitch lines',linesOn:'Show',linesOff:'Hide',photoHint:'The photo is saved only on this device and is not included in exported files.',photoErr:'This photo could not be loaded',photoBig:'The photo is too large to save. It will be shown for this session only',language:'Language',
+reg_GK:'GK',reg_RSB:'RB',reg_RCB:'RCB',reg_CB:'CB',reg_LCB:'LCB',reg_LSB:'LB',reg_DMF:'DM',reg_RMF:'RM',reg_LMF:'LM',reg_OMF:'AM',reg_RWG:'RW',reg_CF:'CF',reg_LWG:'LW',
+z_wide:'Wide',z_half:'Half-space',z_center:'Centre',z_def:'Defensive third',z_mid:'Middle third',z_att:'Attacking third',
+mselP:'{n} players',mselBall:'ball',mselD:'{n} drawings',mselSep:', ',mselSuffix:' selected (drag to move together)',mselHint:'Tap players and the ball, or drag a box to select',
+aboutText:'A free, ad-free football tactics board. Everything you enter is saved only on this device and is never visible to anyone else.',guide:'📖 How to use',support:'♡ Support this app',supportNote:'If you enjoy the app, your support keeps development going. Support is optional — every feature stays free.',soon:' (coming soon)',
+tClear:'All arrows and text cleared (Undo to restore)',tTextDel:'Text deleted',tReform:'Rearranged while keeping current positions',tSaved:'Saved "{n}"',tOver:'Overwrote "{n}" with the current board',tExported:'Exported',tWait:'Please wait a moment and try again',tNoExport:'Export is not available here',tImported:'Imported ({n} scenes added)',tLoaded:'Imported',tBadFile:'This file cannot be opened. Please choose a file exported from 45 Tactics',tDefaultUpd:'Shared starter data updated. Use Undo to go back',tDefault:'Starter data loaded ({n} scenes)'},
+'zh-Hans':{title:'足球战术板',menu:'菜单',settings:'设置',scenes:'场景与文件',playScenes:'▶ 播放场景',multi:'多选',faceBall:'全员朝向球',clearDraw:'清除箭头和文字',showNames:'显示姓名',hideAway:'隐藏对手',showZones:'显示通道与区域',full:'全屏',exitFull:'退出全屏',about:'关于本应用',
+toolbar:'工具栏',tools:'工具',move:'移动',pen:'画笔',text:'文字',erase:'橡皮擦',undo:'撤销',pitchAria:'球场',textPh:'输入要说明的内容',del:'删除',done:'完成',number:'号码',name:'姓名',position:'位置',close:'关闭',clearSel:'取消选择',
+lineHow:'画线方式',free:'手绘线',freeTip:'手绘线（无箭头，也可以写字）',line:'直线箭头',lineTip:'直线箭头',lineKind:'线条类型',solid:'实线',solidTip:'跑动',dashed:'虚线',dashedTip:'传球',penColor:'线条颜色',textColor:'文字颜色',
+restart:'从头开始',again:'再播一次',speed:'速度 {s}×',stop:'结束',
+scPh:'例：上半场 组织进攻',saveBoard:'保存当前布阵',scHint:'将站位、朝向、球和画线保存为一个场景。播放按此列表顺序进行。',file:'文件',fileHint:'将布阵和所有已保存的场景合并为一个文件。通过 AirDrop 或聊天软件发送，即可在其他设备上打开。',export:'导出文件',import:'导入文件',loadDefault:'载入共享的初始数据',empty:'还没有保存的场景。命名保存后，可以随时打开或连续播放。',openScene:'打开此场景',moveUp:'上移',overwrite:'覆盖',sceneN:'场景 {n}',
+teamName:'队名',color:'颜色',visibility:'显示',shown:'显示中',hiddenS:'已隐藏',players:'人数',fewer:'减少',more:'增加',formation:'阵型',auto:'自动排列',applyForm:'按此阵型重新排列',formHint:'5、7、8、11人制可选择阵型，其他人数自动排列。',rosterHint:'设置位置后，更换阵型时球员会排在最接近该位置的地方（形状：门将/后卫为方形，中场为圆形，前锋为三角形）。设置完成后点击“按此阵型重新排列”。',home:'主队',away:'客队',unset:'未设置',autoPos:'自动 {p}',
+pitchTab:'球场',background:'背景',bg_stripes:'草坪（默认）',bg_plain:'纯白',bg_lanes5:'五条通道',bg_lanes3:'三条通道',bg_zones:'区域（棋盘格）',bg_photo:'照片',choosePhoto:'选择照片',changePhoto:'更换照片',lines:'场地线',linesOn:'显示',linesOff:'隐藏',photoHint:'照片只保存在本设备中，不会包含在导出的文件里。',photoErr:'无法载入此照片',photoBig:'照片太大无法保存，仅本次显示',language:'语言',
+reg_GK:'门将',reg_RSB:'右后卫',reg_RCB:'右中卫',reg_CB:'中卫',reg_LCB:'左中卫',reg_LSB:'左后卫',reg_DMF:'后腰',reg_RMF:'右前卫',reg_LMF:'左前卫',reg_OMF:'前腰',reg_RWG:'右边锋',reg_CF:'中锋',reg_LWG:'左边锋',
+z_wide:'边路',z_half:'肋部',z_center:'中路',z_def:'防守三区',z_mid:'中场三区',z_att:'进攻三区',
+mselP:'球员{n}人',mselBall:'球',mselD:'箭头/文字{n}',mselSep:'、',mselSuffix:' 已选中（拖动可一起移动）',mselHint:'点击球员和球，或框选',
+aboutText:'免费、无广告的足球战术板。输入的内容只保存在本设备中，其他人看不到。',guide:'📖 使用说明',support:'♡ 支持本应用',supportNote:'如果喜欢这个应用，欢迎支持开发。支持完全自愿，不支持也能使用全部功能。',soon:'（准备中）',
+tClear:'已清除所有箭头和文字（可撤销）',tTextDel:'已删除文字',tReform:'已在保持当前位置的前提下重新排列',tSaved:'已保存「{n}」',tOver:'已用当前布阵覆盖「{n}」',tExported:'已导出',tWait:'请稍后再试',tNoExport:'此处无法导出',tImported:'已导入（新增 {n} 个场景）',tLoaded:'已导入',tBadFile:'无法打开此文件，请选择由 45 Tactics 导出的文件',tDefaultUpd:'共享的初始数据已更新，可撤销恢复',tDefault:'已载入初始数据（{n} 个场景）'},
+'zh-Hant':{title:'足球戰術板',menu:'選單',settings:'設定',scenes:'場景與檔案',playScenes:'▶ 播放場景',multi:'多選',faceBall:'全員面向球',clearDraw:'清除箭頭與文字',showNames:'顯示姓名',hideAway:'隱藏對手',showZones:'顯示通道與區域',full:'全螢幕',exitFull:'結束全螢幕',about:'關於本應用程式',
+toolbar:'工具列',tools:'工具',move:'移動',pen:'畫筆',text:'文字',erase:'橡皮擦',undo:'復原',pitchAria:'球場',textPh:'輸入要說明的內容',del:'刪除',done:'完成',number:'背號',name:'姓名',position:'位置',close:'關閉',clearSel:'取消選取',
+lineHow:'畫線方式',free:'手繪線',freeTip:'手繪線（無箭頭，也可以寫字）',line:'直線箭頭',lineTip:'直線箭頭',lineKind:'線條類型',solid:'實線',solidTip:'跑動',dashed:'虛線',dashedTip:'傳球',penColor:'線條顏色',textColor:'文字顏色',
+restart:'從頭開始',again:'再播一次',speed:'速度 {s}×',stop:'結束',
+scPh:'例：上半場 組織進攻',saveBoard:'儲存目前布陣',scHint:'將站位、面向、球與畫線儲存為一個場景。播放依照此清單順序進行。',file:'檔案',fileHint:'將布陣與所有已儲存的場景合併成一個檔案。透過 AirDrop 或通訊軟體傳送，即可在其他裝置開啟。',export:'匯出檔案',import:'匯入檔案',loadDefault:'載入共享的初始資料',empty:'還沒有儲存的場景。命名儲存後，可以隨時開啟或連續播放。',openScene:'開啟此場景',moveUp:'上移',overwrite:'覆寫',sceneN:'場景 {n}',
+teamName:'隊名',color:'顏色',visibility:'顯示',shown:'顯示中',hiddenS:'已隱藏',players:'人數',fewer:'減少',more:'增加',formation:'陣型',auto:'自動排列',applyForm:'依此陣型重新排列',formHint:'5、7、8、11人制可選擇陣型，其他人數自動排列。',rosterHint:'設定位置後，變更陣型時球員會排在最接近該位置的地方（形狀：門將／後衛為方形，中場為圓形，前鋒為三角形）。設定完成後點「依此陣型重新排列」。',home:'主隊',away:'客隊',unset:'未設定',autoPos:'自動 {p}',
+pitchTab:'球場',background:'背景',bg_stripes:'草皮（預設）',bg_plain:'純白',bg_lanes5:'五條通道',bg_lanes3:'三條通道',bg_zones:'區域（棋盤格）',bg_photo:'照片',choosePhoto:'選擇照片',changePhoto:'更換照片',lines:'場地線',linesOn:'顯示',linesOff:'隱藏',photoHint:'照片只會儲存在這台裝置中，不會包含在匯出的檔案裡。',photoErr:'無法載入此照片',photoBig:'照片太大無法儲存，僅本次顯示',language:'語言',
+reg_GK:'門將',reg_RSB:'右後衛',reg_RCB:'右中衛',reg_CB:'中衛',reg_LCB:'左中衛',reg_LSB:'左後衛',reg_DMF:'後腰',reg_RMF:'右前衛',reg_LMF:'左前衛',reg_OMF:'前腰',reg_RWG:'右邊鋒',reg_CF:'中鋒',reg_LWG:'左邊鋒',
+z_wide:'邊路',z_half:'肋部',z_center:'中路',z_def:'防守三區',z_mid:'中場三區',z_att:'進攻三區',
+mselP:'球員{n}人',mselBall:'球',mselD:'箭頭／文字{n}',mselSep:'、',mselSuffix:' 已選取（拖曳可一起移動）',mselHint:'點選球員和球，或框選',
+aboutText:'免費、無廣告的足球戰術板。輸入的內容只會儲存在這台裝置中，其他人看不到。',guide:'📖 使用說明',support:'♡ 支持這個應用程式',supportNote:'如果喜歡這個應用程式，歡迎支持開發。支持完全自願，不支持也能使用全部功能。',soon:'（準備中）',
+tClear:'已清除所有箭頭與文字（可復原）',tTextDel:'已刪除文字',tReform:'已在保持目前位置下重新排列',tSaved:'已儲存「{n}」',tOver:'已用目前布陣覆寫「{n}」',tExported:'已匯出',tWait:'請稍後再試',tNoExport:'此處無法匯出',tImported:'已匯入（新增 {n} 個場景）',tLoaded:'已匯入',tBadFile:'無法開啟此檔案，請選擇由 45 Tactics 匯出的檔案',tDefaultUpd:'共享的初始資料已更新，可用復原返回',tDefault:'已載入初始資料（{n} 個場景）'}
+};
+/* strings added for 45 Tactics Multi and printing */
+Object.assign(I18N.ja,{sport:'競技',chooseSport:'競技を選ぶ',titleM:'スポーツ作戦ボード',aboutTextM:'無料・広告なしで使える、いろいろな競技の作戦ボードです。入力した内容はこの端末の中だけに保存され、ほかの人には見えません。',
+rotate:'ローテーション（時計回りに1つ）',offense:'オフェンス',defense:'ディフェンス',bbDef:'守備',bbOff:'攻撃',bg_court:'コート（標準）',bg_field:'グラウンド（標準）',
+formHintG:'並び方を選ぶと、その形に並び直します。プリセットにない人数は自動で並びます。',rosterHintG:'ポジションを入れると、並び方を変えても そのポジションの場所に並びます。入れ終わったら「この配置に並べ直す」で並び直せます。',
+tOtherSport:'このファイルは「{s}」用です。45 Tactics Multiで開いてください',tSport:'{s}に切り替えました',
+print:'印刷・画像で保存',pTitle:'タイトル',pTitlePh:'例：11/3 練習試合',pDate:'日付',pContent:'内容',pCurrent:'今の盤面',pScenes:'保存した場面',pPer:'1ページの図',pRoster:'名簿を入れる',pMemo:'メモ欄を入れる',pBW:'白黒向けにする',pDo:'印刷・PDF',pImg:'画像で保存',
+pHint:'印刷画面で「PDFとして保存」を選ぶとPDFになります。iPhone・iPadで印刷できないときは「画像で保存」をお使いください。',memo:'メモ',tImg:'画像を書き出しました',noScenes:'保存した場面がありません'});
+Object.assign(I18N.en,{sport:'Sport',chooseSport:'Choose a sport',titleM:'Sports tactics board',aboutTextM:'A free, ad-free tactics board for many sports. Everything you enter is saved only on this device and is never visible to anyone else.',
+rotate:'Rotate (one position clockwise)',offense:'Offense',defense:'Defense',bbDef:'Fielding',bbOff:'Batting',bg_court:'Court (default)',bg_field:'Field (default)',
+formHintG:'Choose a formation to line the players up. Other team sizes are arranged automatically.',rosterHintG:'Set a position and the player goes to that spot when you change formation. Tap “Reset to this formation” when you are done.',
+tOtherSport:'This file is for {s}. Please open it in 45 Tactics Multi',tSport:'Switched to {s}',
+print:'Print / save image',pTitle:'Title',pTitlePh:'e.g. Practice match, 3 Nov',pDate:'Date',pContent:'Content',pCurrent:'Current board',pScenes:'Saved scenes',pPer:'Boards per page',pRoster:'Include roster',pMemo:'Include notes box',pBW:'Black & white',pDo:'Print / PDF',pImg:'Save as image',
+pHint:'Choose “Save as PDF” in the print dialog to make a PDF. If printing does not work on iPhone/iPad, use “Save as image”.',memo:'Notes',tImg:'Image exported',noScenes:'No saved scenes'});
+Object.assign(I18N['zh-Hans'],{sport:'项目',chooseSport:'选择运动项目',titleM:'运动战术板',aboutTextM:'免费、无广告、支持多种运动的战术板。输入的内容只保存在本设备中，其他人看不到。',
+rotate:'轮转（顺时针移动一个位置）',offense:'进攻',defense:'防守',bbDef:'守备',bbOff:'进攻',bg_court:'球场（默认）',bg_field:'场地（默认）',
+formHintG:'选择阵型后按该形状重新排列。预设以外的人数会自动排列。',rosterHintG:'设置位置后，更换阵型时球员会站到该位置。设置完成后点击“按此阵型重新排列”。',
+tOtherSport:'此文件用于「{s}」，请在 45 Tactics Multi 中打开',tSport:'已切换为{s}',
+print:'打印・保存图片',pTitle:'标题',pTitlePh:'例：11/3 练习赛',pDate:'日期',pContent:'内容',pCurrent:'当前布阵',pScenes:'已保存的场景',pPer:'每页图数',pRoster:'包含名单',pMemo:'包含备注栏',pBW:'黑白打印',pDo:'打印・PDF',pImg:'保存为图片',
+pHint:'在打印画面选择“存储为PDF”即可生成PDF。iPhone/iPad 无法打印时，请使用“保存为图片”。',memo:'备注',tImg:'已导出图片',noScenes:'没有已保存的场景'});
+Object.assign(I18N['zh-Hant'],{sport:'項目',chooseSport:'選擇運動項目',titleM:'運動戰術板',aboutTextM:'免費、無廣告、支援多種運動的戰術板。輸入的內容只會儲存在這台裝置中，其他人看不到。',
+rotate:'輪轉（順時針移動一個位置）',offense:'進攻',defense:'防守',bbDef:'守備',bbOff:'進攻',bg_court:'球場（預設）',bg_field:'場地（預設）',
+formHintG:'選擇陣型後依該形狀重新排列。預設以外的人數會自動排列。',rosterHintG:'設定位置後，變更陣型時球員會站到該位置。設定完成後點「依此陣型重新排列」。',
+tOtherSport:'此檔案用於「{s}」，請在 45 Tactics Multi 中開啟',tSport:'已切換為{s}',
+print:'列印・儲存圖片',pTitle:'標題',pTitlePh:'例：11/3 練習賽',pDate:'日期',pContent:'內容',pCurrent:'目前布陣',pScenes:'已儲存的場景',pPer:'每頁圖數',pRoster:'包含名單',pMemo:'包含備註欄',pBW:'黑白列印',pDo:'列印・PDF',pImg:'儲存為圖片',
+pHint:'在列印畫面選擇「儲存為PDF」即可產生PDF。iPhone/iPad 無法列印時，請使用「儲存為圖片」。',memo:'備註',tImg:'已匯出圖片',noScenes:'沒有已儲存的場景'});
+const LANG_NAMES={ja:'日本語',en:'English','zh-Hans':'简体中文','zh-Hant':'繁體中文'};
+function detectLang(){
+  const l=(navigator.language||'en').toLowerCase();
+  if(l.startsWith('ja')) return 'ja';
+  if(l.startsWith('zh')) return /tw|hk|mo|hant/.test(l)?'zh-Hant':'zh-Hans';
+  return 'en';
+}
+let LANG='en';
+function t(k,v){let s=(I18N[LANG]&&I18N[LANG][k])||I18N.en[k]||k;if(v)for(const x in v)s=s.split('{'+x+'}').join(v[x]);return s}
+function langOptions(){return Object.keys(LANG_NAMES).map(k=>`<option value="${k}" ${k==LANG?'selected':''}>${LANG_NAMES[k]}</option>`).join('')}
+function applyStatic(){
+  document.documentElement.lang=LANG; document.title=EDITION=='multi'?'45 Tactics Multi｜'+sportName(SPID)+'｜'+t('titleM'):'45 Tactics｜'+t('title');
+  if(EDITION=='multi'){$('appName').textContent='45 Tactics Multi';document.querySelectorAll('[data-i18n="aboutText"]').forEach(e=>e.dataset.i18n='aboutTextM');document.querySelectorAll('#dAbout [data-i18n="title"]').forEach(e=>e.dataset.i18n='titleM')}
+  document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=t(e.dataset.i18n));
+  document.querySelectorAll('[data-i18n-aria]').forEach(e=>{e.setAttribute('aria-label',t(e.dataset.i18nAria));if(e.hasAttribute('title'))e.title=t(e.dataset.i18nAria)});
+  document.querySelectorAll('[data-i18n-title]').forEach(e=>e.title=t(e.dataset.i18nTitle));
+  document.querySelectorAll('[data-i18n-ph]').forEach(e=>e.placeholder=t(e.dataset.i18nPh));
+  $('langA').innerHTML=langOptions();
+  updFullLabel(); setLinks(); updSportUI();
+}
+function setLang(l){LANG=I18N[l]?l:'en';S.lang=LANG;save();applyStatic();renderPenColors();renderTextColors();render();if($('dSet').open)renderSettings();if($('dScn').open)renderScenes();if(play)updPlayLabel()}
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const clone=o=>JSON.parse(JSON.stringify(o));
+
+function autoForm(n){
+  const p=[[.06,.5]],m=n-1; if(m<=0) return p;
+  const rows=m<=3?1:m<=7?2:3, base=Math.floor(m/rows), ex=m%rows;
+  for(let r=0;r<rows;r++){const k=base+(r<ex?1:0),x=rows==1?.7:.34+r*(.58/(rows-1));
+    for(let j=0;j<k;j++) p.push([x,(j+1)/(k+1)]);}
+  return p;
+}
+/* square cost matrix -> a[row]=col with minimum total cost (Hungarian method) */
+function hungarian(c){
+  const n=c.length,u=Array(n+1).fill(0),v=Array(n+1).fill(0),p=Array(n+1).fill(0),way=Array(n+1).fill(0);
+  for(let i=1;i<=n;i++){
+    p[0]=i;let j0=0;const minv=Array(n+1).fill(Infinity),used=Array(n+1).fill(false);
+    do{used[j0]=true;const i0=p[j0];let d=Infinity,j1=0;
+      for(let j=1;j<=n;j++)if(!used[j]){const cur=c[i0-1][j-1]-u[i0]-v[j];if(cur<minv[j]){minv[j]=cur;way[j]=j0}if(minv[j]<d){d=minv[j];j1=j}}
+      for(let j=0;j<=n;j++)if(used[j]){u[p[j]]+=d;v[j]-=d}else minv[j]-=d;
+      j0=j1;}while(p[j0]!=0);
+    do{const j1=way[j0];p[j0]=p[j1];j0=j1}while(j0);
+  }
+  const a=Array(n);for(let j=1;j<=n;j++)a[p[j]-1]=j-1;return a;
+}
+/* stretch points to 0..1 on each axis so the old shape and the new formation compare by relative position */
+function normPts(l){
+  if(!l.length) return l;
+  const xs=l.map(q=>q[0]),ys=l.map(q=>q[1]),x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+  return l.map(([x,y])=>[x1-x0>.02?(x-x0)/(x1-x0):.5,y1-y0>.02?(y-y0)/(y1-y0):.5]);
+}
+/* own-half coordinates: x 0=own goal → 1=halfway line and beyond, y 0..1 across (same as F) */
+function toLocal(ti,p){return ti==0?[p.x/(W/2),p.y/H]:[(W-p.x)/(W/2),(H-p.y)/H]}
+/* GK / DF / MF / FW for each slot of a formation: deepest line = DF, front line = FW, lines between = MF */
+function lineRoles(pts){
+  const xs=[...new Set(pts.slice(1).map(q=>q[0]))].sort((a,b)=>a-b), lines=[];
+  xs.forEach(x=>{const l=lines[lines.length-1];if(l&&x-l[l.length-1]<.06)l.push(x);else lines.push([x])});
+  return pts.map((q,i)=>{if(!i)return 'GK';const li=lines.findIndex(l=>l.includes(q[0]));
+    return lines.length==1?'MF':li==0?'DF':li==lines.length-1?'FW':'MF'});
+}
+function formPts(t){return (F[t.count]&&F[t.count][t.formation])||autoForm(t.count)}
+/* players saved before positions existed: give them GK/DF/MF/FW from where they stand now, without moving anyone */
+function ensurePos(ti){
+  if(!isFB()) return;
+  const t=S.teams[ti]; if(t.players.every(p=>p.pos)) return;
+  const pts=formPts(t); if(pts.length!=t.players.length) return;
+  const slot=assignSlots(t.players.map(p=>typeof p.x=='number'?{xy:toLocal(ti,p)}:null),pts), roles=lineRoles(pts);
+  t.players.forEach((p,i)=>{if(!p.pos)p.pos=roles[slot[i]]});
+}
+/* players: per-player own-half coords (or null) → slot index in pts; deepest player takes the GK slot */
+/* items[i] = {xy, reg} per player (or null for a new player) → slot index in pts.
+   Registered players: stay in their line (DF/MF/FW) as far as the slot counts allow (moving one line at a time),
+   then the same lane (wide / half-space / centre), then the nearest spot.
+   When someone has to change line, wide players (SB, side MF) go first: SB→WB, side MF→winger.
+   Others: nearest slot by relative position. The GK slot goes to the registered GK, else the deepest player. */
+const LINE_IDX={GK:0,DF:0,MF:1,FW:2};
+const lane=y=>y<.2?0:y<.4?1:y<=.6?2:y<=.8?3:4; // 大外・ハーフスペース・中央・ハーフスペース・大外
+function assignSlots(items,pts){
+  const idx=items.map((_,i)=>i), slot=idx.slice(), known=idx.filter(i=>items[i]);
+  if(!known.length) return slot;
+  const gkScore=i=>{const it=items[i];return !it?99:it.reg?(it.reg.c=='GK'?-10:10+it.xy[0]):it.xy[0]};
+  const gk=idx.reduce((a,b)=>gkScore(b)<gkScore(a)?b:a), rows=idx.filter(i=>i!=gk), dst=pts.slice(1), dcat=lineRoles(pts).slice(1);
+  const free=rows.filter(i=>items[i]&&!items[i].reg), A=normPts(free.map(i=>items[i].xy)), B=normPts(dst), npos=new Map(free.map((i,k)=>[i,A[k]]));
+  const as=hungarian(rows.map(i=>dst.map((q,k)=>{const it=items[i];if(!it)return 0;
+    if(it.reg){const dl=LINE_IDX[it.reg.c]-LINE_IDX[dcat[k]],wide=lane(it.xy[1])%4==0;
+      // tiny pull toward the spot remembered at registration (p.tie): players with the same position keep their left/right order
+      const tie=it.tie?.001*((it.tie[0]-q[0])**2+(it.tie[1]-q[1])**2):0;
+      return (wide?7:10)*dl*dl+3*(1+dl*dl)*Math.abs(lane(it.xy[1])-lane(q[1]))+Math.abs(it.xy[1]-q[1])+.5*Math.abs(it.xy[0]-q[0])+tie}
+    const a=npos.get(i),dx=a[0]-B[k][0],dy=a[1]-B[k][1];return dx*dx+dy*dy})));
+  slot[gk]=0; rows.forEach((i,r)=>slot[i]=as[r]+1);
+  return slot;
+}
+/* A player with a registered position (p.reg) always goes to the slot nearest that position.
+   Others keep a fixed role (p.role, own-half coords) and the spot he was last placed at (p.home).
+   While nobody has been dragged since the last arrangement, roles stay fixed, so the result depends only on
+   the chosen formation (A→B→A gives the same layout). If someone was moved, the current layout becomes the new roles. */
+function applyFormation(ti){return isFB()?applyFormationFB(ti):applyFormationG(ti)}
+function applyFormationFB(ti){
+  const t=S.teams[ti], n=t.count;
+  while(t.players.length<n){const used=new Set(t.players.map(p=>+p.num));let k=t.players.length+1;while(used.has(k))k++;t.players.push({num:String(k),name:''})}
+  t.players.length=n;
+  const pts=(F[n]&&F[n][t.formation])||autoForm(n);
+  const placed=p=>typeof p.x=='number';
+  const free=t.players.filter(p=>!regOf(p));
+  const kept=free.some(p=>p.role)&&free.every(p=>!p.role||!placed(p)||p.home&&Math.hypot(p.x-p.home[0],p.y-p.home[1])<.5);
+  if(!kept) free.forEach(p=>{p.role=placed(p)?toLocal(ti,p):null});
+  const slot=assignSlots(t.players.map(p=>regOf(p)?{xy:regOf(p).xy,reg:regOf(p),tie:p.tie||(p.tie=placed(p)?toLocal(ti,p):null)}:p.role?{xy:p.role}:null),pts), roles=lineRoles(pts);
+  t.players.forEach((p,i)=>{const [fx,fy]=pts[slot[i]]; p.pos=roles[slot[i]];
+    if(ti==0){p.x=fx*W/2;p.y=fy*H;p.a=0}else{p.x=W-fx*W/2;p.y=H-fy*H;p.a=180}
+    if(!p.role) p.role=[fx,fy];
+    p.home=[p.x,p.y];});
+}
+function fresh(){
+  const d=SP.def, nm=SP.names||['home','away'];
+  return {teams:[0,1].map(i=>({name:t(nm[i]),color:COLORS[i],count:d[i][0],formation:d[i][1],visible:true,players:[]})),
+    ball:{x:SP.ballXY[0]*W,y:SP.ballXY[1]*H},drawings:[],showNames:true,scenes:[],showZones:false,pitch:{style:'stripes',lines:true}};
+}
+const bgsOf=()=>SP.zones?BG_STYLES:['stripes','plain','photo'];
+function setSport(id){SPID=id;SP=SPORTS[id];H=W*SP.wid/SP.len;KEY=EDITION=='soccer'?'tactics-board-pro-v1':'tactics-multi-v1:'+id}
+function loadSaved(){
+  let s=null;try{s=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+  if(!s&&EDITION=='multi'&&SPID=='soccer'){try{s=JSON.parse(localStorage.getItem('tactics-board-pro-v1'))}catch(e){}} // carry over the 45 Tactics board
+  return s;
+}
+function initS(s){
+  if(!s||!Array.isArray(s.teams)){S=fresh();S.lang=LANG;S.teams.forEach((_,i)=>applyFormation(i))}else S=s;
+  if(!Array.isArray(S.drawings)) S.drawings=[];
+  if(!S.homeBlue){S.homeBlue=true;const h=S.teams[0],a=S.teams[1];if(h&&a&&h.color=='#D7263D'&&a.color=='#1F4FD6'){h.color='#1F4FD6';a.color='#D7263D'}}
+  if(!Array.isArray(S.scenes)) S.scenes=[];
+  if(typeof S.showZones!=='boolean') S.showZones=false;
+  if(!S.pitch||!bgsOf().includes(S.pitch.style)) S.pitch={style:'stripes',lines:true};
+  S.lang=LANG;
+}
+let S;
+{const q=new URLSearchParams(location.search).get('sport');let id='soccer';
+ if(EDITION=='multi'){let last=null;try{last=localStorage.getItem('tactics-multi-sport')}catch(e){}id=SPORTS[q]?q:SPORTS[last]?last:'soccer';try{localStorage.setItem('tactics-multi-sport',id)}catch(e){}}
+ setSport(id);}
+const saved0=loadSaved(), firstLaunch=!saved0;
+LANG=(saved0&&I18N[saved0.lang])?saved0.lang:detectLang();
+initS(saved0);
+let photo=null; try{photo=localStorage.getItem(PHOTO_KEY)}catch(e){}
+
+let sel=null, vertical=false, undo=[], drag=null, saveT=0, mode='move';
+let pen={kind:'run',color:S.pitch.style=='plain'?PEN_COLORS[4]:PEN_COLORS[0],shape:'free'};
+let editing=null, editUndo=false, txtColor=S.pitch.style=='plain'?PEN_COLORS[4]:PEN_COLORS[0];
+let msel=null, multi=false; // multi: tapping adds/removes, dragging from anywhere unselected draws a box // multi-selection {p:Set('t:i'),ball:bool,d:Set(drawing index)}
+const TS=2.4;
+/* token shape per position: d = outline drawn in pitch coords pointing toward the opponent's goal (+x),
+   b = where the facing arrow starts, ox = number offset along the attack direction, ty/fs = number placement */
+const SHAPES={
+  GK:{d:'<rect x="-1.75" y="-1.75" width="3.5" height="3.5" rx=".35" $S/>',b:2.3,ox:0,ty:.72,fs:2.1},
+  DF:{d:'<rect x="-1.75" y="-1.75" width="3.5" height="3.5" rx=".35" $S/>',b:2.3,ox:0,ty:.72,fs:2.1},
+  MF:{d:`<circle r="${R}" $S/>`,b:R+.3,ox:0,ty:.72,fs:2.1},
+  FW:{d:'<path d="M2.75 0L-1.5 2.45L-1.5 -2.45Z" $S/>',b:3,ox:-.3,ty:.66,fs:1.85}};
+let play=null;
+
+function save(){clearTimeout(saveT);saveT=setTimeout(()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}},250)}
+function board(){return {teams:S.teams,ball:S.ball,drawings:S.drawings}}
+function snap(){return JSON.stringify(board())}
+/* boards saved before positions existed: take each player's GK/DF/MF/FW from the current board */
+function fillPos(o){(o.teams||[]).forEach((t,ti)=>(t.players||[]).forEach((p,i)=>{const c=S.teams[ti]&&S.teams[ti].players[i];if(!p.pos&&c&&c.pos)p.pos=c.pos}))}
+function setBoard(o){S.teams=clone(o.teams);S.ball=clone(o.ball);S.drawings=clone(o.drawings||[]);editing=null;msel=null;$('textBar').hidden=true}
+function pushUndo(){undo.push(snap());if(undo.length>60)undo.shift();$('bUndo').disabled=false}
+function doUndo(){if(play)return;const s=undo.pop();if(!s)return;setBoard(JSON.parse(s));sel=null;$('bUndo').disabled=!undo.length;render();save()}
+let toastT=0;
+function toast(msg){const t=$('toast');t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,2600)}
+
+/* ---------- pitch ---------- */
+const LANE5=[0,13.84,24.84,43.16,54.16,68], LANE3=[0,68/3,2*68/3,68], ZCOL=[0,16.5,35,52.5,70,88.5,W];
+function drawPitch(){
+  if(SP.draw){$('pitch').innerHTML=SP.draw();return}
+  const st=S.pitch.style, plain=st=='plain', lc=plain?'#5B6A61':'rgba(255,255,255,.88)';
+  const L=`fill="none" stroke="${lc}" stroke-width=".24"`;
+  const G='fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".18" stroke-dasharray="1 .8"';
+  let s=`<rect x="-4" y="-4" width="${W+8}" height="${H+8}" rx="1.2" fill="${plain?'#FFFFFF':'#24683F'}"/>`;
+  if(plain){}
+  else if(st=='lanes5'||st=='lanes3'){
+    const b=st=='lanes5'?LANE5:LANE3, tint=st=='lanes5'
+      ?['rgba(90,150,255,.42)','rgba(255,214,70,.36)','','rgba(255,214,70,.36)','rgba(90,150,255,.42)']
+      :['rgba(90,150,255,.42)','','rgba(90,150,255,.42)'];
+    s+=`<rect x="0" y="0" width="${W}" height="${H}" fill="#2B7A4B"/>`;
+    for(let i=0;i<b.length-1;i++) if(tint[i]) s+=`<rect x="0" y="${b[i]}" width="${W}" height="${b[i+1]-b[i]}" fill="${tint[i]}"/>`;
+    for(let i=1;i<b.length-1;i++) s+=`<line x1="0" y1="${b[i]}" x2="${W}" y2="${b[i]}" ${G}/>`;
+  }
+  else if(st=='zones'){
+    for(let c=0;c<ZCOL.length-1;c++) for(let r=0;r<LANE5.length-1;r++)
+      s+=`<rect x="${ZCOL[c]}" y="${LANE5[r]}" width="${ZCOL[c+1]-ZCOL[c]}" height="${LANE5[r+1]-LANE5[r]}" fill="${(c+r)%2?'#246A41':'#3A9460'}"/>`;
+    for(let c=1;c<ZCOL.length-1;c++) s+=`<line x1="${ZCOL[c]}" y1="0" x2="${ZCOL[c]}" y2="${H}" ${G}/>`;
+    for(let r=1;r<LANE5.length-1;r++) s+=`<line x1="0" y1="${LANE5[r]}" x2="${W}" y2="${LANE5[r]}" ${G}/>`;
+  }
+  else if(st=='photo'&&photo){ s+=`<image href="${photo}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/>`; }
+  else { for(let i=0;i<10;i++) s+=`<rect x="${i*10.5}" y="0" width="10.5" height="${H}" fill="${i%2?'#2A7849':'#2E8250'}"/>`; }
+  if(S.pitch.lines!==false){
+    const dy=Math.sqrt(9.15*9.15-5.5*5.5);
+    s+=`<rect x="0" y="0" width="${W}" height="${H}" ${L}/>
+    <line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" ${L}/>
+    <circle cx="${W/2}" cy="${H/2}" r="9.15" ${L}/>
+    <circle cx="${W/2}" cy="${H/2}" r=".35" fill="${lc}"/>
+    <rect x="0" y="13.84" width="16.5" height="40.32" ${L}/>
+    <rect x="${W-16.5}" y="13.84" width="16.5" height="40.32" ${L}/>
+    <rect x="0" y="24.84" width="5.5" height="18.32" ${L}/>
+    <rect x="${W-5.5}" y="24.84" width="5.5" height="18.32" ${L}/>
+    <circle cx="11" cy="34" r=".3" fill="${lc}"/><circle cx="${W-11}" cy="34" r=".3" fill="${lc}"/>
+    <path d="M16.5 ${34-dy} A9.15 9.15 0 0 1 16.5 ${34+dy}" ${L}/>
+    <path d="M${W-16.5} ${34-dy} A9.15 9.15 0 0 0 ${W-16.5} ${34+dy}" ${L}/>
+    <rect x="-1.6" y="30.34" width="1.6" height="7.32" ${L}/>
+    <rect x="${W}" y="30.34" width="1.6" height="7.32" ${L}/>
+    <path d="M1 0A1 1 0 0 1 0 1M${W-1} 0A1 1 0 0 0 ${W} 1M0 ${H-1}A1 1 0 0 1 1 ${H}M${W} ${H-1}A1 1 0 0 0 ${W-1} ${H}" ${L}/>`;
+  }
+  $('pitch').innerHTML=s;
+}
+function zonesSVG(cr){
+  if(!S.showZones||!SP.zones) return '';
+  const plain=S.pitch.style=='plain';
+  const lane=`stroke="${plain?'rgba(30,42,34,.45)':'rgba(255,255,255,.5)'}" stroke-width=".18" stroke-dasharray=".9 .9"`;
+  const zone=`stroke="${plain?'rgba(214,140,0,.85)':'rgba(255,225,77,.75)'}" stroke-width=".26" stroke-dasharray="1.6 1"`;
+  const lab=(x,y,tx,a)=>`<g transform="translate(${x} ${y}) rotate(${cr})"><text class="zl" font-size="1.35" text-anchor="${a}" y=".45"${plain?' style="fill:rgba(30,42,34,.55)"':''}>${tx}</text></g>`;
+  let s='';
+  [13.84,24.84,H-24.84,H-13.84].forEach(y=>s+=`<line x1="0" y1="${y}" x2="${W}" y2="${y}" ${lane}/>`);
+  [W/3,W*2/3].forEach(x=>s+=`<line x1="${x}" y1="0" x2="${x}" y2="${H}" ${zone}/>`);
+  [[6.92,t('z_wide')],[19.34,t('z_half')],[34,t('z_center')],[H-19.34,t('z_half')],[H-6.92,t('z_wide')]].forEach(([y,tx])=>s+=lab(W/3+.8,y,tx,'start'));
+  [[W/6,t('z_def')],[W/2,t('z_mid')],[W*5/6,t('z_att')]].forEach(([x,tx])=>s+=lab(x,H-1.4,tx,cr?'end':'middle'));
+  return s;
+}
+function inkFor(hex){const c=parseInt(hex.slice(1),16),r=c>>16,g=c>>8&255,b=c&255;return (r*299+g*587+b*114)/1000>160?'#13241A':'#FFFFFF'}
+
+/* ---------- drawings ---------- */
+function pathD(p){
+  if(p.length<2) return '';
+  let d=`M${p[0][0].toFixed(2)} ${p[0][1].toFixed(2)}`;
+  if(p.length==2) return d+`L${p[1][0].toFixed(2)} ${p[1][1].toFixed(2)}`;
+  for(let i=1;i<p.length-1;i++){const mx=(p[i][0]+p[i+1][0])/2,my=(p[i][1]+p[i+1][1])/2;d+=`Q${p[i][0].toFixed(2)} ${p[i][1].toFixed(2)} ${mx.toFixed(2)} ${my.toFixed(2)}`}
+  const l=p[p.length-1];return d+`L${l[0].toFixed(2)} ${l[1].toFixed(2)}`;
+}
+function textW(d){return [...d.text].reduce((s,c)=>s+(c.charCodeAt(0)>255?1:.58),0)*TS}
+function textSVG(d,i,cr){
+  const [x,y]=d.pts[0], w=Math.max(textW(d),TS*2);
+  const box=i===editing?`<rect x="${-w/2-.7}" y="${-TS*.75}" width="${w+1.4}" height="${TS*1.5}" rx=".5" fill="none" stroke="#FFE14D" stroke-width=".2" stroke-dasharray=".7 .5"/>`:'';
+  return `<g transform="translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${cr})">${box}<text class="note" font-size="${TS}" y="${(TS*.35).toFixed(2)}" fill="${d.color}">${esc(d.text)}</text></g>`;
+}
+function hitText(d,x,y){
+  const [px,py]=d.pts[0], a=vertical?Math.PI/2:0, dx=x-px, dy=y-py;
+  return Math.abs(dx*Math.cos(a)+dy*Math.sin(a))<Math.max(textW(d),TS*2)/2+.8 && Math.abs(-dx*Math.sin(a)+dy*Math.cos(a))<TS*.75+.5;
+}
+function hitTextAt(x,y){for(let k=S.drawings.length-1;k>=0;k--){const d=S.drawings[k];if(d.kind=='text'&&hitText(d,x,y))return k}return -1}
+function drawingSVG(d){
+  if(d.kind=='text') return '';
+  const p=d.pts; if(p.length<2) return '';
+  const dash=d.kind=='pass'?' stroke-dasharray="1.1 .8"':'';
+  const line=`<path d="${pathD(p)}" fill="none" stroke="rgba(0,0,0,.25)" stroke-width=".85" stroke-linecap="round" stroke-linejoin="round"${dash}/>
+    <path d="${pathD(p)}" fill="none" stroke="${d.color}" stroke-width=".48" stroke-linecap="round" stroke-linejoin="round"${dash}/>`;
+  if(d.head===false) return `<g>${line}</g>`; // freehand: plain line (lets people write letters)
+  const E=p[p.length-1]; let B=p[0];
+  for(let i=p.length-2;i>=0;i--){if(Math.hypot(E[0]-p[i][0],E[1]-p[i][1])>=1.8){B=p[i];break}}
+  const a=Math.atan2(E[1]-B[1],E[0]-B[0]), L=1.7, w=.95;
+  const bx=E[0]-L*Math.cos(a), by=E[1]-L*Math.sin(a);
+  const h=`M${E[0].toFixed(2)} ${E[1].toFixed(2)}L${(bx+w*Math.sin(a)).toFixed(2)} ${(by-w*Math.cos(a)).toFixed(2)}L${(bx-w*Math.sin(a)).toFixed(2)} ${(by+w*Math.cos(a)).toFixed(2)}Z`;
+  return `<g>${line}
+    <path d="${h}" fill="${d.color}" stroke="rgba(0,0,0,.25)" stroke-width=".12"/></g>`;
+}
+function segDist(px,py,a,b){const dx=b[0]-a[0],dy=b[1]-a[1],l=dx*dx+dy*dy;let t=l?((px-a[0])*dx+(py-a[1])*dy)/l:0;t=Math.max(0,Math.min(1,t));return Math.hypot(px-a[0]-t*dx,py-a[1]-t*dy)}
+function hitDrawing(x,y){
+  for(let k=S.drawings.length-1;k>=0;k--){const d=S.drawings[k],p=d.pts;
+    if(d.kind=='text'){if(hitText(d,x,y))return k;continue}
+    for(let i=0;i<p.length-1;i++) if(segDist(x,y,p[i],p[i+1])<1.6) return k;}
+  return -1;
+}
+
+/* ---------- render ---------- */
+function render(){
+  const cr=vertical?90:0;
+  $('zonesL').innerHTML=zonesSVG(cr);
+  $('textL').innerHTML=S.drawings.map((d,i)=>d.kind=='text'?textSVG(d,i,cr):'').join('');
+  $('drawL').innerHTML=S.drawings.map(drawingSVG).join('')+(drag&&drag.k=='pen'?drawingSVG(drag.d):'');
+  let s='';
+  S.teams.forEach((t,ti)=>{ if(!t.visible) return; ensurePos(ti); const ink=inkFor(t.color), edge=ink=='#FFFFFF'?'#FFFFFF':'#13241A';
+    t.players.forEach((p,i)=>{
+      const nm=S.showNames&&p.name?`<text class="nm" y="${R+2.3}" font-size="1.65">${esc(p.name)}</text>`:'';
+      const sh=SHAPES[shapeKey(p)]||SHAPES.MF, st=`fill="${t.color}" stroke="${edge}" stroke-width=".32" stroke-linejoin="round"`;
+      s+=`<g class="tok" data-t="${ti}" data-i="${i}" transform="translate(${p.x.toFixed(2)} ${p.y.toFixed(2)})">
+        <circle r="3.6" fill="transparent"/>
+        <path transform="rotate(${p.a.toFixed(1)})" d="M${sh.b} -1.15L${sh.b+1.45} 0L${sh.b} 1.15Z" fill="${t.color}" stroke="${edge}" stroke-width=".18" stroke-linejoin="round"/>
+        <g transform="rotate(${shRot(ti)})">${sh.d.replace('$S',st)}<g transform="translate(${sh.ox} 0) rotate(${cr-shRot(ti)})"><text class="num" y="${sh.ty}" font-size="${sh.fs}" fill="${ink}">${esc(p.num)}</text></g></g>
+        <g transform="rotate(${cr})">${nm}</g>
+      </g>`;
+    });
+  });
+  $('tokens').innerHTML=s;
+  const b=S.ball;
+  $('ballL').innerHTML=`<g id="ball" transform="translate(${b.x.toFixed(2)} ${b.y.toFixed(2)})">
+    <circle r="3.8" fill="transparent"/>
+    ${BALLS[SP.ball||'soccer']}</g>`;
+  let h='';
+  if(mode=='move'&&!play&&sel&&S.teams[sel.t]&&S.teams[sel.t].players[sel.i]&&S.teams[sel.t].visible){
+    const p=S.teams[sel.t].players[sel.i],rr=5.2,a=p.a*Math.PI/180;
+    h=`<g transform="translate(${p.x} ${p.y})" pointer-events="none">
+      <circle r="${R+.9}" fill="none" stroke="#FFE14D" stroke-width=".4"/>
+      <circle r="${rr}" fill="none" stroke="rgba(255,255,255,.75)" stroke-width=".18" stroke-dasharray=".7 .6"/>
+      <line x1="0" y1="0" x2="${rr*Math.cos(a)}" y2="${rr*Math.sin(a)}" stroke="rgba(255,255,255,.75)" stroke-width=".16"/></g>
+      <g data-handle="1" transform="translate(${p.x+rr*Math.cos(a)} ${p.y+rr*Math.sin(a)})" style="cursor:grab">
+        <circle r="2.6" fill="transparent"/><circle r="1.05" fill="#FFE14D" stroke="#13241A" stroke-width=".2"/></g>`;
+    const t=S.teams[sel.t];
+    $('insp').hidden=false; $('iDot').style.background=t.color;
+    if(document.activeElement!==$('iNum')) $('iNum').value=p.num;
+    if(document.activeElement!==$('iName')) $('iName').value=p.name;
+    $('iPos').hidden=!!SP.noPos; if(document.activeElement!==$('iPos')) $('iPos').innerHTML=regOptions(p.reg||'',p.pos);
+  } else { $('insp').hidden=true; sel=null; }
+  pruneMsel();
+  if(msel&&mode=='move'&&!play){
+    const ring='fill="none" stroke="#FFE14D" stroke-width=".4" pointer-events="none"';
+    msel.p.forEach(k=>{const [t,i]=k.split(':').map(Number),p=S.teams[t].players[i];h+=`<circle cx="${p.x}" cy="${p.y}" r="${R+.9}" ${ring}/>`});
+    if(msel.ball) h+=`<circle cx="${S.ball.x}" cy="${S.ball.y}" r="3" ${ring}/>`;
+    msel.d.forEach(k=>{const d=S.drawings[k];
+      if(d.kind=='text'){const w=Math.max(textW(d),TS*2);h+=`<g transform="translate(${d.pts[0][0]} ${d.pts[0][1]}) rotate(${cr})" pointer-events="none"><rect x="${-w/2-.7}" y="${-TS*.75}" width="${w+1.4}" height="${TS*1.5}" rx=".5" fill="none" stroke="#FFE14D" stroke-width=".3"/></g>`}
+      else h+=`<path d="${pathD(d.pts)}" fill="none" stroke="rgba(255,225,77,.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>`});
+    const n=msel.p.size,parts=[];if(n)parts.push(t('mselP',{n}));if(msel.ball)parts.push(t('mselBall'));if(msel.d.size)parts.push(t('mselD',{n:msel.d.size}));
+    $('mselTxt').textContent=parts.join(t('mselSep'))+t('mselSuffix');$('mselBar').hidden=false;
+  } else if(multi&&mode=='move'&&!play){$('mselTxt').textContent=t('mselHint');$('mselBar').hidden=false}
+  else $('mselBar').hidden=true;
+  if(drag&&drag.k=='box'&&drag.moved){const x=Math.min(drag.q.x,drag.q1.x),y=Math.min(drag.q.y,drag.q1.y);
+    h+=`<rect x="${x}" y="${y}" width="${Math.abs(drag.q1.x-drag.q.x)}" height="${Math.abs(drag.q1.y-drag.q.y)}" fill="rgba(255,225,77,.12)" stroke="#FFE14D" stroke-width=".25" stroke-dasharray=".8 .6" pointer-events="none"/>`}
+  $('selL').innerHTML=h;
+  $('bNames').setAttribute('aria-pressed',S.showNames);
+  $('bAway').setAttribute('aria-pressed',!S.teams[1].visible);
+  $('bPlay').disabled=S.scenes.length<2;
+  $('bZones').setAttribute('aria-pressed',S.showZones);
+  $('bClearDraw').disabled=!S.drawings.length;
+}
+
+/* ---------- orientation ---------- */
+function layout(){
+  const w=$('board').clientWidth,hh=$('board').clientHeight, v=!SP.noRotate&&hh>w*1.05;
+  if(v!==vertical||!$('board').getAttribute('viewBox')){
+    vertical=v;
+    $('board').setAttribute('viewBox',v?`-4 ${-W-4} ${H+8} ${W+8}`:`-4 -4 ${W+8} ${H+8}`);
+    $('rot').setAttribute('transform',v?'rotate(-90)':'');
+    render();
+  }
+}
+new ResizeObserver(()=>{layout();window.scrollTo(0,0)}).observe($('board'));
+window.addEventListener('orientationchange',()=>setTimeout(()=>window.scrollTo(0,0),300));
+window.addEventListener('scroll',()=>{if(window.scrollY||window.scrollX)window.scrollTo(0,0)});
+
+/* ---------- modes ---------- */
+function setMode(m){
+  if(m!='text') endEdit();
+  if(m!='move'&&multi){multi=false;$('bMulti').setAttribute('aria-pressed',false)}
+  mode=m; msel=null; document.body.classList.remove('move','pen','erase','text'); document.body.classList.add(m);
+  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode==m));
+  $('penBar').hidden=m!='pen'; sel=null; render();
+}
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+document.querySelectorAll('[data-shape]').forEach(b=>b.onclick=()=>{pen.shape=b.dataset.shape;document.querySelectorAll('[data-shape]').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+document.querySelectorAll('[data-kind]').forEach(b=>b.onclick=()=>{pen.kind=b.dataset.kind;document.querySelectorAll('[data-kind]').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+function renderPenColors(){$('penColors').innerHTML=PEN_COLORS.map(c=>`<button class="pc" data-pc="${c}" style="background:${c}" aria-label="${t('penColor')}" aria-pressed="${c==pen.color}"></button>`).join('')}
+renderPenColors();
+$('penColors').addEventListener('click',e=>{const b=e.target.closest('[data-pc]');if(!b)return;pen.color=b.dataset.pc;$('penColors').querySelectorAll('.pc').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+$('bClearDraw').onclick=()=>{if(!S.drawings.length)return;pushUndo();S.drawings=[];editing=null;msel=null;$('textBar').hidden=true;render();save();toast(t('tClear'))};
+$('bZones').onclick=()=>{S.showZones=!S.showZones;render();save()};
+
+/* ---------- text notes ---------- */
+function renderTextColors(){$('textColors').innerHTML=PEN_COLORS.map(c=>`<button class="pc" data-tc="${c}" style="background:${c}" aria-label="${t('textColor')}" aria-pressed="${c==txtColor}"></button>`).join('')}
+renderTextColors();
+function markTextColor(c){$('textColors').querySelectorAll('.pc').forEach(x=>x.setAttribute('aria-pressed',x.dataset.tc==c))}
+function editUndoOnce(){if(!editUndo){editUndo=true;pushUndo()}}
+function beginEdit(k){editing=k;editUndo=false;const d=S.drawings[k];$('tText').value=d.text;txtColor=d.color;markTextColor(d.color);$('textBar').hidden=false;render()}
+function endEdit(){
+  if(editing==null) return;
+  const d=S.drawings[editing];
+  if(d&&d.kind=='text'&&!d.text.trim()) S.drawings.splice(editing,1);
+  editing=null;$('textBar').hidden=true;if(document.activeElement===$('tText'))$('tText').blur();render();save();
+}
+$('textColors').addEventListener('click',e=>{const b=e.target.closest('[data-tc]');if(!b)return;txtColor=b.dataset.tc;markTextColor(txtColor);
+  if(editing!=null){editUndoOnce();S.drawings[editing].color=txtColor;render();save()}});
+$('tText').addEventListener('input',e=>{if(editing==null)return;editUndoOnce();S.drawings[editing].text=e.target.value;render();save()});
+$('tText').addEventListener('keydown',e=>{if(e.key=='Enter'&&!e.isComposing){e.preventDefault();endEdit()}});
+$('tDone').onclick=endEdit;
+$('tDel').onclick=()=>{if(editing==null)return;editUndoOnce();S.drawings[editing].text='';endEdit();toast(t('tTextDel'))};
+
+/* ---------- multi-selection ---------- */
+function mselCount(){return msel?msel.p.size+(msel.ball?1:0)+msel.d.size:0}
+function pruneMsel(){
+  if(!msel) return;
+  msel.p.forEach(k=>{const [t,i]=k.split(':').map(Number);if(!S.teams[t]||!S.teams[t].visible||!S.teams[t].players[i])msel.p.delete(k)});
+  msel.d.forEach(k=>{if(!S.drawings[k])msel.d.delete(k)});
+  if(!mselCount()) msel=null;
+}
+function mselToggle(kind,key){
+  if(!msel){msel={p:new Set(),ball:false,d:new Set()};if(sel)msel.p.add(sel.t+':'+sel.i)}
+  sel=null;
+  if(kind=='ball') msel.ball=!msel.ball; else if(msel.p.has(key)) msel.p.delete(key); else msel.p.add(key);
+  if(!mselCount()) msel=null;
+}
+function mselInBox(a,b,add){
+  const x0=Math.min(a.x,b.x),x1=Math.max(a.x,b.x),y0=Math.min(a.y,b.y),y1=Math.max(a.y,b.y),in_=(x,y)=>x>=x0&&x<=x1&&y>=y0&&y<=y1;
+  const m={p:new Set(),ball:in_(S.ball.x,S.ball.y),d:new Set()};
+  S.teams.forEach((t,ti)=>{if(t.visible)t.players.forEach((p,i)=>{if(in_(p.x,p.y))m.p.add(ti+':'+i)})});
+  S.drawings.forEach((d,k)=>{if(d.pts.length&&d.pts.every(([x,y])=>in_(x,y)))m.d.add(k)});
+  if(add&&msel){msel.p.forEach(k=>m.p.add(k));msel.d.forEach(k=>m.d.add(k));m.ball=m.ball||msel.ball}
+  msel=m; sel=null; if(!mselCount()) msel=null;
+}
+function mselSnapshot(){
+  return {p:[...msel.p].map(k=>{const [t,i]=k.split(':').map(Number),p=S.teams[t].players[i];return [p,p.x,p.y]}),
+    ball:msel.ball?[S.ball.x,S.ball.y]:null, d:[...msel.d].map(k=>[S.drawings[k],clone(S.drawings[k].pts)])};
+}
+function mselMove(o,dx,dy){
+  // clamp the whole group so it keeps its shape at the pitch edge
+  const xs=[],ys=[];o.p.forEach(([,x,y])=>{xs.push(x);ys.push(y)});if(o.ball){xs.push(o.ball[0]);ys.push(o.ball[1])}
+  o.d.forEach(([,pts])=>pts.forEach(([x,y])=>{xs.push(x);ys.push(y)}));
+  dx=Math.max(-3-Math.min(...xs),Math.min(W+3-Math.max(...xs),dx)); dy=Math.max(-3-Math.min(...ys),Math.min(H+3-Math.max(...ys),dy));
+  o.p.forEach(([p,x,y])=>{p.x=x+dx;p.y=y+dy});
+  if(o.ball){S.ball.x=o.ball[0]+dx;S.ball.y=o.ball[1]+dy}
+  o.d.forEach(([d,pts])=>{d.pts=pts.map(([x,y])=>[x+dx,y+dy])});
+}
+function setMulti(v){multi=v;msel=null;sel=null;$('bMulti').setAttribute('aria-pressed',v);if(v&&mode!='move')setMode('move');render()}
+$('bMulti').onclick=()=>setMulti(!multi);
+$('mselClear').onclick=()=>{msel=null;if(multi)setMulti(false);else render()};
+
+/* ---------- pointer ---------- */
+const svg=$('board');
+function pt(e){const m=$('rot').getScreenCTM().inverse();const q=new DOMPoint(e.clientX,e.clientY).matrixTransform(m);return {x:q.x,y:q.y}}
+const clampX=x=>Math.max(-3,Math.min(W+3,x)), clampY=y=>Math.max(-3,Math.min(H+3,y));
+function eraseAt(q){const k=hitDrawing(q.x,q.y);if(k<0)return;if(!drag.moved){drag.moved=true;pushUndo()}S.drawings.splice(k,1);render()}
+svg.addEventListener('pointerdown',e=>{
+  if(play) return;
+  const q=pt(e);
+  if(mode=='pen'){drag={k:'pen',line:pen.shape=='line',d:{kind:pen.kind,color:pen.color,pts:[[clampX(q.x),clampY(q.y)]]}};if(!drag.line)drag.d.head=false;}
+  else if(mode=='erase'){drag={k:'erase',moved:false};eraseAt(q)}
+  else if(mode=='text'){
+    const k=hitTextAt(q.x,q.y);
+    if(k>=0){if(k!==editing){endEdit();beginEdit(hitTextAt(q.x,q.y))}const d=S.drawings[editing];drag={k:'txt',q,ox:d.pts[0][0],oy:d.pts[0][1],cx:e.clientX,cy:e.clientY,moved:false}}
+    else if(editing!=null){endEdit();return}
+    else{pushUndo();S.drawings.push({kind:'text',color:txtColor,text:'',pts:[[clampX(q.x),clampY(q.y)]]});beginEdit(S.drawings.length-1);editUndo=true;drag={k:'txtnew'}}
+  }
+  else{
+    const hd=e.target.closest('[data-handle]'), tk=e.target.closest('.tok'), bl=e.target.closest('#ball');
+    const base={q,cx:e.clientX,cy:e.clientY,moved:false,shift:e.shiftKey};
+    if(hd&&sel) drag={k:'rot',moved:false};
+    else if(msel&&(bl&&msel.ball||!bl&&tk&&msel.p.has(tk.dataset.t+':'+tk.dataset.i)))
+      drag={...base,k:'group',tap:bl?['ball']:['p',tk.dataset.t+':'+tk.dataset.i]};
+    else if(multi) drag={...base,k:'box',q1:q,tap:bl?['ball']:tk?['p',tk.dataset.t+':'+tk.dataset.i]:null};
+    else if(bl) drag={...base,k:'ball',ox:S.ball.x,oy:S.ball.y};
+    else if(tk){const t=+tk.dataset.t,i=+tk.dataset.i,p=S.teams[t].players[i];drag={...base,k:'p',t,i,ox:p.x,oy:p.y}}
+    else drag={...base,k:'box',q1:q};
+  }
+  svg.setPointerCapture(e.pointerId); e.preventDefault();
+});
+svg.addEventListener('pointermove',e=>{
+  if(!drag) return; const q=pt(e);
+  if(drag.k=='pen'){const p=drag.d.pts,x=clampX(q.x),y=clampY(q.y);
+    if(drag.line){p.length=1;p.push([x,y]);render();return}
+    const l=p[p.length-1];if(Math.hypot(x-l[0],y-l[1])>.2){p.push([x,y]);render()}return}
+  if(drag.k=='erase'){eraseAt(q);return}
+  if(drag.k=='txtnew') return;
+  if(drag.k=='txt'){if(editing==null)return;
+    if(!drag.moved){if(Math.hypot(e.clientX-drag.cx,e.clientY-drag.cy)<5)return;drag.moved=true;editUndoOnce()}
+    S.drawings[editing].pts[0]=[clampX(drag.ox+q.x-drag.q.x),clampY(drag.oy+q.y-drag.q.y)];render();return}
+  if(drag.k=='rot'){const p=S.teams[sel.t].players[sel.i];
+    if(!drag.moved){drag.moved=true;pushUndo()}
+    p.a=Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI; render(); return;}
+  if(drag.k=='box'){drag.q1=q;if(!drag.moved&&Math.hypot(e.clientX-drag.cx,e.clientY-drag.cy)>=5){drag.moved=true;sel=null}if(drag.moved)render();return}
+  if(!drag.moved){ if(Math.hypot(e.clientX-drag.cx,e.clientY-drag.cy)<5) return; drag.moved=true; pushUndo(); if(drag.k=='group') drag.o=mselSnapshot(); }
+  if(drag.k=='group'){mselMove(drag.o,q.x-drag.q.x,q.y-drag.q.y);render();return}
+  const nx=clampX(drag.ox+q.x-drag.q.x), ny=clampY(drag.oy+q.y-drag.q.y);
+  if(drag.k=='ball'){S.ball.x=nx;S.ball.y=ny}
+  else{const p=S.teams[drag.t].players[drag.i];p.x=nx;p.y=ny}
+  render();
+});
+function endDrag(){
+  if(!drag) return;
+  if(drag.k=='pen'){const p=drag.d.pts;let len=0;for(let i=1;i<p.length;i++)len+=Math.hypot(p[i][0]-p[i-1][0],p[i][1]-p[i-1][1]);
+    if(!drag.line&&p.length==1)p.push([p[0][0]+.05,p[0][1]]); // a tap with the freehand pen leaves a dot
+    if(len>=2||!drag.line){pushUndo();S.drawings.push(drag.d)}}
+  else if(drag.k=='box'){ if(drag.moved) mselInBox(drag.q,drag.q1,multi); else if(drag.tap) mselToggle(drag.tap[0],drag.tap[1]); else if(!multi){sel=null;msel=null} }
+  else if(drag.k=='group'&&!drag.moved){ mselToggle(drag.tap[0],drag.tap[1]); }
+  else if(drag.k=='ball'&&!drag.moved&&(msel||drag.shift)){ mselToggle('ball'); }
+  else if(drag.k=='p'&&!drag.moved&&(msel||drag.shift)){ mselToggle('p',drag.t+':'+drag.i); }
+  else if(drag.k=='p'&&!drag.moved){ sel=(sel&&sel.t==drag.t&&sel.i==drag.i)?null:{t:drag.t,i:drag.i}; }
+  else if(drag.k=='p'&&drag.moved&&!msel){ sel={t:drag.t,i:drag.i}; }
+  else if((drag.k=='txtnew'||drag.k=='txt'&&!drag.moved)&&editing!=null){ $('tText').focus(); }
+  drag=null; render(); save();
+}
+svg.addEventListener('pointerup',endDrag); svg.addEventListener('pointercancel',endDrag);
+
+/* ---------- inspector ---------- */
+$('iNum').addEventListener('input',e=>{if(!sel)return;S.teams[sel.t].players[sel.i].num=e.target.value;render();save()});
+$('iName').addEventListener('input',e=>{if(!sel)return;S.teams[sel.t].players[sel.i].name=e.target.value;render();save()});
+function setReg(p,v,ti){if(v){p.reg=v;if(typeof p.x=='number')p.tie=toLocal(ti,p)}else{delete p.reg;delete p.tie}}
+$('iPos').addEventListener('change',e=>{if(!sel)return;pushUndo();setReg(S.teams[sel.t].players[sel.i],e.target.value,sel.t);e.target.blur();render();save()});
+$('iClose').onclick=()=>{sel=null;document.activeElement.blur();render()};
+
+/* ---------- toolbar ---------- */
+$('bNames').onclick=()=>{S.showNames=!S.showNames;render();save()};
+$('bUndo').onclick=doUndo;
+$('bAway').onclick=()=>{const t=S.teams[1];t.visible=!t.visible;if(sel&&sel.t==1)sel=null;render();save()};
+$('bFace').onclick=()=>{pushUndo();S.teams.forEach(t=>t.players.forEach(p=>{p.a=Math.atan2(S.ball.y-p.y,S.ball.x-p.x)*180/Math.PI}));render();save()};
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key=='z'&&!/INPUT/.test(document.activeElement.tagName)){e.preventDefault();doUndo()}});
+
+/* ---------- settings ---------- */
+let tab=0;
+function renderSettings(){
+  const tabs=`<div class="tabs">${S.teams.map((x,i)=>`<button class="btn" data-tab="${i}" aria-pressed="${i==tab}"><span class="dot" style="background:${x.color}"></span>${esc(x.name)}</button>`).join('')}<button class="btn" data-tab="2" aria-pressed="${tab==2}">${t('pitchTab')}</button></div>`;
+  if(tab==2){
+    const st=S.pitch.style;
+    $('setBody').innerHTML=tabs+`
+    <h3 style="margin-top:4px">${t('background')}</h3>
+    <div class="bgopts">${bgsOf().map(k=>`<button class="bgopt" data-bg="${k}" aria-pressed="${k==st}"><span class="sw-${k}"${k=='photo'&&photo?` style="background-image:url(${photo})"`:k=='stripes'&&SP.surface!='grass'?` style="background:${SURF[SP.surface].sw}"`:''}></span>${t(k=='stripes'?bgLabel():'bg_'+k)}</button>`).join('')}</div>
+    ${st=='photo'?`<div class="row" style="margin-top:12px"><button class="btn" id="pPick">${photo?t('changePhoto'):t('choosePhoto')}</button></div><p class="hint">${t('photoHint')}</p>`:''}
+    <div class="row" style="margin-top:14px"><label>${t('lines')}</label>
+      <div class="seg"><button data-lines="1" aria-pressed="${S.pitch.lines!==false}">${t('linesOn')}</button><button data-lines="0" aria-pressed="${S.pitch.lines===false}">${t('linesOff')}</button></div></div>
+    ${SP.zones?`<div class="row"><label>${t('showZones')}</label>
+      <div class="seg"><button data-zones="1" aria-pressed="${S.showZones}">${t('linesOn')}</button><button data-zones="0" aria-pressed="${!S.showZones}">${t('linesOff')}</button></div></div>`:''}
+    <div class="row" style="margin-top:18px"><label for="langS">${t('language')}</label><select id="langS" class="grow">${langOptions()}</select></div>`;
+    return;
+  }
+  const tm=S.teams[tab], forms=formsFor(tm.count,tab), fb=isFB();
+  $('setBody').innerHTML=tabs+`
+  <div class="row"><label for="tName">${t('teamName')}</label><input id="tName" class="grow" value="${esc(tm.name)}" maxlength="16"></div>
+  <div class="row"><label>${t('color')}</label><div class="sw">${COLORS.map(c=>`<button data-color="${c}" style="background:${c}" aria-label="${t('color')} ${c}" aria-pressed="${c==tm.color}"></button>`).join('')}</div></div>
+  ${tab==1?`<div class="row"><label>${t('visibility')}</label><button class="btn" id="tVis" aria-pressed="${tm.visible}">${tm.visible?t('shown'):t('hiddenS')}</button></div>`:''}
+  <div class="row"><label>${t('players')}</label><div class="step"><button class="btn" data-step="-1" aria-label="${t('fewer')}">−</button><output>${tm.count}</output><button class="btn" data-step="1" aria-label="${t('more')}">＋</button></div></div>
+  <div class="row"><label for="tForm">${t('formation')}</label>
+    <select id="tForm" class="grow">${forms.map(f=>`<option value="${f}" ${f==tm.formation?'selected':''}>${esc(formLabel(tab,tm.count,f))}</option>`).join('')}${fb||!forms.length?`<option value="auto" ${forms.includes(tm.formation)?'':'selected'}>${t('auto')}</option>`:''}</select></div>
+  <div class="row"><label></label><button class="btn primary" id="tApply">${t('applyForm')}</button></div>
+  ${SP.rotate?`<div class="row"><label></label><button class="btn" id="tRot">${t('rotate')}</button></div>`:''}
+  <p class="hint">${t(fb?'formHint':'formHintG')}</p>
+  <div class="roster${SP.noPos?' nopos':''}" style="margin-top:14px"><span class="hint" style="margin:0">${t('number')}</span><span class="hint" style="margin:0">${t('name')}</span>${SP.noPos?'':`<span class="hint" style="margin:0">${t('position')}</span>`}
+  ${tm.players.map((p,i)=>`<input class="n" data-num="${i}" value="${esc(p.num)}" inputmode="numeric" maxlength="3" aria-label="${t('number')} ${i+1}"><input data-name="${i}" value="${esc(p.name)}" placeholder="${t('name')}" maxlength="14" aria-label="${t('name')} ${i+1}">${SP.noPos?'':`<select data-reg="${i}" aria-label="${t('position')} ${i+1}">${regOptions(p.reg||'',p.pos)}</select>`}`).join('')}</div>
+  ${SP.noPos?'':`<p class="hint">${t(fb?'rosterHint':'rosterHintG')}</p>`}`;
+}
+$('setBody').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  if(b.dataset.tab!=null){tab=+b.dataset.tab;renderSettings();return}
+  if(b.dataset.bg){S.pitch.style=b.dataset.bg;drawPitch();render();save();renderSettings();if(b.dataset.bg=='photo'&&!photo)$('photoIn').click();return}
+  if(b.id=='pPick'){$('photoIn').click();return}
+  if(b.dataset.lines!=null){S.pitch.lines=b.dataset.lines=='1';drawPitch();save();renderSettings();return}
+  if(b.dataset.zones!=null){S.showZones=b.dataset.zones=='1';render();save();renderSettings();return}
+  if(tab==2) return; const t=S.teams[tab];
+  if(b.dataset.color){t.color=b.dataset.color;renderSettings();render();save();return}
+  if(b.id=='tVis'){t.visible=!t.visible;renderSettings();render();save();return}
+  if(b.id=='tRot'){rotateTeam(tab);return}
+  if(b.dataset.step){const [lo,hi]=SP.cnt[tab],n=Math.max(lo,Math.min(hi,t.count+ +b.dataset.step));if(n==t.count)return;pushUndo();t.count=n;
+    const f=formsFor(n,tab);if(!f.includes(t.formation))t.formation=f[0]||'auto';applyFormation(tab);sel=null;renderSettings();render();save();return}
+  if(b.id=='tApply'){pushUndo();applyFormation(tab);sel=null;render();save();$('dSet').close();return}
+});
+$('setBody').addEventListener('input',e=>{
+  const el=e.target; if(tab==2) return; const t=S.teams[tab];
+  if(el.id=='tName'){t.name=el.value;save();return}
+  if(el.dataset.num!=null){t.players[+el.dataset.num].num=el.value;render();save()}
+  if(el.dataset.name!=null){t.players[+el.dataset.name].name=el.value;render();save()}
+});
+$('setBody').addEventListener('change',e=>{
+  if(e.target.id=='langS'){setLang(e.target.value);return}
+  if(e.target.id=='tForm'){pushUndo();S.teams[tab].formation=e.target.value;applyFormation(tab);sel=null;render();save();toast(t('tReform'))}
+  if(e.target.id=='tName') renderSettings();
+  if(e.target.dataset.reg!=null){pushUndo();setReg(S.teams[tab].players[+e.target.dataset.reg],e.target.value,tab);render();save()}
+});
+$('bSettings').onclick=()=>{renderSettings();$('dSet').showModal()};
+
+/* ---------- photo background ---------- */
+$('photoIn').addEventListener('change',e=>{
+  const f=e.target.files&&e.target.files[0]; e.target.value=''; if(!f) return;
+  const url=URL.createObjectURL(f), img=new Image();
+  img.onload=()=>{
+    const M=1600, k=Math.min(1,M/Math.max(img.naturalWidth,img.naturalHeight));
+    const c=document.createElement('canvas'); c.width=Math.round(img.naturalWidth*k); c.height=Math.round(img.naturalHeight*k);
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(url);
+    photo=c.toDataURL('image/jpeg',.82);
+    try{localStorage.setItem(PHOTO_KEY,photo)}catch(err){toast(t('photoBig'))}
+    S.pitch.style='photo'; save(); drawPitch(); if($('dSet').open) renderSettings();
+  };
+  img.onerror=()=>{URL.revokeObjectURL(url);toast(t('photoErr'))};
+  img.src=url;
+});
+
+/* ---------- scenes ---------- */
+function renderScenes(){
+  const l=S.scenes;
+  $('scList').innerHTML=l.length?l.map((s,i)=>`<li><span class="no">${i+1}</span>
+    <button class="open" data-open="${i}" title="${t('openScene')}">${esc(s.name)}</button>
+    <button class="btn sb" data-up="${i}" ${i?'':'disabled'} aria-label="${t('moveUp')}">↑</button>
+    <button class="btn sb" data-over="${i}">${t('overwrite')}</button>
+    <button class="btn sb" data-del="${i}">${t('del')}</button></li>`).join('')
+    :`<li class="empty" style="border:0;padding:0">${t('empty')}</li>`;
+  $('scName').value='';$('scName').placeholder=t('sceneN',{n:l.length+1});
+}
+$('bScenes').onclick=()=>{renderScenes();$('dScn').showModal()};
+$('scSave').onclick=()=>{const name=$('scName').value.trim()||$('scName').placeholder;S.scenes.push({name,data:snap()});save();renderScenes();render();toast(t('tSaved',{n:name}))};
+$('scList').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.open!=null){pushUndo();const o=JSON.parse(S.scenes[+b.dataset.open].data);fillPos(o);setBoard(o);sel=null;render();save();$('dScn').close()}
+  if(b.dataset.up!=null){const i=+b.dataset.up;[S.scenes[i-1],S.scenes[i]]=[S.scenes[i],S.scenes[i-1]];save();renderScenes()}
+  if(b.dataset.over!=null){const s=S.scenes[+b.dataset.over];s.data=snap();save();toast(t('tOver',{n:s.name}))}
+  if(b.dataset.del!=null){S.scenes.splice(+b.dataset.del,1);save();renderScenes();render()}
+});
+
+/* ---------- file export / import ---------- */
+let downloads=null;
+if(window.claude&&typeof window.claude.use==='function'){window.claude.use('downloads').then(d=>{downloads=d}).catch(()=>{})}
+function stamp(){const d=new Date(),z=n=>String(n).padStart(2,'0');return `${d.getFullYear()}${z(d.getMonth()+1)}${z(d.getDate())}-${z(d.getHours())}${z(d.getMinutes())}`}
+$('bExport').onclick=async()=>{
+  const data=JSON.stringify({app:'tactics-board',version:1,sport:SPID,savedAt:new Date().toISOString(),board:board(),showNames:S.showNames,pitch:{style:S.pitch.style=='photo'?'stripes':S.pitch.style,lines:S.pitch.lines},showZones:S.showZones,scenes:S.scenes},null,1);
+  const fname=`45tactics_${EDITION=='multi'?SPID+'_':''}${stamp()}.json`;
+  if(!downloads){
+    try{const file=new File([data],fname,{type:'application/json'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'45 Tactics'});return}}
+    catch(err){if(err&&err.name=='AbortError')return}
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.download=fname;document.body.appendChild(a);a.click();
+    setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);return}
+  try{await downloads.save({filename:fname,data});toast(t('tExported'))}
+  catch(err){const c=err&&err.code;
+    if(c=='declined') return;
+    if(c=='rate_limited'){toast(t('tWait'));return}
+    toast(t('tNoExport'));}
+};
+$('bImport').onclick=()=>$('fileIn').click();
+$('fileIn').addEventListener('change',async e=>{
+  const f=e.target.files&&e.target.files[0]; e.target.value=''; if(!f) return;
+  try{
+    const o=JSON.parse(await f.text());
+    if(o.app!=='tactics-board'||!o.board||!Array.isArray(o.board.teams)) throw 0;
+    const fs=o.sport||'soccer';
+    if(fs!==SPID){if(EDITION=='multi'&&SPORTS[fs])switchSport(fs);else{toast(t('tOtherSport',{s:SPORT_NAME[fs]?sportName(fs):fs}));return}}
+    pushUndo(); fillPos(o.board); setBoard(o.board);
+    if(typeof o.showNames==='boolean') S.showNames=o.showNames;
+    applyPitchFrom(o);
+    const names=new Set(S.scenes.map(s=>s.name)); let added=0;
+    (o.scenes||[]).forEach(s=>{if(!s||typeof s.data!=='string')return;let n=s.name||t('sceneN',{n:S.scenes.length+1}),k=2,base=n;while(names.has(n))n=`${base} (${k++})`;names.add(n);S.scenes.push({name:n,data:s.data});added++});
+    sel=null; render(); save(); renderScenes();
+    toast(added?t('tImported',{n:added}):t('tLoaded'));
+  }catch(err){toast(t('tBadFile'))}
+});
+
+/* ---------- shared default (default.json next to index.html) ---------- */
+let sharedDefault=null;
+function validData(o){return o&&o.app==='tactics-board'&&o.board&&Array.isArray(o.board.teams)}
+function applyPitchFrom(o){if(o.pitch&&bgsOf().includes(o.pitch.style)&&o.pitch.style!='photo'){S.pitch.style=o.pitch.style;S.pitch.lines=o.pitch.lines!==false;drawPitch()}if(typeof o.showZones==='boolean')S.showZones=o.showZones}
+function applyShared(o,replaceAll){
+  fillPos(o.board); setBoard(o.board); if(typeof o.showNames==='boolean') S.showNames=o.showNames; applyPitchFrom(o);
+  if(replaceAll){S.scenes=(o.scenes||[]).filter(x=>x&&typeof x.data==='string').map((x,i)=>({name:x.name||t('sceneN',{n:i+1}),data:x.data}));return S.scenes.length}
+  // shared scenes replace local scenes of the same name; the viewer's own scenes stay
+  let added=0;
+  (o.scenes||[]).forEach(x=>{if(!x||typeof x.data!=='string')return;const n=x.name||t('sceneN',{n:S.scenes.length+1}),e=S.scenes.find(y=>y.name===n);
+    if(e)e.data=x.data;else S.scenes.push({name:n,data:x.data});added++});
+  return added;
+}
+if(EDITION=='soccer'&&location.protocol.startsWith('http')){
+  fetch('default.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(o=>{
+    if(!validData(o)) return; sharedDefault=o; $('bDefault').hidden=false;
+    if(firstLaunch){applyShared(o,true);S.defaultApplied=o.savedAt;sel=null;render();save()}
+    else if(S.defaultApplied!==o.savedAt){pushUndo();applyShared(o,false);S.defaultApplied=o.savedAt;sel=null;render();save();
+      toast(t('tDefaultUpd'))}
+  }).catch(()=>{});
+}
+$('bDefault').onclick=()=>{if(!sharedDefault)return;pushUndo();const n=applyShared(sharedDefault,false);sel=null;render();save();renderScenes();toast(t('tDefault',{n}))};
+
+/* ---------- playback ---------- */
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+function angLerp(a,b,k){let d=((b-a)%360+540)%360-180;return a+d*k}
+function frameBetween(A,B,k){
+  const o=clone(B); o.drawings=[];
+  o.teams.forEach((t,ti)=>t.players.forEach((p,i)=>{const q=A.teams[ti]&&A.teams[ti].players[i];if(!q)return;
+    p.x=q.x+(p.x-q.x)*k;p.y=q.y+(p.y-q.y)*k;p.a=angLerp(q.a,p.a,k)}));
+  o.ball.x=A.ball.x+(B.ball.x-A.ball.x)*k; o.ball.y=A.ball.y+(B.ball.y-A.ball.y)*k;
+  return o;
+}
+function startPlay(restart){
+  if(S.scenes.length<2) return;
+  if(restart!==true) pushUndo(); sel=null;
+  play={list:S.scenes.map(s=>{const o=JSON.parse(s.data);fillPos(o);return o}),idx:0,phase:'hold',t0:performance.now(),speed:play?play.speed:1,raf:0,done:false};
+  endEdit(); document.body.classList.add('playing'); $('playBar').hidden=false; $('insp').hidden=true; $('penBar').hidden=true;
+  setBoard(play.list[0]); render(); updPlayLabel(); play.raf=requestAnimationFrame(tick);
+}
+function updPlayLabel(){$('pLabel').textContent=`${play.idx+1} / ${play.list.length}`;$('pSpeed').textContent=t('speed',{s:play.speed})}
+function tick(now){
+  if(!play||play.done) return;
+  const HOLD=1300/play.speed, MOVE=1500/play.speed, el=now-play.t0;
+  if(play.phase=='hold'){
+    if(el>=HOLD){ if(play.idx>=play.list.length-1){play.done=true;$('pRestart').textContent=t('again');return}
+      play.phase='move'; play.t0=now; }
+  }else{
+    const k=Math.min(1,el/MOVE), A=play.list[play.idx], B=play.list[play.idx+1];
+    setBoard(frameBetween(A,B,ease(k))); render();
+    if(k>=1){play.idx++; setBoard(B); render(); updPlayLabel(); play.phase='hold'; play.t0=now;}
+  }
+  play.raf=requestAnimationFrame(tick);
+}
+function stopPlay(){if(!play)return;cancelAnimationFrame(play.raf);play=null;document.body.classList.remove('playing');$('playBar').hidden=true;$('pRestart').textContent=t('restart');$('penBar').hidden=mode!='pen';render();save()}
+$('bPlay').onclick=()=>startPlay();
+$('pStop').onclick=stopPlay;
+$('pRestart').onclick=()=>{const sp=play?play.speed:1;cancelAnimationFrame(play.raf);play={speed:sp};$('pRestart').textContent=t('restart');startPlay(true)};
+$('pSpeed').onclick=()=>{const s=[.5,1,2],i=s.indexOf(play.speed);play.speed=s[(i+1)%3];updPlayLabel()};
+
+/* ---------- menu (everything except the always-used tools) ---------- */
+const menu=$('menu'), mb=$('bMenu');
+function setMenu(v){menu.hidden=!v;mb.setAttribute('aria-expanded',v);if(v){menu.style.top=(mb.getBoundingClientRect().bottom+6)+'px'}}
+mb.onclick=()=>setMenu(menu.hidden);
+menu.addEventListener('click',e=>{if(e.target.closest('.mi'))setMenu(false)});
+document.addEventListener('pointerdown',e=>{if(!menu.hidden&&!menu.contains(e.target)&&!mb.contains(e.target))setMenu(false)},true);
+document.addEventListener('keydown',e=>{if(e.key=='Escape'&&!menu.hidden)setMenu(false)});
+
+/* ---------- fullscreen ---------- */
+const de=document.documentElement;
+const fsOK=document.fullscreenEnabled||document.webkitFullscreenEnabled;
+const standalone=window.navigator.standalone||matchMedia('(display-mode: standalone)').matches;
+const isFull=()=>!!(document.fullscreenElement||document.webkitFullscreenElement);
+function updFullLabel(){$('bFull').textContent=isFull()?t('exitFull'):t('full')}
+if(fsOK&&!standalone){$('bFull').hidden=false;
+  $('bFull').onclick=()=>{if(isFull()){(document.exitFullscreen||document.webkitExitFullscreen).call(document)}else{(de.requestFullscreen||de.webkitRequestFullscreen).call(de)}};
+  ['fullscreenchange','webkitfullscreenchange'].forEach(ev=>document.addEventListener(ev,updFullLabel));}
+
+/* ---------- about & links ---------- */
+function setLinks(){
+  [['aGuide',GUIDE_URL,'guide'],['aSupport',SUPPORT_URL,'support']].forEach(([id,url,k])=>{const el=$(id);
+    if(url){el.href=url;el.removeAttribute('aria-disabled');el.style.opacity='';el.textContent=t(k)}
+    else{el.removeAttribute('href');el.setAttribute('aria-disabled','true');el.style.opacity='.45';el.textContent=t(k)+t('soon')}});
+}
+$('bAbout').onclick=$('bAbout2').onclick=()=>$('dAbout').showModal();
+$('langA').addEventListener('change',e=>setLang(e.target.value));
+
+document.querySelectorAll('dialog').forEach(d=>{
+  d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-close]'))d.close()});
+});
+
+['gesturestart','gesturechange'].forEach(ev=>document.addEventListener(ev,e=>e.preventDefault(),{passive:false}));
+document.addEventListener('touchmove',e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});
+const bgLabel=()=>SP.surface=='grass'?'bg_stripes':['wood','volley'].includes(SP.surface)?'bg_court':'bg_field';
+/* ---------- sport switching (45 Tactics Multi) ---------- */
+function updSportUI(){
+  const m=EDITION=='multi';
+  $('bSport').hidden=!m; $('bSport2').hidden=!m;
+  if(m){$('sEmoji').textContent=SP.emoji;$('sName').textContent=sportName(SPID,true);$('bSport').setAttribute('aria-label',t('chooseSport')+'：'+sportName(SPID));$('bAbout').hidden=true}
+  $('bZones').hidden=!SP.zones; $('bRotate').hidden=!SP.rotate;
+}
+function renderSports(){
+  $('sportList').innerHTML=SPORT_ORDER.map(id=>`<button class="btn spb" data-sport="${id}" aria-pressed="${id==SPID}"><span class="se">${SPORTS[id].emoji}</span><span>${esc(sportName(id))}</span></button>`).join('');
+}
+function switchSport(id){
+  if(!SPORTS[id]||id==SPID) return;
+  if(play) stopPlay(); endEdit(); setMenu(false);
+  clearTimeout(saveT); try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}
+  setSport(id); try{localStorage.setItem('tactics-multi-sport',id)}catch(e){}
+  initS(loadSaved());
+  undo=[]; $('bUndo').disabled=true; sel=null; msel=null; if(multi){multi=false;$('bMulti').setAttribute('aria-pressed',false)}
+  applyStatic(); drawPitch(); $('board').removeAttribute('viewBox'); layout(); render(); save();
+  if($('dSet').open){tab=0;renderSettings()}
+}
+$('bSport').onclick=$('bSport2').onclick=()=>{renderSports();$('dSport').showModal()};
+$('sportList').addEventListener('click',e=>{const b=e.target.closest('[data-sport]');if(!b)return;$('dSport').close();if(b.dataset.sport!=SPID){switchSport(b.dataset.sport);toast(t('tSport',{s:sportName(SPID)}))}});
+$('bRotate').onclick=()=>rotateTeam(0);
+
+/* ---------- print & image ---------- */
+const BOARD_CSS='text{font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",system-ui,sans-serif}.num{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;text-anchor:middle}.nm{font-weight:700;text-anchor:middle;fill:#fff;paint-order:stroke;stroke:#123A24;stroke-width:.5px;stroke-linejoin:round}.note{font-weight:700;text-anchor:middle;paint-order:stroke;stroke:rgba(0,0,0,.72);stroke-width:.6px;stroke-linejoin:round}.zl{font-weight:700;fill:rgba(255,255,255,.6)}';
+/* one board as a stand-alone SVG string (always landscape); o = board object or null for the current board */
+function boardSVG(o,bw){
+  const keep=snap(),kv=vertical,ks=sel,km=msel,kst=S.pitch.style;
+  try{
+    if(o) setBoard(clone(o)); vertical=false; sel=null; msel=null;
+    if(bw){S.pitch.style='plain';S.teams[0].color='#1E1E1E';if(S.teams[1])S.teams[1].color='#FFFFFF';S.drawings.forEach(d=>d.color='#1E1E1E')}
+    drawPitch(); render();
+    const inner=['pitch','zonesL','drawL','tokens','ballL','textL'].map(id=>$(id).innerHTML).join('');
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 ${W+8} ${H+8}"><style>${BOARD_CSS}${bw?'.nm{fill:#111;stroke:#fff}.note{stroke:#fff}':''}</style>${inner}</svg>`;
+  }finally{
+    setBoard(JSON.parse(keep)); S.pitch.style=kst; vertical=kv; sel=ks; msel=km; drawPitch(); render();
+  }
+}
+const posText=p=>p.reg?posName(p.reg):p.pos?(isFB()?p.pos:posName(p.pos)):'';
+function buildPrint(){
+  const title=$('pTitle').value.trim(), date=$('pDate').value, useSc=$('pContent').dataset.v=='scenes'&&S.scenes.length, per=useSc?+$('pPer').dataset.v:1, bw=$('pBW').checked;
+  const items=useSc?S.scenes.map(s=>{const o=JSON.parse(s.data);fillPos(o);return {name:s.name,o}}):[{name:'',o:null}];
+  const teams=S.teams.filter(x=>x.visible);
+  const head=`<div class="ph"><div class="pt">${esc(title||(EDITION=='multi'?sportName(SPID):t('title')))}</div><div class="pm">${EDITION=='multi'&&title?esc(sportName(SPID))+'　':''}${esc(date)}　${teams.map(x=>`<span class="pd" style="background:${bw?(x===S.teams[0]?'#1E1E1E':'#fff'):x.color}"></span>${esc(x.name)}`).join('　')}</div></div>`;
+  const pages=[];
+  for(let i=0;i<items.length;i+=per){const grp=items.slice(i,i+per);
+    pages.push(`<section class="pp per${per}">${head}<div class="pg">${grp.map((it,k)=>`<figure>${boardSVG(it.o,bw)}${it.name?`<figcaption>${i+k+1}. ${esc(it.name)}</figcaption>`:''}</figure>`).join('')}</div></section>`)}
+  let extra='';
+  if($('pRoster').checked) extra+=`<div class="pr">${teams.filter(x=>x.players.length).map(x=>`<table><caption>${esc(x.name)}</caption><tr><th>${t('number')}</th><th>${t('name')}</th>${SP.noPos?'':`<th>${t('position')}</th>`}</tr>${x.players.map(p=>`<tr><td>${esc(p.num)}</td><td>${esc(p.name)}</td>${SP.noPos?'':`<td>${esc(posText(p))}</td>`}</tr>`).join('')}</table>`).join('')}</div>`;
+  if($('pMemo').checked) extra+=`<div class="pmemo">${t('memo')}</div>`;
+  if(extra) pages[pages.length-1]=pages[pages.length-1].replace(/<\/section>$/,extra+'</section>');
+  $('printArea').innerHTML=pages.join('');
+}
+function segPick(id,v){const g=$(id);g.dataset.v=v;g.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v==v))}
+['pContent','pPer'].forEach(id=>$(id).addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;segPick(id,b.dataset.v);$('pPerRow').hidden=$('pContent').dataset.v!='scenes'}));
+$('bPrint').onclick=()=>{
+  if(!$('pDate').value){const d=new Date(),z=n=>String(n).padStart(2,'0');$('pDate').value=`${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`}
+  const sb=$('pContent').querySelector('[data-v="scenes"]');sb.disabled=!S.scenes.length;if(!S.scenes.length)segPick('pContent','cur');
+  $('pPerRow').hidden=$('pContent').dataset.v!='scenes';$('dPrint').showModal();
+};
+$('pDo').onclick=()=>{buildPrint();$('dPrint').close();setTimeout(()=>window.print(),80)};
+window.addEventListener('afterprint',()=>{$('printArea').innerHTML=''});
+$('pImg').onclick=async()=>{
+  try{
+    const svgS=boardSVG(null,$('pBW').checked), w=1600, h=Math.round(w*(H+8)/(W+8));
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgS.replace('<svg ',`<svg width="${w}" height="${h}" `))});
+    const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(img,0,0,w,h);
+    const blob=await new Promise(r=>c.toBlob(r,'image/png'));
+    const fname=`45tactics_${EDITION=='multi'?SPID+'_':''}${stamp()}.png`;
+    try{const file=new File([blob],fname,{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'45 Tactics'});return}}
+    catch(err){if(err&&err.name=='AbortError')return}
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fname;document.body.appendChild(a);a.click();
+    setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);toast(t('tImg'));
+  }catch(err){toast(t('tNoExport'))}
+};
+
+applyStatic(); drawPitch(); layout(); render();
+</script>
+</body>
+</html>

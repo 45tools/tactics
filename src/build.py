@@ -15,7 +15,7 @@ soccer = src.replace("const EDITION='multi';", "const EDITION='soccer';", 1)
 (ROOT / 'index.html').write_text(soccer)
 
 # ---- 45 Tactics Multi ----
-MULTI_GUIDE = 'https://note.com/45tools'   # replace with the Multi article URL once it is published
+MULTI_GUIDE = 'https://note.com/45tools/n/n9b482193fd57'
 m = src
 m = re.sub(r"const GUIDE_URL='[^']*';", f"const GUIDE_URL='{MULTI_GUIDE}';", m, count=1)
 m = m.replace('<meta name="apple-mobile-web-app-title" content="45 Tactics">', '<meta name="apple-mobile-web-app-title" content="45 Multi">', 1)

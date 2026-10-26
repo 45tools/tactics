@@ -212,6 +212,7 @@ a.btn{color:var(--ink)}a.btn.primary{color:var(--accent-ink)}
   <button class="mi" id="bMulti" role="menuitemcheckbox" aria-pressed="false" data-i18n="multi"></button>
   <button class="mi" id="bFace" role="menuitem" data-i18n="faceBall"></button>
   <button class="mi" id="bRotate" role="menuitem" hidden data-i18n="rotate"></button>
+  <button class="mi" id="bReset" role="menuitem" data-i18n="resetStart"></button>
   <button class="mi" id="bClearDraw" role="menuitem" data-i18n="clearDraw"></button>
   <hr>
   <button class="mi" id="bNames" role="menuitemcheckbox" aria-pressed="true" data-i18n="showNames"></button>
@@ -399,12 +400,16 @@ const POS={
 };
 const FN=(l,s)=>({l,s});
 /* ---- basketball (28 x 15 m, attack →, basket at x=.944) ---- */
+const bkc=(dx,dy,pos)=>[(14+dx)/28,(7.5+dy)/15,pos], bkr=(deg,pos)=>bkc(3*Math.cos(deg*Math.PI/180),3*Math.sin(deg*Math.PI/180),pos);
+const BK_TIP=PL('ジャンプボール（試合開始）','Jump ball (tip-off)','跳球（开场）','跳球（開場）');
 const BK_OFF={5:{
+ tip:FN(BK_TIP,[bkr(135,'PG'),bkr(225,'SG'),bkr(45,'SF'),bkr(315,'PF'),bkc(-.6,0,'C')]),
  '5out':FN(PL('5アウト','5-out','五外','五外'),[[.675,.5,'PG'],[.768,.827,'SG'],[.768,.173,'SF'],[.93,.94,'PF'],[.93,.06,'C']]),
  '4out':FN(PL('4アウト1イン','4-out 1-in','四外一内','四外一內'),[[.675,.5,'PG'],[.768,.827,'SG'],[.768,.173,'SF'],[.93,.94,'PF'],[.885,.36,'C']]),
  horns:FN(PL('ホーンズ','Horns','牛角','牛角'),[[.675,.5,'PG'],[.93,.94,'SG'],[.93,.06,'SF'],[.79,.337,'PF'],[.79,.663,'C']]),
  '131':FN(PL('1-3-1','1-3-1','1-3-1','1-3-1'),[[.68,.5,'PG'],[.8,.88,'SG'],[.8,.12,'SF'],[.94,.3,'PF'],[.79,.5,'C']])}};
 const BK_DEF={5:{
+ tip:FN(BK_TIP,[bkr(180,'PG'),bkr(90,'SG'),bkr(270,'SF'),bkr(0,'PF'),bkc(.6,0,'C')]),
  man:FN(PL('マンツーマン','Man-to-man','人盯人','人盯人'),[[.756,.5,'PG'],[.82,.73,'SG'],[.82,.27,'SF'],[.934,.8,'PF'],[.934,.2,'C']]),
  z23:FN(PL('2-3ゾーン','2-3 zone','2-3联防','2-3區域'),[[.78,.35,'PG'],[.78,.65,'SG'],[.92,.2,'SF'],[.92,.8,'PF'],[.93,.5,'C']]),
  z32:FN(PL('3-2ゾーン','3-2 zone','3-2联防','3-2區域'),[[.73,.5,'PG'],[.79,.2,'SG'],[.79,.8,'SF'],[.9,.37,'PF'],[.9,.63,'C']]),
@@ -413,6 +418,7 @@ const BK_DEF={5:{
 const hbArc=(r,deg)=>[(40-r*Math.cos(deg*Math.PI/180))/40,(10+r*Math.sin(deg*Math.PI/180))/20];
 const hbD=(r,deg)=>[...hbArc(r,deg),'D'];
 const HB_OFF={7:{
+ throwoff:FN(PL('スローオフ（試合開始）','Throw-off (start)','开球（开场）','開球（開場）'),[[.0125,.5,'GK'],[.45,.06,'LW'],[.38,.27,'LB'],[.49,.5,'CB'],[.38,.73,'RB'],[.45,.94,'RW'],[.44,.4,'PV']]),
  '33':FN(PL('3-3','3-3','3-3','3-3'),[[.0125,.5,'GK'],[.95,.06,'LW'],[.75,.26,'LB'],[.72,.5,'CB'],[.75,.74,'RB'],[.95,.94,'RW'],[.84,.5,'PV']]),
  '2pv':FN(PL('2ポスト','Two pivots','双底线','雙底線'),[[.0125,.5,'GK'],[.95,.06,'LW'],[.74,.3,'LB'],[.74,.7,'RB'],[.95,.94,'RW'],[.84,.38,'PV'],[.84,.62,'PV']])}};
 const HB_DEF={7:{
@@ -423,8 +429,10 @@ const HB_DEF={7:{
 const V6=[[.46,.7,'S'],[.875,.7,'OH'],[.875,.5,'MB'],[.875,.3,'OP'],[.46,.3,'OH'],[.46,.5,'MB']]; // slot k = rotation position k+1
 const VB6={6:{base:FN(PL('ローテーション1（Sが後衛ライト）','Rotation 1 (setter in 1)','轮转1（二传在1号位）','輪轉1（舉球員在1號位）'),V6)},
  7:{base:FN(PL('ローテーション1＋リベロ','Rotation 1 + libero','轮转1＋自由人','輪轉1＋自由球員'),[...V6,[.12,.9,'L']])}};
+const VB6S={6:{serve:FN(PL('サーブ（ローテーション1・試合開始）','Serve (rotation 1, start)','发球（轮转1・开场）','發球（輪轉1・開場）'),[[.13,.7,'S'],...V6.slice(1)]),...VB6[6]},7:VB6[7]};
 const VB9={9:{base:FN(PL('基本（前衛・中衛・後衛）','Basic (3 rows)','基本（三排）','基本（三排）'),
  [[.885,.33,'FL'],[.885,.5,'FC'],[.885,.67,'FR'],[.615,.33,'ML'],[.615,.5,'MC'],[.615,.67,'MR'],[.31,.33,'BL'],[.31,.5,'BC'],[.31,.67,'BR']])}};
+const VB9S={9:{serve:FN(PL('サーブ（試合開始）','Serve (start)','发球（开场）','發球（開場）'),[...VB9[9].base.s.slice(0,8),[.1,.67,'BR']]),...VB9[9]}};
 /* ---- dodgeball (court 20 x 10 m + 3 m outer zone: 26 x 16 m) ---- */
 function dgInner(n){const r=[],rows=Math.max(1,Math.ceil(n/4));let k=0;
   for(let i=0;i<rows;i++){const m=Math.ceil((n-k)/(rows-i));for(let j=0;j<m;j++)r.push([.36+(rows==1?.27:i*(.44/(rows-1))),.26+(j+.5)*(.48/m),'IN']);k+=m}return r}
@@ -443,9 +451,11 @@ function dgReclass(){
 }
 const dgGen=(ti,n)=>n<2?dgInner(n):[...dgInner(n-1),DG_OUT[0]];
 /* ---- tag rugby (field 40 x 30 m + 5 m in-goal: 50 x 30 m) ---- */
+const TR0={5:{start:FN(PL('キックオフ（試合開始）','Kick-off (start)','开球（开场）','開球（開場）'),[[.8,.15,'X'],[.8,.325,'X'],[.98,.5,'X'],[.8,.675,'X'],[.8,.85,'X']])}};
 const TR={5:{flat:FN(PL('フラット（横一列）','Flat line','平行站位','平行站位'),[[.8,.15,'X'],[.8,.325,'X'],[.8,.5,'X'],[.8,.675,'X'],[.8,.85,'X']]),
  wedge:FN(PL('くさび形','Wedge','楔形','楔形'),[[.86,.5,'X'],[.77,.34,'X'],[.77,.66,'X'],[.68,.18,'X'],[.68,.82,'X']]),
  deep:FN(PL('2列（深め）','Two lines (deep)','两排（纵深）','兩排（縱深）'),[[.84,.3,'X'],[.84,.7,'X'],[.7,.15,'X'],[.7,.5,'X'],[.7,.85,'X']])}};
+TR0[5]={...TR0[5],...TR[5]};
 const trGen=(ti,n)=>Array.from({length:n},(_,j)=>[.8,(j+.5)/n,'X']);
 /* ---- baseball family: home at the bottom, field opens upward ---- */
 function bbSport(o){
@@ -478,23 +488,23 @@ const SPORTS={
  soccer:{len:105,wid:68,kind:'fb',emoji:'⚽',zones:true},
  soccer8:{len:68,wid:50,kind:'fb',emoji:'⚽',def:[[8,'3-3-1'],[8,'2-3-2']],draw:drawSoccer8},
  futsal:{len:40,wid:20,kind:'fb',emoji:'🥅',surface:'wood',cnt:[[1,7],[1,7]],def:[[5,'1-2-1'],[5,'2-2']],draw:drawFutsal},
- basketball:{len:28,wid:15,kind:'abs',emoji:'🏀',ball:'basket',surface:'wood',names:['offense','defense'],cnt:[[1,5],[1,5]],def:[[5,'5out'],[5,'man']],
-   forms:[BK_OFF,BK_DEF],face:[[.944,.5],null],ballXY:[.64,.5],regs:['PG','SG','SF','PF','C'],shape:BK_SHAPE,draw:()=>drawBasket(true)},
- minibasket:{len:28,wid:15,kind:'abs',emoji:'🏀',ball:'basket',surface:'wood',names:['offense','defense'],cnt:[[1,5],[1,5]],def:[[5,'5out'],[5,'man']],
-   forms:[BK_OFF,BK_DEF],face:[[.944,.5],null],ballXY:[.64,.5],regs:['PG','SG','SF','PF','C'],shape:BK_SHAPE,draw:()=>drawBasket(false)},
- volley6:{len:24,wid:15,kind:'own',emoji:'🏐',ball:'volley',surface:'volley',cnt:[[1,7],[1,7]],def:[[6,'base'],[6,'base']],forms:[VB6,VB6],rotate:true,
-   ballXY:[.15,.7],regs:['S','OH','MB','OP','L'],shape:{S:'FW',OH:'MF',OP:'MF',MB:'DF',L:'GK'},draw:()=>drawVolley(6)},
- volley9:{len:26,wid:15.5,kind:'own',emoji:'🏐',ball:'volley',surface:'volley',cnt:[[1,9],[1,9]],def:[[9,'base'],[9,'base']],forms:[VB9,VB9],
-   ballXY:[.08,.6],regs:['FL','FC','FR','ML','MC','MR','BL','BC','BR'],shape:{FL:'FW',FC:'FW',FR:'FW',ML:'MF',MC:'MF',MR:'MF',BL:'DF',BC:'DF',BR:'DF'},draw:()=>drawVolley(9)},
- handball:{len:40,wid:20,kind:'abs',emoji:'🤾',ball:'hand',surface:'wood',names:['offense','defense'],cnt:[[1,7],[1,7]],def:[[7,'33'],[7,'60']],
-   forms:[HB_OFF,HB_DEF],face:[[1,.5],null],ballXY:[.69,.5],regs:['GK','LW','LB','CB','RB','RW','PV','D'],shape:{GK:'GK',LW:'FW',RW:'FW',PV:'FW',LB:'MF',CB:'MF',RB:'MF',D:'DF'},draw:drawHandball},
+ basketball:{len:28,wid:15,kind:'abs',emoji:'🏀',ball:'basket',surface:'wood',names:['offense','defense'],cnt:[[1,5],[1,5]],def:[[5,'tip'],[5,'tip']],
+   forms:[BK_OFF,BK_DEF],face:[[.944,.5],null],ballXY:[.5,.5],regs:['PG','SG','SF','PF','C'],shape:BK_SHAPE,draw:()=>drawBasket(true)},
+ minibasket:{len:28,wid:15,kind:'abs',emoji:'🏀',ball:'basket',surface:'wood',names:['offense','defense'],cnt:[[1,5],[1,5]],def:[[5,'tip'],[5,'tip']],
+   forms:[BK_OFF,BK_DEF],face:[[.944,.5],null],ballXY:[.5,.5],regs:['PG','SG','SF','PF','C'],shape:BK_SHAPE,draw:()=>drawBasket(false)},
+ volley6:{len:24,wid:15,kind:'own',emoji:'🏐',ball:'volley',surface:'volley',cnt:[[1,7],[1,7]],def:[[6,'serve'],[6,'base']],forms:[VB6S,VB6],rotate:true,
+   ballXY:[.075,.63],regs:['S','OH','MB','OP','L'],shape:{S:'FW',OH:'MF',OP:'MF',MB:'DF',L:'GK'},draw:()=>drawVolley(6)},
+ volley9:{len:26,wid:15.5,kind:'own',emoji:'🏐',ball:'volley',surface:'volley',cnt:[[1,9],[1,9]],def:[[9,'serve'],[9,'base']],forms:[VB9S,VB9],
+   ballXY:[.06,.6],regs:['FL','FC','FR','ML','MC','MR','BL','BC','BR'],shape:{FL:'FW',FC:'FW',FR:'FW',ML:'MF',MC:'MF',MR:'MF',BL:'DF',BC:'DF',BR:'DF'},draw:()=>drawVolley(9)},
+ handball:{len:40,wid:20,kind:'abs',emoji:'🤾',ball:'hand',surface:'wood',names:['offense','defense'],cnt:[[1,7],[1,7]],def:[[7,'throwoff'],[7,'60']],
+   forms:[HB_OFF,HB_DEF],face:[[1,.5],null],ballXY:[.52,.5],regs:['GK','LW','LB','CB','RB','RW','PV','D'],shape:{GK:'GK',LW:'FW',RW:'FW',PV:'FW',LB:'MF',CB:'MF',RB:'MF',D:'DF'},draw:drawHandball},
  dodgeball:{len:26,wid:16,kind:'own',emoji:'🔴',ball:'dodge',surface:'wood',cnt:[[1,15],[1,15]],def:[[12,'o1'],[12,'o1']],forms:[DG,DG],gen:dgGen,
    ballXY:[.5,.5],regs:['IN','OUT'],shape:{IN:'MF',OUT:'FW'},draw:drawDodge},
  baseball:bbSport({b:27.43,m:18.44,lf:76,cf:90}), /* outfield drawn shorter than real so the infield stays readable */
  youthbaseball:bbSport({b:23,m:16,lf:62,cf:72}),
  softball:bbSport({b:18.29,m:13.11,lf:50,cf:56,ball:'softball'}),
- tagrugby:{len:50,wid:30,kind:'own',emoji:'🏉',ball:'rugby',surface:'grass',cnt:[[1,8],[1,8]],def:[[5,'flat'],[5,'flat']],forms:[TR,TR],gen:trGen,noPos:true,
-   ballXY:[.4,.5],regs:[],shape:{},draw:drawTagRugby},
+ tagrugby:{len:50,wid:30,kind:'own',emoji:'🏉',ball:'rugby',surface:'grass',cnt:[[1,8],[1,8]],def:[[5,'start'],[5,'flat']],forms:[TR0,TR],gen:trGen,noPos:true,
+   ballXY:[.52,.5],regs:[],shape:{},draw:drawTagRugby},
  hockey:{len:91.4,wid:55,kind:'fb',emoji:'🏑',ball:'hockey',surface:'turf',draw:drawHockey}
 };
 SPORTS.baseball.emoji=SPORTS.youthbaseball.emoji='⚾';SPORTS.softball.emoji='🥎';
@@ -732,25 +742,25 @@ rotate:'ローテーション（時計回りに1つ）',offense:'オフェンス
 formHintG:'並び方を選ぶと、その形に並び直します。プリセットにない人数は自動で並びます。',rosterHintG:'ポジションを入れると、並び方を変えても そのポジションの場所に並びます。入れ終わったら「この配置に並べ直す」で並び直せます。',
 tOtherSport:'このファイルは「{s}」用です。45 Tactics Multiで開いてください',tSport:'{s}に切り替えました',
 print:'印刷・画像で保存',pTitle:'タイトル',pTitlePh:'例：11/3 練習試合',pDate:'日付',pContent:'内容',pCurrent:'今の盤面',pScenes:'保存した場面',pPer:'1ページの図',pRoster:'名簿を入れる',pMemo:'メモ欄を入れる',pBW:'白黒向けにする',pDo:'印刷・PDF',pImg:'画像で保存',
-pHint:'印刷画面で「PDFとして保存」を選ぶとPDFになります。iPhone・iPadで印刷できないときは「画像で保存」をお使いください。',memo:'メモ',tImg:'画像を書き出しました',noScenes:'保存した場面がありません',dgCount:'{t}：内野{a}人・外野{b}人'});
+pHint:'印刷画面で「PDFとして保存」を選ぶとPDFになります。iPhone・iPadで印刷できないときは「画像で保存」をお使いください。',memo:'メモ',tImg:'画像を書き出しました',noScenes:'保存した場面がありません',dgCount:'{t}：内野{a}人・外野{b}人',resetStart:'試合開始の配置に戻す',tResetStart:'試合開始の配置に戻しました（元に戻す で復元できます）'});
 Object.assign(I18N.en,{sport:'Sport',chooseSport:'Choose a sport',titleM:'Sports tactics board',aboutTextM:'A free, ad-free tactics board for many sports. Everything you enter is saved only on this device and is never visible to anyone else.',
 rotate:'Rotate (one position clockwise)',offense:'Offense',defense:'Defense',bbDef:'Fielding',bbOff:'Batting',bg_court:'Court (default)',bg_field:'Field (default)',
 formHintG:'Choose a formation to line the players up. Other team sizes are arranged automatically.',rosterHintG:'Set a position and the player goes to that spot when you change formation. Tap “Reset to this formation” when you are done.',
 tOtherSport:'This file is for {s}. Please open it in 45 Tactics Multi',tSport:'Switched to {s}',
 print:'Print / save image',pTitle:'Title',pTitlePh:'e.g. Practice match, 3 Nov',pDate:'Date',pContent:'Content',pCurrent:'Current board',pScenes:'Saved scenes',pPer:'Boards per page',pRoster:'Include roster',pMemo:'Include notes box',pBW:'Black & white',pDo:'Print / PDF',pImg:'Save as image',
-pHint:'Choose “Save as PDF” in the print dialog to make a PDF. If printing does not work on iPhone/iPad, use “Save as image”.',memo:'Notes',tImg:'Image exported',noScenes:'No saved scenes',dgCount:'{t}: {a} in / {b} out'});
+pHint:'Choose “Save as PDF” in the print dialog to make a PDF. If printing does not work on iPhone/iPad, use “Save as image”.',memo:'Notes',tImg:'Image exported',noScenes:'No saved scenes',dgCount:'{t}: {a} in / {b} out',resetStart:'Reset to start positions',tResetStart:'Reset to start positions (Undo to restore)'});
 Object.assign(I18N['zh-Hans'],{sport:'项目',chooseSport:'选择运动项目',titleM:'运动战术板',aboutTextM:'免费、无广告、支持多种运动的战术板。输入的内容只保存在本设备中，其他人看不到。',
 rotate:'轮转（顺时针移动一个位置）',offense:'进攻',defense:'防守',bbDef:'守备',bbOff:'进攻',bg_court:'球场（默认）',bg_field:'场地（默认）',
 formHintG:'选择阵型后按该形状重新排列。预设以外的人数会自动排列。',rosterHintG:'设置位置后，更换阵型时球员会站到该位置。设置完成后点击“按此阵型重新排列”。',
 tOtherSport:'此文件用于「{s}」，请在 45 Tactics Multi 中打开',tSport:'已切换为{s}',
 print:'打印・保存图片',pTitle:'标题',pTitlePh:'例：11/3 练习赛',pDate:'日期',pContent:'内容',pCurrent:'当前布阵',pScenes:'已保存的场景',pPer:'每页图数',pRoster:'包含名单',pMemo:'包含备注栏',pBW:'黑白打印',pDo:'打印・PDF',pImg:'保存为图片',
-pHint:'在打印画面选择“存储为PDF”即可生成PDF。iPhone/iPad 无法打印时，请使用“保存为图片”。',memo:'备注',tImg:'已导出图片',noScenes:'没有已保存的场景',dgCount:'{t}：内场{a}人・外场{b}人'});
+pHint:'在打印画面选择“存储为PDF”即可生成PDF。iPhone/iPad 无法打印时，请使用“保存为图片”。',memo:'备注',tImg:'已导出图片',noScenes:'没有已保存的场景',dgCount:'{t}：内场{a}人・外场{b}人',resetStart:'恢复开场站位',tResetStart:'已恢复开场站位（可撤销）'});
 Object.assign(I18N['zh-Hant'],{sport:'項目',chooseSport:'選擇運動項目',titleM:'運動戰術板',aboutTextM:'免費、無廣告、支援多種運動的戰術板。輸入的內容只會儲存在這台裝置中，其他人看不到。',
 rotate:'輪轉（順時針移動一個位置）',offense:'進攻',defense:'防守',bbDef:'守備',bbOff:'進攻',bg_court:'球場（預設）',bg_field:'場地（預設）',
 formHintG:'選擇陣型後依該形狀重新排列。預設以外的人數會自動排列。',rosterHintG:'設定位置後，變更陣型時球員會站到該位置。設定完成後點「依此陣型重新排列」。',
 tOtherSport:'此檔案用於「{s}」，請在 45 Tactics Multi 中開啟',tSport:'已切換為{s}',
 print:'列印・儲存圖片',pTitle:'標題',pTitlePh:'例：11/3 練習賽',pDate:'日期',pContent:'內容',pCurrent:'目前布陣',pScenes:'已儲存的場景',pPer:'每頁圖數',pRoster:'包含名單',pMemo:'包含備註欄',pBW:'黑白列印',pDo:'列印・PDF',pImg:'儲存為圖片',
-pHint:'在列印畫面選擇「儲存為PDF」即可產生PDF。iPhone/iPad 無法列印時，請使用「儲存為圖片」。',memo:'備註',tImg:'已匯出圖片',noScenes:'沒有已儲存的場景',dgCount:'{t}：內場{a}人・外場{b}人'});
+pHint:'在列印畫面選擇「儲存為PDF」即可產生PDF。iPhone/iPad 無法列印時，請使用「儲存為圖片」。',memo:'備註',tImg:'已匯出圖片',noScenes:'沒有已儲存的場景',dgCount:'{t}：內場{a}人・外場{b}人',resetStart:'恢復開場站位',tResetStart:'已恢復開場站位（可復原）'});
 const LANG_NAMES={ja:'日本語',en:'English','zh-Hans':'简体中文','zh-Hant':'繁體中文'};
 function detectLang(){
   const l=(navigator.language||'en').toLowerCase();
@@ -1502,6 +1512,9 @@ function switchSport(id){
 $('bSport').onclick=$('bSport2').onclick=()=>{renderSports();$('dSport').showModal()};
 $('sportList').addEventListener('click',e=>{const b=e.target.closest('[data-sport]');if(!b)return;$('dSport').close();if(b.dataset.sport!=SPID){switchSport(b.dataset.sport);toast(t('tSport',{s:sportName(SPID)}))}});
 $('bRotate').onclick=()=>rotateTeam(0);
+$('bReset').onclick=()=>{pushUndo();
+  S.teams.forEach((tm,ti)=>{const f=SP.def[ti];if(tm.count==f[0])tm.formation=f[1];else{const fs=formsFor(tm.count,ti);tm.formation=fs[0]||'auto'}tm.players.forEach(p=>{delete p.role;delete p.home});applyFormation(ti)});
+  S.ball={x:SP.ballXY[0]*W,y:SP.ballXY[1]*H};sel=null;msel=null;render();save();toast(t('tResetStart'))};
 
 /* ---------- print & image ---------- */
 const BOARD_CSS='text{font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",system-ui,sans-serif}.num{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;text-anchor:middle}.nm{font-weight:700;text-anchor:middle;fill:#fff;paint-order:stroke;stroke:#123A24;stroke-width:.5px;stroke-linejoin:round}.note{font-weight:700;text-anchor:middle;paint-order:stroke;stroke:rgba(0,0,0,.72);stroke-width:.6px;stroke-linejoin:round}.zl{font-weight:700;fill:rgba(255,255,255,.6)}';

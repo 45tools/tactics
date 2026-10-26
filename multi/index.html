@@ -433,6 +433,15 @@ const DG_OUT=[[1.885,.5,'OUT'],[1.4,.09,'OUT'],[1.4,.91,'OUT'],[1.65,.09,'OUT'],
 const DG={12:{o1:FN(PL('内野11・外野1','11 in / 1 out','内场11・外场1','內場11・外場1'),[...dgInner(11),DG_OUT[0]]),
  o2:FN(PL('内野10・外野2','10 in / 2 out','内场10・外场2','內場10・外場2'),[...dgInner(10),DG_OUT[1],DG_OUT[2]]),
  o3:FN(PL('内野9・外野3','9 in / 3 out','内场9・外场3','內場9・外場3'),[...dgInner(9),DG_OUT[0],DG_OUT[1],DG_OUT[2]])}};
+/* a player dragged into the own inner court becomes 内野, anywhere else 外野 */
+function dgReclass(){
+  const m=v=>v*W/SP.len, x0=m(3)-.5, x1=W-m(3)+.5, y0=m(3)-.5, y1=H-m(3)+.5, msg=[];
+  S.teams.forEach((tm,ti)=>{let ch=false;
+    tm.players.forEach(p=>{const inside=p.y>=y0&&p.y<=y1&&(ti==0?p.x>=x0&&p.x<=W/2:p.x>=W/2&&p.x<=x1),v=inside?'IN':'OUT';
+      if(p.pos!=v){p.pos=v;ch=true}if(p.reg&&p.reg!=v)p.reg=v});
+    if(ch){const a=tm.players.filter(p=>p.pos=='IN').length;msg.push(t('dgCount',{t:tm.name,a,b:tm.players.length-a}))}});
+  if(msg.length) toast(msg.join('　'));
+}
 const dgGen=(ti,n)=>n<2?dgInner(n):[...dgInner(n-1),DG_OUT[0]];
 /* ---- tag rugby (field 40 x 30 m + 5 m in-goal: 50 x 30 m) ---- */
 const TR={5:{flat:FN(PL('フラット（横一列）','Flat line','平行站位','平行站位'),[[.8,.15,'X'],[.8,.325,'X'],[.8,.5,'X'],[.8,.675,'X'],[.8,.85,'X']]),
@@ -569,7 +578,7 @@ const BALLS={
 /* ---------- courts (internal units: long side = W = 105) ---------- */
 const SURF={
  grass:{out:'#24683F',fill:()=>{let s='';for(let i=0;i<10;i++)s+=`<rect x="${i*W/10}" y="0" width="${W/10}" height="${H}" fill="${i%2?'#2A7849':'#2E8250'}"/>`;return s},sw:'repeating-linear-gradient(90deg,#2E8250 0 10%,#2A7849 10% 20%)'},
- turf:{out:'#24683F',fill:()=>{let s='';for(let i=0;i<10;i++)s+=`<rect x="${i*W/10}" y="0" width="${W/10}" height="${H}" fill="${i%2?'#2C67A8':'#3272B6'}"/>`;return s},sw:'repeating-linear-gradient(90deg,#3272B6 0 10%,#2C67A8 10% 20%)'},
+ turf:{out:'#24589A',fill:()=>{let s='';for(let i=0;i<10;i++)s+=`<rect x="${i*W/10}" y="0" width="${W/10}" height="${H}" fill="${i%2?'#2C67A8':'#3272B6'}"/>`;return s},sw:'repeating-linear-gradient(90deg,#3272B6 0 10%,#2C67A8 10% 20%)'},
  wood:{out:'#B9874F',fill:()=>{let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="#D3A26A"/>`;for(let x=3.5;x<W;x+=3.5)s+=`<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="rgba(110,60,20,.09)" stroke-width=".2"/>`;return s},sw:'repeating-linear-gradient(90deg,#D3A26A 0 9%,#C8975F 9% 10%)'},
  volley:{out:'#2F6EA8',fill:()=>'',sw:'linear-gradient(90deg,#2F6EA8 0 12%,#E8833A 12% 88%,#2F6EA8 88%)'},
  field:{out:'#1F5E38',fill:()=>`<rect x="0" y="0" width="${W}" height="${H}" fill="#2E8250"/>`,sw:'linear-gradient(0deg,#C08A55 0 30%,#2E8250 30%)'}
@@ -724,25 +733,25 @@ rotate:'ローテーション（時計回りに1つ）',offense:'オフェンス
 formHintG:'並び方を選ぶと、その形に並び直します。プリセットにない人数は自動で並びます。',rosterHintG:'ポジションを入れると、並び方を変えても そのポジションの場所に並びます。入れ終わったら「この配置に並べ直す」で並び直せます。',
 tOtherSport:'このファイルは「{s}」用です。45 Tactics Multiで開いてください',tSport:'{s}に切り替えました',
 print:'印刷・画像で保存',pTitle:'タイトル',pTitlePh:'例：11/3 練習試合',pDate:'日付',pContent:'内容',pCurrent:'今の盤面',pScenes:'保存した場面',pPer:'1ページの図',pRoster:'名簿を入れる',pMemo:'メモ欄を入れる',pBW:'白黒向けにする',pDo:'印刷・PDF',pImg:'画像で保存',
-pHint:'印刷画面で「PDFとして保存」を選ぶとPDFになります。iPhone・iPadで印刷できないときは「画像で保存」をお使いください。',memo:'メモ',tImg:'画像を書き出しました',noScenes:'保存した場面がありません'});
+pHint:'印刷画面で「PDFとして保存」を選ぶとPDFになります。iPhone・iPadで印刷できないときは「画像で保存」をお使いください。',memo:'メモ',tImg:'画像を書き出しました',noScenes:'保存した場面がありません',dgCount:'{t}：内野{a}人・外野{b}人'});
 Object.assign(I18N.en,{sport:'Sport',chooseSport:'Choose a sport',titleM:'Sports tactics board',aboutTextM:'A free, ad-free tactics board for many sports. Everything you enter is saved only on this device and is never visible to anyone else.',
 rotate:'Rotate (one position clockwise)',offense:'Offense',defense:'Defense',bbDef:'Fielding',bbOff:'Batting',bg_court:'Court (default)',bg_field:'Field (default)',
 formHintG:'Choose a formation to line the players up. Other team sizes are arranged automatically.',rosterHintG:'Set a position and the player goes to that spot when you change formation. Tap “Reset to this formation” when you are done.',
 tOtherSport:'This file is for {s}. Please open it in 45 Tactics Multi',tSport:'Switched to {s}',
 print:'Print / save image',pTitle:'Title',pTitlePh:'e.g. Practice match, 3 Nov',pDate:'Date',pContent:'Content',pCurrent:'Current board',pScenes:'Saved scenes',pPer:'Boards per page',pRoster:'Include roster',pMemo:'Include notes box',pBW:'Black & white',pDo:'Print / PDF',pImg:'Save as image',
-pHint:'Choose “Save as PDF” in the print dialog to make a PDF. If printing does not work on iPhone/iPad, use “Save as image”.',memo:'Notes',tImg:'Image exported',noScenes:'No saved scenes'});
+pHint:'Choose “Save as PDF” in the print dialog to make a PDF. If printing does not work on iPhone/iPad, use “Save as image”.',memo:'Notes',tImg:'Image exported',noScenes:'No saved scenes',dgCount:'{t}: {a} in / {b} out'});
 Object.assign(I18N['zh-Hans'],{sport:'项目',chooseSport:'选择运动项目',titleM:'运动战术板',aboutTextM:'免费、无广告、支持多种运动的战术板。输入的内容只保存在本设备中，其他人看不到。',
 rotate:'轮转（顺时针移动一个位置）',offense:'进攻',defense:'防守',bbDef:'守备',bbOff:'进攻',bg_court:'球场（默认）',bg_field:'场地（默认）',
 formHintG:'选择阵型后按该形状重新排列。预设以外的人数会自动排列。',rosterHintG:'设置位置后，更换阵型时球员会站到该位置。设置完成后点击“按此阵型重新排列”。',
 tOtherSport:'此文件用于「{s}」，请在 45 Tactics Multi 中打开',tSport:'已切换为{s}',
 print:'打印・保存图片',pTitle:'标题',pTitlePh:'例：11/3 练习赛',pDate:'日期',pContent:'内容',pCurrent:'当前布阵',pScenes:'已保存的场景',pPer:'每页图数',pRoster:'包含名单',pMemo:'包含备注栏',pBW:'黑白打印',pDo:'打印・PDF',pImg:'保存为图片',
-pHint:'在打印画面选择“存储为PDF”即可生成PDF。iPhone/iPad 无法打印时，请使用“保存为图片”。',memo:'备注',tImg:'已导出图片',noScenes:'没有已保存的场景'});
+pHint:'在打印画面选择“存储为PDF”即可生成PDF。iPhone/iPad 无法打印时，请使用“保存为图片”。',memo:'备注',tImg:'已导出图片',noScenes:'没有已保存的场景',dgCount:'{t}：内场{a}人・外场{b}人'});
 Object.assign(I18N['zh-Hant'],{sport:'項目',chooseSport:'選擇運動項目',titleM:'運動戰術板',aboutTextM:'免費、無廣告、支援多種運動的戰術板。輸入的內容只會儲存在這台裝置中，其他人看不到。',
 rotate:'輪轉（順時針移動一個位置）',offense:'進攻',defense:'防守',bbDef:'守備',bbOff:'進攻',bg_court:'球場（預設）',bg_field:'場地（預設）',
 formHintG:'選擇陣型後依該形狀重新排列。預設以外的人數會自動排列。',rosterHintG:'設定位置後，變更陣型時球員會站到該位置。設定完成後點「依此陣型重新排列」。',
 tOtherSport:'此檔案用於「{s}」，請在 45 Tactics Multi 中開啟',tSport:'已切換為{s}',
 print:'列印・儲存圖片',pTitle:'標題',pTitlePh:'例：11/3 練習賽',pDate:'日期',pContent:'內容',pCurrent:'目前布陣',pScenes:'已儲存的場景',pPer:'每頁圖數',pRoster:'包含名單',pMemo:'包含備註欄',pBW:'黑白列印',pDo:'列印・PDF',pImg:'儲存為圖片',
-pHint:'在列印畫面選擇「儲存為PDF」即可產生PDF。iPhone/iPad 無法列印時，請使用「儲存為圖片」。',memo:'備註',tImg:'已匯出圖片',noScenes:'沒有已儲存的場景'});
+pHint:'在列印畫面選擇「儲存為PDF」即可產生PDF。iPhone/iPad 無法列印時，請使用「儲存為圖片」。',memo:'備註',tImg:'已匯出圖片',noScenes:'沒有已儲存的場景',dgCount:'{t}：內場{a}人・外場{b}人'});
 const LANG_NAMES={ja:'日本語',en:'English','zh-Hans':'简体中文','zh-Hant':'繁體中文'};
 function detectLang(){
   const l=(navigator.language||'en').toLowerCase();
@@ -1223,6 +1232,7 @@ function endDrag(){
   else if(drag.k=='p'&&!drag.moved){ sel=(sel&&sel.t==drag.t&&sel.i==drag.i)?null:{t:drag.t,i:drag.i}; }
   else if(drag.k=='p'&&drag.moved&&!msel){ sel={t:drag.t,i:drag.i}; }
   else if((drag.k=='txtnew'||drag.k=='txt'&&!drag.moved)&&editing!=null){ $('tText').focus(); }
+  if(SPID=='dodgeball'&&drag.moved&&(drag.k=='p'||drag.k=='group')) dgReclass();
   drag=null; render(); save();
 }
 svg.addEventListener('pointerup',endDrag); svg.addEventListener('pointercancel',endDrag);
